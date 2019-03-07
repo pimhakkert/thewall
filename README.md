@@ -3,7 +3,7 @@ Dit project is een schoolproject waarin een website gemaakt wordt zoals Imgur of
 Mensen kunnen foto's zien en erop klikken, waarna de foto in een vergroot scherm wordt laten zien met verdere informatie zoals een titel, tags en een extra beschrijving.
 
 ### Details
-Developers: Casper Mataûschek (Front-end) en Pim Hakkert (Back-end).
+Developers: Casper Mataûschek, Rai Griffioen (Front-end) en Pim Hakkert (Back-end).
 
 Tijdsperiode: 25 februari tot 19 april.
 
@@ -15,7 +15,7 @@ Users can view photos and click on them, after which the image enlarges and you 
 
 ### Details
 
-Developers: Casper Mataûschek (Front-end) and Pim Hakkert (Back-end).
+Developers: Casper Mataûschek, Rai Griffioen (Front-end) and Pim Hakkert (Back-end).
 
 Project time: February 25th until April 19th.
 
