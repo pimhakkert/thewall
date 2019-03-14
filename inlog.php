@@ -1,4 +1,5 @@
 <html lang="en">
+<?php include 'settings.php';?>
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">
