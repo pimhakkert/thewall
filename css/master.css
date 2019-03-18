@@ -5,4 +5,9 @@
 
 .navbar{
     height: 100px !important;
+    background-color: #0A0702 !important;
+}
+footer{
+    background-color: #0A0702;
+    height: 2em;
 }
