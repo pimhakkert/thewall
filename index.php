@@ -35,38 +35,37 @@
     </nav>
 
     <div class="container-fluid gallery">
-
+        <!--Gebruik deze galleryItem AUB om je modaleContent mee te testen. Dat gaat beter dan dat je een hele database verbinding moet hebben met mijn laptop
+        die toch bijna niet aan staat.-->
         <div class="galleryItem">
             <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
+            <h3 class="galleryItemTitle"></h3>
+            <div class="modalItemContent">
+                <h1 class="modalItemTitle"></h1>
+                <img class="modalItemImg" src="images/meme1.jpg" alt="">
+                <p class="modalItemDesc"></p>
+                <h3 class="modalItemOwner"></h3>
+                <p class="modalItemTags"></p>
+            </div>
         </div>
 
-        <div  class="galleryItem">
-            <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
-        </div>
-
-        <div class="galleryItem">
-            <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
-        </div>
-
-        <div class="galleryItem">
-            <img class="galleryItemImg"  src="images/meme1.jpg" alt="meme" height="469" width="469"/>
-        </div>
-
-        <div class="galleryItem">
-            <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
-        </div>
-
-        <div class="galleryItem">
-            <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
-        </div>
-
-
+        <?php
+        $sql = "SELECT * FROM images";
+        foreach ($database->query($sql) as $results) {
+            echo "<div class=\"galleryitem\">";
+            echo "<img class=\"galleryItemImg\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " .  $results['image_title'] . "\"/>";
+            echo "<h3 class=\"galleryItemTitle\">" . $results['image_title'] . "</h3>";
+            echo    "<div class=\"modalItemContent\">";
+            echo        "<h1 class=\"modalItemTitle\">";
+            echo        "<img class=\"modalItemImg\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " . $results['image_title'] . "\">";
+            echo        "<p class=\"modalItemDesc\"></p>";
+            echo        "<h3 class=\"modalItemOwner\"></h3>";
+            echo        "<p class=\"modalItemTags\"></p>";
+            echo    "</div>";
+            echo "</div>";
+        }
+        ?>
     </div>
-
-
-
-
-
 </div>
 <footer>
 
