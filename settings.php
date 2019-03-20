@@ -1,6 +1,6 @@
 <?php
 $dsn = 'mysql:dbname=thewall;host=127.0.0.1';
-$user = 'user';
+$user = 'root';
 $password = '';
 
 try {
