@@ -28,7 +28,7 @@
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="upload.php">Upload</a>
+                    <a class="nav-link" href="#">Upload</a>
                 </li>
             </ul>
         </div>
