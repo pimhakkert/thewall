@@ -36,7 +36,7 @@ footer{
     width: 1000px;
     display: grid;
     align-self: center;
-    : grid-template-columnsrepeat(4, 270px);
+    grid-template-columns: repeat(4, 270px);
     grid-template-rows: repeat(3, 270px);
     grid-gap: 20px;
 }
