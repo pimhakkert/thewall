@@ -32,13 +32,14 @@ footer{
 
 .gallery{
     padding: 30px;
-    transform: translateY(50px) translateX(-75px);
+    transform: translateY(50px);
     width: 1000px;
     display: grid;
     align-self: center;
-    grid-template-columns: repeat(4, 270px);
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     grid-template-rows: repeat(3, 270px);
-    grid-gap: 20px;
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
 }
 .galleryItem{
     grid-column: auto;
@@ -114,15 +115,3 @@ footer{
 
 
 /*file upload*/
-
-.button {
-    display: inline-block;
-    padding: 10px;
-    background: #ccc;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-.button:hover {
-    background: #ddd;
-}
