@@ -28,13 +28,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="login.php">Login</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item modalButton">
                     <a class="nav-link" href="#">Upload</a>
                 </li>
             </ul>
         </div>
     </nav>
-
+    <div class="modalContent">
+        <h1>Hallo</h1>
+    </div>
     <div class="container-fluid gallery">
 
 
@@ -43,14 +45,16 @@
         <div class="galleryItem modalButton">
             <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
             <h3 class="galleryItemTitle"></h3>
+
+            <div class="modalContent">
+                <h1 class="modalItemTitle"></h1>
+                <img class="modalItemImg" src="images/meme1.jpg" alt="">
+                <p class="modalItemDesc"></p>
+                <h3 class="modalItemOwner"></h3>
+                <p class="modalItemTags"></p>
+            </div>
         </div>
-        <div class="modalContent">
-            <h1 class="modalItemTitle"></h1>
-            <img class="modalItemImg" src="images/meme1.jpg" alt="">
-            <p class="modalItemDesc"></p>
-            <h3 class="modalItemOwner"></h3>
-            <p class="modalItemTags"></p>
-        </div>
+
 
         <!--<?php
         $sql = "SELECT * FROM images";
@@ -69,8 +73,9 @@
         }
         ?>-->
     </div>
+    <script src="js/modal.js"></script>
 </div>
-<script src="js/modal.js"></script>
+
 <footer>
 
 </footer>
