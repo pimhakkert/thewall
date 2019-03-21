@@ -40,7 +40,7 @@
 
         <!--Gebruik deze galleryItem AUB om je modaleContent mee te testen. Dat gaat beter dan dat je een hele database verbinding moet hebben met mijn laptop
         die toch bijna niet aan staat.-->
-        <div class="galleryItem">
+        <div class="galleryItem modalButton">
             <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
             <h3 class="galleryItemTitle"></h3>
             <div class="modalContent">
