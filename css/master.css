@@ -2,10 +2,44 @@
     background-color: #e8a43f;
 }
 
-.navbar{
-    color: white !important;
-    height: 100px !important;
-    background-color: #0A0702 !important;
+.customNavbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    height: 100px;
+    background-color: #0A0702;
+
+
+    -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+}
+.customNavbar button{
+    width: 10em;
+    margin-right: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    background-color: lightgray;
+}
+.customNavbar button:hover{
+    transform: scale(1.1);
+    transition: .1s ease-in;
+    -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75)
+}
+.navbarLogo{
+    width: 8em;
+    margin: 10px;
+    transform: translateX(10px);
+}
+.navbarLogo:hover{
+    transform: scale(1.1);
+    transition: .1s ease-in;
+    -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75)
 }
 footer{
     background-color: #0A0702;
@@ -36,7 +70,8 @@ footer{
     width: 1000px;
     display: grid;
     align-self: center;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(3, 270px);
     grid-column-gap: 30px;
     grid-row-gap: 50px;
@@ -113,5 +148,6 @@ footer{
     grid-template-columns:1fr 1fr;
 }
 
+@media screen and (max-width: 992px) {
 
-/*file upload*/
+}

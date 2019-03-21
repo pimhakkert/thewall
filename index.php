@@ -3,6 +3,7 @@
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.45">
     <meta name="author" content="Pim Hakkert, Rai Griffioen, Casper Matauschek">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
@@ -17,7 +18,7 @@
 
 <div class="wrapper">
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <!--<nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" id="no" href="#"><img src="images/TheWallLogo.png" alt="" style="height: 100%;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,11 +34,20 @@
                 </li>
             </ul>
         </div>
+    </nav>--->
+
+
+    <nav class="customNavbar">
+        <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
+        <button class="modalButton upload" type="button" name="button" style="margin-left: auto">Upload</button>
+        <button type="button" name="button" onclick="location.href = 'login.php'">Login</button>
     </nav>
+
+
     <div class="modalContent">
         <h1>Hallo</h1>
     </div>
-    <div class="container-fluid gallery">
+    <div class="container gallery">
 
 
         <!--Gebruik deze galleryItem AUB om je modaleContent mee te testen. Dat gaat beter dan dat je een hele database verbinding moet hebben met mijn laptop
