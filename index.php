@@ -1,5 +1,5 @@
 <html lang="en">
-<?php include 'settings.php'; ?>
+<?php include 'settings.php';?>
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">
@@ -42,8 +42,8 @@
 
         <!--Gebruik deze galleryItem AUB om je modaleContent mee te testen. Dat gaat beter dan dat je een hele database verbinding moet hebben met mijn laptop
         die toch bijna niet aan staat.-->
-        <div class="galleryItem modalButton">
-            <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
+        <div class="galleryItem ">
+            <img class="galleryItemImg modalButton" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
             <h3 class="galleryItemTitle"></h3>
 
             <div class="modalContent">
@@ -56,22 +56,26 @@
         </div>
 
 
-        <!--<?php
-        $sql = "SELECT * FROM images";
-        foreach ($database->query($sql) as $results) {
-            echo "<div class=\"galleryItem\">";
-            echo "<img class=\"galleryItemImg\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " . $results['image_title'] . "\"/>";
-            echo "<h3 class=\"galleryItemTitle\">" . $results['image_title'] . "</h3>";
-            echo "<div class=\"modalItemContent\">";
-            echo "<h1 class=\"modalItemTitle\">";
-            echo "<img class=\"modalItemImg\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " . $results['image_title'] . "\">";
-            echo "<p class=\"modalItemDesc\"></p>";
-            echo "<h3 class=\"modalItemOwner\"></h3>";
-            echo "<p class=\"modalItemTags\"></p>";
-            echo "</div>";
-            echo "</div>";
-        }
-        ?>-->
+        <?php
+
+           $sql = "SELECT * FROM images";
+           foreach ($database->query($sql) as $results) {
+           echo "<div class=\"galleryitem\">";
+           echo "<img class=\"galleryItemImg modalButton\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " .  $results['image_title'] . "\"/>";
+           echo "<h3 class=\"galleryItemTitle\">" . $results['image_title'] . "</h3>";
+           echo    "<div class=\"modalContent\">";
+           echo        "<h1 class=\"modalItemTitle\">";
+           echo        "<img class=\"modalItemImg\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " . $results['image_title'] . "\">";
+           echo        "<p class=\"modalItemDesc\"></p>";
+           echo        "<h3 class=\"modalItemOwner\"></h3>";
+           echo        "<p class=\"modalItemTags\"></p>";
+           echo    "</div>";
+           echo "</div>";
+          }
+
+           ?>
+
+
     </div>
     <script src="js/modal.js"></script>
 </div>
