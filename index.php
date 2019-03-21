@@ -40,18 +40,16 @@
 
         <!--Gebruik deze galleryItem AUB om je modaleContent mee te testen. Dat gaat beter dan dat je een hele database verbinding moet hebben met mijn laptop
         die toch bijna niet aan staat.-->
-        <div class="galleryItem">
+        <div class="galleryItem modalButton">
             <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
             <h3 class="galleryItemTitle"></h3>
-
-
-            <div class="modalContent">
-                <h1 class="modalItemTitle"></h1>
-                <img class="modalItemImg" src="images/meme1.jpg" alt="">
-                <p class="modalItemDesc"></p>
-                <h3 class="modalItemOwner"></h3>
-                <p class="modalItemTags"></p>
-            </div>
+        </div>
+        <div class="modalContent">
+            <h1 class="modalItemTitle"></h1>
+            <img class="modalItemImg" src="images/meme1.jpg" alt="">
+            <p class="modalItemDesc"></p>
+            <h3 class="modalItemOwner"></h3>
+            <p class="modalItemTags"></p>
         </div>
 
         <!--<?php
