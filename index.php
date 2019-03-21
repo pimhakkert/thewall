@@ -43,8 +43,6 @@
         <div class="galleryItem">
             <img class="galleryItemImg" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
             <h3 class="galleryItemTitle"></h3>
-
-
             <div class="modalContent">
                 <h1 class="modalItemTitle"></h1>
                 <img class="modalItemImg" src="images/meme1.jpg" alt="">
@@ -57,7 +55,7 @@
         <!--<?php
         $sql = "SELECT * FROM images";
         foreach ($database->query($sql) as $results) {
-            echo "<div class=\"galleryitem\">";
+            echo "<div class=\"galleryItem\">";
             echo "<img class=\"galleryItemImg\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " . $results['image_title'] . "\"/>";
             echo "<h3 class=\"galleryItemTitle\">" . $results['image_title'] . "</h3>";
             echo "<div class=\"modalItemContent\">";
