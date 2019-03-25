@@ -47,7 +47,7 @@ input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
   transition: color .4s;
 }
 .forgot:hover { color: #3b3b3b }
-input[type="submit"] {
+input[id="submit"] {
   width:240px;
   height:35px;
   display:block;
@@ -67,7 +67,7 @@ input[type="submit"] {
   border: 1px solid #42464b;
 }
 .forgot:hover { color: #3b3b3b }
-input[type="submit2"] {
+input[id="submit2"] {
   width:240px;
   height:35px;
   display:block;
