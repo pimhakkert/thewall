@@ -1,3 +1,6 @@
+body{
+    height: 100%;
+}
 nav.upperNav {
 display: flex;
 flex-direction: column;
@@ -8,13 +11,26 @@ nav.upperNav input{
     background-color: dimgray;
     color: black;
     border-color: black;
-    border-style: double;
-    margin-top: -.5px;
+    border-style: inset;
+    margin-bottom: 0;
 }
 nav.upperNav input:hover{
     background-color: grey;
 }
-
+.uploadButtonLabel{
+    padding-top: 0.3em;
+    text-align: center;
+    margin-bottom: -0.2em;
+    height: 2.5em;
+    width: 100vw;
+    background-color: dimgray;
+    color: black;
+    border-color: black;
+    border-style: inset;
+}
+.uploadButtonLabel:hover{
+    background-color: grey;
+}
 #toggleMenu{
  display: none;
 }
