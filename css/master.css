@@ -1,3 +1,20 @@
+nav.upperNav {
+display: flex;
+flex-direction: column;
+}
+nav.upperNav input{
+    height: 2.5em;
+    width: 100vw;
+    background-color: dimgray;
+    color: black;
+    border-color: black;
+    border-style: double;
+    margin-top: -.5px;
+}
+nav.upperNav input:hover{
+    background-color: grey;
+}
+
 #toggleMenu{
  display: none;
 }
@@ -11,6 +28,7 @@
 
 
 .wrapper{
+    height: 105vh;
     transform: translatey(-5em);
     background-color: #e8a43f;
     transition: margin-top ease-in-out 0.2s;
@@ -58,6 +76,7 @@
 footer{
     background-color: #0A0702;
     height: 2em;
+    transform: translateY(-5em);
 }
 .navbar a{
     margin-left: 5px;
@@ -86,7 +105,7 @@ footer{
     align-self: center;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
     grid-column-gap: 30px;
     grid-row-gap: 50px;
 }

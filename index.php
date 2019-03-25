@@ -35,7 +35,10 @@
             </ul>
         </div>
     </nav>--->
-    <nav class="" style="height: 5em;"></nav>
+    <nav class="upperNav" style="height: 5em; background-color: dimgrey">
+        <input type="button" value="LOGIN">
+        <input type="button" value="REGISTREER">
+    </nav>
 
     <nav class="customNavbar">
         <img class="navbarLogo" src="images/TheWallLogo.png" alt="">

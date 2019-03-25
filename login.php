@@ -15,13 +15,20 @@
 </head>
 <body>
 
+
+<input type="checkbox" id="toggleMenu">
   <div class="wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" id="no" href="#"><img src="images/TheWallLogo.png" alt="" style="height: 100%;"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
+      <nav class="upperNav" style="height: 5em; background-color: dimgrey">
+          <input type="button" value="LOGIN">
+          <input type="button" value="REGISTREER">
+      </nav>
+
+      <nav class="customNavbar">
+          <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
+          <button class="modalButton upload" type="button" name="button" style="margin-left: auto">Upload</button>
+          <button type="button" name="button" onclick="location.href = 'login.php'">Login</button>
+          <label for="toggleMenu" id="navHamburger">&#9776</label>
       </nav>
 
 
@@ -37,8 +44,10 @@
 
 
 
+
 <footer>
 
 </footer>
+  </div>
 </body>
 </html>
