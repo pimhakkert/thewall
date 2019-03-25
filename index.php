@@ -15,7 +15,7 @@
 </head>
 <body>
 
-
+<input type="checkbox" id="toggleMenu">
 <div class="wrapper">
 
     <!--<nav class="navbar navbar-expand-lg navbar-dark">
@@ -35,12 +35,13 @@
             </ul>
         </div>
     </nav>--->
-
+    <nav class="" style="height: 5em;"></nav>
 
     <nav class="customNavbar">
         <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
         <button class="modalButton upload" type="button" name="button" style="margin-left: auto">Upload</button>
         <button type="button" name="button" onclick="location.href = 'login.php'">Login</button>
+        <label for="toggleMenu" id="navHamburger">&#9776</label>
     </nav>
 
 

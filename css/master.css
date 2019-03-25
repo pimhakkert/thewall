@@ -1,5 +1,19 @@
+#toggleMenu{
+ display: none;
+}
+#navHamburger{
+    display: none;
+}
+#toggleMenu:checked ~ div.wrapper {
+    margin-top: 5em;
+    transition: margin-top ease-in-out 0.2s;
+}
+
+
 .wrapper{
+    transform: translatey(-5em);
     background-color: #e8a43f;
+    transition: margin-top ease-in-out 0.2s;
 }
 
 .customNavbar{
@@ -39,7 +53,7 @@
     transition: .1s ease-in;
     -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
-    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75)
+    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
 }
 footer{
     background-color: #0A0702;
@@ -72,7 +86,7 @@ footer{
     align-self: center;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, 270px);
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 30px;
     grid-row-gap: 50px;
 }
@@ -149,5 +163,13 @@ footer{
 }
 
 @media screen and (max-width: 992px) {
+    .customNavbar button{
+        display: none;
+    }
 
+    #navHamburger{
+        display: contents;
+        font-size: 4em;
+        transform: translateX(10px)!important;
+    }
 }
