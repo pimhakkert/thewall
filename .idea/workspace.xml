@@ -81,7 +81,6 @@
       <list>
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -94,6 +93,7 @@
         <option value="$PROJECT_DIR$/inlog.php" />
         <option value="$PROJECT_DIR$/registratie.php" />
         <option value="$PROJECT_DIR$/admin.php" />
+        <option value="$PROJECT_DIR$/css/master.css" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/upload.html" />
         <option value="$PROJECT_DIR$/js/draganddrop.js" />
@@ -126,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,7 +182,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,11 +189,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/School/ma/bewijzenmap/periode1.3/fro/cdcoverMenu" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Rai Griffioen\Desktop\School\ma\bewijzenmap\periode1.3\proj2\thewall\js" />
       <recent name="C:\Users\Rai Griffioen\Desktop\School\ma\bewijzenmap\periode1.3\proj2\thewall" />
       <recent name="C:\Users\Rai Griffioen\Desktop\School\ma\bewijzenmap\periode1.3\proj2\thewall\css" />
     </key>
@@ -214,13 +213,10 @@
     <configuration name="admin.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/thewall/thewall/admin.php">
       <method v="2" />
     </configuration>
-    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thewall/thewall/index.html" useBuiltInWebServerPort="true">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thewall/index.html">
       <method v="2" />
     </configuration>
-    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thewall/index.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
-    <configuration name="upload.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thewall/upload.html" useBuiltInWebServerPort="true">
+    <configuration name="upload.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/thewall/upload.html">
       <method v="2" />
     </configuration>
     <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
@@ -228,7 +224,6 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.admin.php" />
-      <item itemvalue="JavaScript Debug.index.html (1)" />
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="JavaScript Debug.upload.html" />
       <item itemvalue="PHP Script.index.php" />
@@ -236,7 +231,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
-        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.upload.html" />
         <item itemvalue="JavaScript Debug.admin.php" />
       </list>
@@ -256,10 +250,8 @@
       <workItem from="1551948779494" duration="4228000" />
       <workItem from="1552557525834" duration="70000" />
       <workItem from="1552561827443" duration="991000" />
-      <workItem from="1553070774894" duration="9852000" />
-      <workItem from="1553162656552" duration="193000" />
-      <workItem from="1553163097775" duration="550000" />
-      <workItem from="1553163682021" duration="1621000" />
+      <workItem from="1553070774894" duration="4635000" />
+      <workItem from="1553277072993" duration="12000" />
     </task>
     <servers />
   </component>
@@ -302,14 +294,14 @@
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css" />
     <entry file="file://$PROJECT_DIR$/css/style.css" />
     <entry file="file://$PROJECT_DIR$/css/bootstrap.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="sourcemapFileViewerProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/css/js/script.js" />
     <entry file="file://$PROJECT_DIR$/js/script.js" />
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="sourcemapFileViewerProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery-3.3.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -341,7 +333,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
+        <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="20" />
         </state>
       </provider>
