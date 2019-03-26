@@ -1,0 +1,210 @@
+body{
+    height: 100%;
+}
+nav.upperNav {
+display: flex;
+flex-direction: column;
+}
+nav.upperNav input{
+    height: 2.5em;
+    width: 100vw;
+    background-color: dimgray;
+    color: black;
+    border-color: black;
+    border-style: inset;
+    margin-bottom: 0;
+}
+nav.upperNav input:hover{
+    background-color: grey;
+}
+.uploadButtonLabel{
+    padding-top: 0.3em;
+    text-align: center;
+    margin-bottom: -0.2em;
+    height: 2.5em;
+    width: 100vw;
+    background-color: dimgray;
+    color: black;
+    border-color: black;
+    border-style: inset;
+}
+.uploadButtonLabel:hover{
+    background-color: grey;
+}
+#toggleMenu{
+ display: none;
+}
+#navHamburger{
+    display: none;
+}
+#toggleMenu:checked ~ div.wrapper {
+    margin-top: 5em;
+    transition: margin-top ease-in-out 0.2s;
+}
+
+
+.wrapper{
+    height: 105vh;
+    transform: translatey(-5em);
+    background-color: #e8a43f;
+    transition: margin-top ease-in-out 0.2s;
+}
+
+.customNavbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    height: 100px;
+    background-color: #0A0702;
+
+
+    -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+}
+.customNavbar button{
+    width: 10em;
+    margin-right: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    background-color: lightgray;
+}
+.customNavbar button:hover{
+    transform: scale(1.1);
+    transition: .1s ease-in;
+    -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75)
+}
+.navbarLogo{
+    width: 8em;
+    margin: 10px;
+    transform: translateX(10px);
+}
+.navbarLogo:hover{
+    transform: scale(1.1);
+    transition: .1s ease-in;
+    -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+}
+footer{
+    background-color: #0A0702;
+    height: 2em;
+    transform: translateY(-5em);
+}
+.navbar a{
+    margin-left: 5px;
+    background-color: lightgrey;
+}
+.navbar a.nav-link{
+    color: black !important;
+}
+.navbar a:hover{
+    transform: scale(1.1);
+    transition: .1s ease-in;
+    -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75)
+}
+#no{
+    height: 84px;
+    background-color: rgba(0,0,0,0);
+}
+
+.gallery{
+    padding: 30px;
+    transform: translateY(50px);
+    width: 1000px;
+    display: grid;
+    align-self: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+}
+.galleryItem{
+    grid-column: auto;
+}
+.galleryItemImg{
+    width: 100%;
+    height: auto;
+}
+.galleryItem:hover{
+    transform: scale(1.1);
+    transition: .1s ease-in;
+}
+.galleryItemTitle{
+
+}
+.galleryItemImg{
+
+}
+
+
+.modal {
+    height: 25em;
+    width: 750px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+    max-height: 50%;
+    max-width: 80%;
+    padding: 1em;
+    border-radius: 1em;
+    background-color: #fff;
+    align-self: center;
+    animation: modalKey 1s forwards;
+}
+@keyframes modalKey {
+    0% {max-width: 30%; max-height: 15%;}
+    100% {max-width: 80%; max-height: 50%;}
+}
+.modalBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0,0,0,0.5);
+    display: grid;
+    justify-items: center;
+}
+.modalContent img{
+    position: relative;
+    width: 80%;
+}
+.closeButton{
+    position: relative;
+    left: 94%;
+    border-style: none;
+    border-radius: 10px;
+    background: rgb(202, 60, 60);
+    color: white;
+    grid-column: 3;
+    width: 30px;
+    height: 30px;
+}
+.modalContent{
+    margin-left: 15px;
+    margin-right: 5px;
+    align-content: center;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+}
+
+@media screen and (max-width: 992px) {
+    .customNavbar button{
+        display: none;
+    }
+
+    #navHamburger{
+        display: contents;
+        font-size: 4em;
+        transform: translateX(10px)!important;
+    }
+}

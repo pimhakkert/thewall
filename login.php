@@ -1,5 +1,5 @@
 <html lang="en">
-<?php include 'php_tools/settings.php';?>
+<?php include 'settings.php';?>
 <head>
   <title>The Wall</title>
   <meta charset="utf-8">
@@ -15,30 +15,39 @@
 </head>
 <body>
 
+
+<input type="checkbox" id="toggleMenu">
   <div class="wrapper">
 
-      <nav class="navbar navbar-expand-lg navbar-dark">
-          <a class="navbar-brand" id="no" href="#"><img src="images/TheWallLogo.png" alt="" style="height: 100%;"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
+      <nav class="upperNav" style="height: 5em; background-color: dimgrey">
+          <label class="uploadButtonLabel" for="uploadButton">Upload</label>
+          <input type="button" value="Login" onclick="location.href = 'login.php'">
+      </nav>
+
+      <nav class="customNavbar">
+          <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
+          <button class="modalButton upload" id="uploadButton" type="button" name="button" style="margin-left: auto">Upload</button>
+          <button type="button" name="button" onclick="location.href = 'login.php'">Login</button>
+          <label for="toggleMenu" id="navHamburger">&#9776</label>
       </nav>
 
 
 
 <div class="login">
     <input type="text" placeholder="Username" id="username">
-    <input type="text" placeholder="E-mail" id="username">
   <input type="password" placeholder="Password" id="password">
-  <input type="password" placeholder="Password again" id="password">
+  <a href="#" class="forgot">forgot password?</a>
+  <input type="submit" value="Sign In">
   <input type="submit2" value="Sign Up">
 </div>
 <div class="shadow"></div>
 
 
 
+
 <footer>
 
 </footer>
+  </div>
 </body>
 </html>
