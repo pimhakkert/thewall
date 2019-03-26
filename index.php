@@ -1,5 +1,5 @@
 <html lang="en">
-<?php include 'settings.php';?>
+<?php include 'php_tools/settings.php';?>
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">
@@ -53,9 +53,7 @@
     </div>
     <div class="container gallery">
 
-
-        <!--Gebruik deze galleryItem AUB om je modaleContent mee te testen. Dat gaat beter dan dat je een hele database verbinding moet hebben met mijn laptop
-        die toch bijna niet aan staat.-->
+<!--        Deze gallery item nog verwijderen na CSS-->
         <div class="galleryItem ">
             <img class="galleryItemImg modalButton" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
             <h3 class="galleryItemTitle"></h3>
@@ -68,51 +66,8 @@
                 <p class="modalItemTags"></p>
             </div>
         </div>
-
-
-        <?php
-        $sql = "SELECT * FROM images";
-           foreach ($database->query($sql) as $results) {
-               $imageID = $results['id'];
-               $userID = $results['user_id'];
-               $username;
-               $sql2 = "SELECT tag_id FROM image_tags WHERE image_id = $imageID";
-               $tagArray = array();
-               //Need to change this to prepared statements. Possible database linking???
-               foreach($database->query($sql2) as $results2) {
-                   $tagID = $results2['tag_id'];
-                   $sql3 = "SELECT tag_name FROM tags WHERE tag_id = $tagID";
-                   foreach ($database->query($sql3) as $results3) {
-                       $tagName = $results3['tag_name'];
-                       array_push($tagArray,$tagName);
-                   }
-               }
-               //Comment End
-               $sql4 = "SELECT user_name FROM users WHERE id = $userID";
-               foreach ($database->query($sql4) as $results4) {
-                   $username = $results4['user_name'];
-               }
-               echo "<div class=\"galleryItem\">";
-               echo "<img class=\"galleryItemImg modalButton\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " .  $results['image_title'] . "\"/>";
-               echo "<h3 class=\"galleryItemTitle\">" . $results['image_title'] . "</h3>";
-               echo    "<div class=\"modalContent\">";
-               echo        "<h1 class=\"modalItemTitle\">" . $results['image_title'] . "</h1>";
-               echo        "<img class=\"modalItemImg\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " . $results['image_title'] . "\">";
-               echo        "<p class=\"modalItemDesc\">" . $results['image_description'] . "</p>";
-               echo        "<h3 class=\"modalItemOwner\">" . $username . "</h3>";
-               echo        "<h4 class=\"modalItemDate\">" . $results['image_date'] . "</h4>";
-               //Need to finish search functionality for following for loop to be completed.
-               for($i=0;$i<sizeof($tagArray);$i++){
-                   echo    "<a class=\"modalItemTags\" href=\"index.php/search\">";
-                   echo    "$tagArray[$i]";
-                   echo    "</a>";
-               }
-               echo    "</div>";
-               echo "</div>";
-          }
-           ?>
-
-
+<!--        Einde gallery item-->
+        <?php include 'php_tools/query.php'?>
     </div>
     <script src="js/modal.js"></script>
 </div>
