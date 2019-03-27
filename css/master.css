@@ -44,6 +44,7 @@ nav.upperNav input:hover{
 
 
 .wrapper{
+    width: 100%;
     height: 105vh;
     transform: translatey(-5em);
     background-color: #e8a43f;
@@ -120,7 +121,7 @@ footer{
     display: grid;
     align-self: center;
     justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-template-rows: auto;
     grid-column-gap: 30px;
     grid-row-gap: 50px;
@@ -158,7 +159,7 @@ footer{
     border-radius: 1em;
     background-color: #fff;
     align-self: center;
-    animation: modalKey 1s forwards;
+    animation: modalKey .5s forwards;
 }
 @keyframes modalKey {
     0% {max-width: 30%; max-height: 15%;}
@@ -175,8 +176,10 @@ footer{
     justify-items: center;
 }
 .modalItemImg{
+    margin-right: auto;
+    margin-left: auto;
     background-color: lightgrey;
-    height: 430px;
+    height: 45vh;
     width: 900px;
 }
 .modalItemImg img{
@@ -184,7 +187,7 @@ footer{
     margin-left: auto;
     margin-right: auto;
     width: auto;
-    height: 430px;
+    height: 45vh;
     max-height: 430px;
     display: block;
 }
@@ -201,21 +204,21 @@ footer{
     height: 30px;
 }
 .modalContent{
-    position: relative;
-    transform: translate(32px, 0px);
-    margin-left: 15px;
-    margin-right: 5px;
+    margin-left: auto;
+    margin-right: auto;
     align-content: center;
     display: grid;
     grid-template-columns:1fr 1fr;
-    grid-template-rows: 0.3fr 2fr  0.5fr;
+    grid-template-rows: 0.3fr 50vh  0.5fr;
 }
 .modalItemTItle{
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     height: 60px;
-    width: 1000px;
+    width: 105%;
+    left: 4%;
     background-color: #0A0702;
     color: white;
     transform: translate(-63px,-17px);
@@ -224,7 +227,7 @@ footer{
     grid-column-end: 3;
 }
 .modalItemLeft{
-    transform: translateX(-47px);
+    transform: translateY(-15%);
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
@@ -260,7 +263,7 @@ footer{
     transform: translateY(2em);
    text-align: center;
     grid-row-start: 2;
-    grid-row-end: 10;
+    grid-row-end: 9;
 }
 @media screen and (max-width: 992px) {
     .customNavbar button{
@@ -273,3 +276,4 @@ footer{
         transform: translateX(10px)!important;
     }
 }
+
