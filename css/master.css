@@ -186,6 +186,7 @@ footer{
     width: auto;
     height: 430px;
     max-height: 430px;
+    display: block;
 }
 .closeButton{
     position: absolute;

@@ -55,20 +55,7 @@
     </div>
     <div class="container gallery">
 
-<!--        Deze gallery item nog verwijderen na CSS-->
-        <div class="galleryItem ">
-            <img class="galleryItemImg modalButton" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
-            <h3 class="galleryItemTitle"></h3>
 
-            <div class="modalContent">
-                <h1 class="modalItemTitle"></h1>
-                <img class="modalItemImg" src="images/meme1.jpg" alt="">
-                <p class="modalItemDesc"></p>
-                <h3 class="modalItemOwner"></h3>
-                <p class="modalItemTags"></p>
-            </div>
-        </div>
-<!--        Einde gallery item-->
         <?php include 'php_tools/query.php'?>
     </div>
     <script src="js/modal.js"></script>
