@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.45">
     <meta name="author" content="Pim Hakkert, Rai Griffioen, Casper Matauschek">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
@@ -95,7 +96,7 @@
 </div>
 
 <footer>
-    
+
 </footer>
 </body>
 </html>
