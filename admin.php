@@ -1,5 +1,5 @@
 <html lang="en">
-<?php include 'settings.php';?>
+<?php include 'php_tools/settings.php';?>
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">

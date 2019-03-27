@@ -1,5 +1,5 @@
 <html lang="en">
-<?php include 'settings.php';?>
+<?php include 'php_tools/settings.php';?>
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">
@@ -54,9 +54,7 @@
     </div>
     <div class="container gallery">
 
-
-        <!--Gebruik deze galleryItem AUB om je modaleContent mee te testen. Dat gaat beter dan dat je een hele database verbinding moet hebben met mijn laptop
-        die toch bijna niet aan staat.-->
+<!--        Deze gallery item nog verwijderen na CSS-->
         <div class="galleryItem ">
             <img class="galleryItemImg modalButton" src="images/meme1.jpg" alt="meme" height="469" width="469"/>
             <h3 class="galleryItemTitle"></h3>
@@ -69,28 +67,8 @@
                 <p class="modalItemTags"></p>
             </div>
         </div>
-
-
-        <?php
-
-           $sql = "SELECT * FROM images";
-           foreach ($database->query($sql) as $results) {
-           echo "<div class=\"galleryItem\">";
-           echo "<img class=\"galleryItemImg modalButton\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " .  $results['image_title'] . "\"/>";
-           echo "<h3 class=\"galleryItemTitle\">" . $results['image_title'] . "</h3>";
-           echo    "<div class=\"modalContent\">";
-           echo        "<h1 class=\"modalItemTitle\">";
-           echo        "<img class=\"modalItemImg\" src=\"images/" . $results['image_name'] . "\" alt=\"" . "Picture: " . $results['image_title'] . "\">";
-           echo        "<p class=\"modalItemDesc\"></p>";
-           echo        "<h3 class=\"modalItemOwner\"></h3>";
-           echo        "<p class=\"modalItemTags\"></p>";
-           echo    "</div>";
-           echo "</div>";
-          }
-
-           ?>
-
-
+<!--        Einde gallery item-->
+        <?php include 'php_tools/query.php'?>
     </div>
     <script src="js/modal.js"></script>
 </div>
