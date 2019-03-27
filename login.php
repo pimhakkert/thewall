@@ -4,6 +4,7 @@
   <title>The Wall</title>
   <meta charset="utf-8">
   <meta name="author" content="Pim Hakkert, Rai Griffioen, Casper Matauschek">
+    <meta name="viewport" content="user-scalable=no, width=device-width">
   <link rel="stylesheet" href="css/bootstrap.css" >
   <link rel="stylesheet" href="css/bootstrap-grid.css">
   <link rel="stylesheet" href="css/bootstrap-reboot.css">
@@ -12,6 +13,7 @@
   <script src="js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="css/master.css">
   <link rel="stylesheet" href="css/login.css">
+
 </head>
 <body>
 

@@ -58,7 +58,6 @@
     </div>
     <script src="js/modal.js"></script>
 </div>
-<footer>
-</footer>
+<div class="footer"></div>
 </body>
 </html>
