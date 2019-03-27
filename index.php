@@ -36,6 +36,7 @@
             </ul>
         </div>
     </nav>--->
+
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <label class="uploadButtonLabel" for="uploadButton">Upload</label>
         <input type="button" value="Login" onclick="location.href = 'login.php'">

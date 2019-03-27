@@ -145,14 +145,14 @@ footer{
 
 
 .modal {
-    height: 25em;
-    width: 750px;
+    height: 50em;
+    width: 1000px;
     position: fixed;
     top: 50%;
     left: 50%;
     display: block;
     transform: translate(-50%, -50%);
-    max-height: 50%;
+    max-height: 90%;
     max-width: 80%;
     padding: 1em;
     border-radius: 1em;
@@ -162,7 +162,7 @@ footer{
 }
 @keyframes modalKey {
     0% {max-width: 30%; max-height: 15%;}
-    100% {max-width: 80%; max-height: 50%;}
+    100% {max-width: 80%; max-height: 90%;}
 }
 .modalBackground {
     position: absolute;
@@ -174,12 +174,22 @@ footer{
     display: grid;
     justify-items: center;
 }
-.modalContent img{
+.modalItemImg{
+    background-color: lightgrey;
+    height: 430px;
+    width: 900px;
+}
+.modalItemImg img{
     position: relative;
-    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 430px;
+    max-height: 430px;
 }
 .closeButton{
-    position: relative;
+    position: absolute;
+    z-index: 99999;
     left: 94%;
     border-style: none;
     border-radius: 10px;
@@ -190,13 +200,67 @@ footer{
     height: 30px;
 }
 .modalContent{
+    position: relative;
+    transform: translate(32px, 0px);
     margin-left: 15px;
     margin-right: 5px;
     align-content: center;
     display: grid;
     grid-template-columns:1fr 1fr;
+    grid-template-rows: 0.3fr 2fr  0.5fr;
 }
-
+.modalItemTItle{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 60px;
+    width: 1000px;
+    background-color: #0A0702;
+    color: white;
+    transform: translate(-63px,-17px);
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.modalItemLeft{
+    transform: translateX(-47px);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+}
+.modalItemRight{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 2;
+}
+.modalItemDesc{
+    padding: 5px;
+    background-color: lightgrey;
+    height: 8em;
+    grid-column: 2;
+    grid-row-start: 2;
+    grid-row-end: 9;
+}
+.modalItemDate{
+    text-align: left;
+    grid-column: 2;
+    grid-row: 10;
+}
+.modalItemTags{
+    text-align: left;
+    grid-row:11;
+    grid-column: 2;
+}
+.modalItemOwner{
+    transform: translateY(2em);
+   text-align: center;
+    grid-row-start: 2;
+    grid-row-end: 10;
+}
 @media screen and (max-width: 992px) {
     .customNavbar button{
         display: none;
