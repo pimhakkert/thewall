@@ -1,5 +1,5 @@
 <html lang="en">
-<?php include 'settings.php';?>
+<?php include 'php_tools/settings.php';?>
 <head>
   <title>The Wall</title>
   <meta charset="utf-8">
@@ -28,8 +28,9 @@
           <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
           <button class="modalButton upload" id="uploadButton" type="button" name="button" style="margin-left: auto">Upload</button>
           <button type="button" name="button" onclick="location.href = 'login.php'">Login</button>
-          <label for="toggleMenu" id="navHamburger">&#9776</label>
-      </nav>
+          <label for="toggleMenu" id="navHamburger" &#9776</label>
+          </nav>
+
 
 
 
