@@ -3,23 +3,20 @@ $sql = "SELECT * FROM images";
 foreach ($database->query($sql) as $image_results) {
     $imageID = $image_results['id'];
     $userID = $image_results['user_id'];
-    $username;
-    $sql2 = "SELECT tag_id FROM image_tags WHERE image_id = $imageID";
+
+    //Get tag names
+    $sql2 = "SELECT t.tag_name FROM image_tags it LEFT JOIN tags t ON t.tag_id = it.tag_id WHERE it.image_id = ?";
     $tagArray = array();
-    //Need to change this to prepared statements. Possible database linking???
-    foreach($database->query($sql2) as $tagId_results) {
-        $tagID = $tagId_results['tag_id'];
-        $sql3 = "SELECT tag_name FROM tags WHERE tag_id = $tagID";
-        foreach ($database->query($sql3) as $tagName_results) {
-            $tagName = $tagName_results['tag_name'];
-            array_push($tagArray,$tagName);
-        }
-    }
-    //Comment End
-    $sql4 = "SELECT user_name FROM users WHERE id = $userID";
-    foreach ($database->query($sql4) as $username_results) {
-        $username = $username_results['user_name'];
-    }
+    $sth = $database->prepare($sql2);
+    $sth->execute([$imageID]);
+    $tagArray = $sth->fetchAll(PDO::FETCH_COLUMN);
+
+    //Get owner name
+    $sql3 = "SELECT user_name FROM users WHERE id = ?";
+    $sth2 = $database->prepare($sql3);
+    $sth2->execute([$userID]);
+    $username = null;
+    $username = $sth2->fetchColumn();
     ?>
     <div class="galleryItem">
         <img class="galleryItemImg modalButton" src="images/<?php echo $image_results['image_name']; ?>"alt="Picture: <?php echo $image_results['image_title']; ?>"/>
