@@ -43,7 +43,31 @@
     </nav>
 
     <div class="modalContent">
-        <h1>Hallo</h1>
+        <div class="modalItemTitle2"></div>
+        <form class="modalUploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+
+            <div class="ModalUploadDiv">
+                Select image to upload:
+            <input class="modalUploadFile" type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+            <div class="modalUploadContent">
+                <div>
+                    <p>Title:</p>
+                    <p>Description:</p>
+                    <p style="margin-top: 4em">Tags:</p>
+                </div>
+                <div class="modalUploadInput">
+                    <input class="modalUploadTitle" type="text" >
+                    <input class="modalUploadDescription" type="text" >
+                    <input class="modalUploadTags" type="text" >
+                </div>
+                <div class="modalUploadSubmit">
+                    <input class="modalUploadSubmit" type="submit" value="Upload Image" name="submit">
+                </div>
+
+
+            </div>
+        </form>
     </div>
 
     <nav class="customNavbar">

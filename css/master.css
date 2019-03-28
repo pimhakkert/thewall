@@ -171,6 +171,73 @@ nav.upperNav input:hover{
     0% {max-width: 30%; max-height: 15%;}
     100% {max-width: 80%; max-height: 90%;}
 }
+.modalUploadForm{
+    transform: translateY(20vh);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    display: grid;
+    grid-template-columns: 1fr
+}
+.modalUploadContent{
+    margin-left: -20px;
+    justify-content: center;
+    grid-row-gap: 0.3em;
+    display: grid;
+    grid-template-columns: 0.5fr 0.3fr;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr;
+}
+.modalUploadSubmit{
+    justify-self: self-end;
+    margin-right: 8%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.modalUploadDescription{
+    margin-bottom: 0.4em;
+    height: 5em;
+    width: 50vw;
+    max-width: 90%;
+
+    -webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+.modalUploadTitle{
+    margin-bottom: 0.4em;
+    width: 50vw;
+    max-width: 90%;
+
+    -webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+.modalUploadTags{
+    margin-bottom: 0.4em;
+    width: 50vw;
+    max-width: 90%;
+
+    -webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+.modalUploadInput{
+    margin-left: 2vw;
+
+}
+.modalUploadDiv{
+    justify-self: center;
+    padding-left: 10%;
+}
+
+
+
+
+
+
+
 .modalBackground {
     position: absolute;
     top: 0;
@@ -218,6 +285,21 @@ nav.upperNav input:hover{
     grid-template-rows: 0.3fr 50vh  0.5fr;
 }
 .modalItemTItle{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 60px;
+    width: 105%;
+    left: 4%;
+    background-color: #0A0702;
+    color: white;
+    transform: translate(-63px,-17px);
+    grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.modalItemTitle2{
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -346,9 +428,36 @@ nav.upperNav input:hover{
     .closeButton{
         left: 85%;
     }
+    .modalUploadDiv{
+
+    }
+    .modalUploadContent{
+        margin-top: 20px;
+    }
+    .modalUploadTitle{
+
+    }
+    .modalUploadDiv{
+        padding-left: 0%;
+    }
+    .modalItemTitle2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 110%;
+        height: auto;
+        padding-top: 2em;
+        padding-bottom: 2em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 @media screen and (max-width: 414px) {
     .modalItemTItle{
+        width: 115%;
+        left: 15%;
+    }
+    .modalItemTitle2{
         width: 115%;
         left: 15%;
     }
