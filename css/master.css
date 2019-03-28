@@ -1,5 +1,6 @@
-body{
+html, body{
     height: 100%;
+    background-color: #e8a43f;
 }
 nav.upperNav {
 display: flex;
@@ -44,10 +45,13 @@ nav.upperNav input:hover{
 
 
 .wrapper{
+    min-height: 100vh;
+    width: 100%;
     height: 105vh;
     transform: translatey(-5em);
     background-color: #e8a43f;
     transition: margin-top ease-in-out 0.2s;
+    padding-bottom: 2.5rem;
 }
 
 .customNavbar{
@@ -89,10 +93,13 @@ nav.upperNav input:hover{
     -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
     box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
 }
-footer{
+.footer{
     background-color: #0A0702;
-    height: 2em;
-    transform: translateY(-5em);
+    position: relative;
+    height: 3em;
+    margin-top: -3em;
+    clear: both;
+    bottom: 0;
 }
 .navbar a{
     margin-left: 5px;
@@ -116,11 +123,11 @@ footer{
 .gallery{
     padding: 30px;
     transform: translateY(50px);
-    width: 1000px;
+    width: 100vw;
     display: grid;
     align-self: center;
     justify-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-template-rows: auto;
     grid-column-gap: 30px;
     grid-row-gap: 50px;
@@ -158,7 +165,7 @@ footer{
     border-radius: 1em;
     background-color: #fff;
     align-self: center;
-    animation: modalKey 1s forwards;
+    animation: modalKey .5s forwards;
 }
 @keyframes modalKey {
     0% {max-width: 30%; max-height: 15%;}
@@ -175,16 +182,18 @@ footer{
     justify-items: center;
 }
 .modalItemImg{
+    margin-right: auto;
+    margin-left: auto;
     background-color: lightgrey;
-    height: 430px;
-    width: 900px;
+    height: 45vh;
+    width: 100%;
 }
 .modalItemImg img{
     position: relative;
     margin-left: auto;
     margin-right: auto;
     width: auto;
-    height: 430px;
+    height: 45vh;
     max-height: 430px;
     display: block;
 }
@@ -201,21 +210,21 @@ footer{
     height: 30px;
 }
 .modalContent{
-    position: relative;
-    transform: translate(32px, 0px);
-    margin-left: 15px;
-    margin-right: 5px;
+    margin-left: auto;
+    margin-right: auto;
     align-content: center;
     display: grid;
     grid-template-columns:1fr 1fr;
-    grid-template-rows: 0.3fr 2fr  0.5fr;
+    grid-template-rows: 0.3fr 50vh  0.5fr;
 }
 .modalItemTItle{
+    position: relative;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     height: 60px;
-    width: 1000px;
+    width: 105%;
+    left: 4%;
     background-color: #0A0702;
     color: white;
     transform: translate(-63px,-17px);
@@ -224,7 +233,7 @@ footer{
     grid-column-end: 3;
 }
 .modalItemLeft{
-    transform: translateX(-47px);
+    transform: translateY(-15%);
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
@@ -239,6 +248,7 @@ footer{
     grid-row: 2;
 }
 .modalItemDesc{
+    overflow-y: scroll;
     padding: 5px;
     background-color: lightgrey;
     height: 8em;
@@ -260,7 +270,7 @@ footer{
     transform: translateY(2em);
    text-align: center;
     grid-row-start: 2;
-    grid-row-end: 10;
+    grid-row-end: 9;
 }
 @media screen and (max-width: 992px) {
     .customNavbar button{
@@ -271,5 +281,75 @@ footer{
         display: contents;
         font-size: 4em;
         transform: translateX(10px)!important;
+    }
+
+
+    .modalItemImg{
+        height: 30vh;
+    }
+
+
+    .modalItemImg img{
+        margin-top: auto;
+        margin-bottom: auto;
+        height: auto;
+        width: auto;
+        max-height: 30vh;
+        max-width: 70vw;
+    }
+    .modalContent{
+        grid-template-rows: 0.3fr 35vh 0.5fr;
+    }
+    .modalItemLeft{
+        transform: translateY(-1.6em);
+    }
+    .modalItemDesc{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+    .modalItemOwner{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        transform: translateY(0);
+    }
+    .modalItemDate{
+        text-align: center;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+    .modalItemTags{
+        text-align: center;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 5;
+        grid-row-end: 6;
+    }
+    .modalItemTItle{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        width: 110%;
+        height: auto;
+        padding-top: 2em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .modal{
+        max-width: 100%;
+        width: 100%;
+    }
+    .closeButton{
+        left: 85%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .modalItemTItle{
+        width: 115%;
+        left: 15%;
     }
 }

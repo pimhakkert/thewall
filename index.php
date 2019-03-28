@@ -3,9 +3,9 @@
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.45">
-    <meta name="author" content="Pim Hakkert, Rai Griffioen, Casper Matauschek">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Pim Hakkert, Rai Griffioen, Casper Matauschek">
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
@@ -42,6 +42,10 @@
         <input type="button" value="Login" onclick="location.href = 'login.php'">
     </nav>
 
+    <div class="modalContent">
+        <h1>Hallo</h1>
+    </div>
+
     <nav class="customNavbar">
         <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
         <button class="modalButton upload" id="uploadButton" type="button" name="button" style="margin-left: auto">Upload</button>
@@ -49,20 +53,11 @@
         <label for="toggleMenu" id="navHamburger">&#9776</label>
     </nav>
 
-
-    <div class="modalContent">
-        <h1>Hallo</h1>
-    </div>
     <div class="container gallery">
-
-
         <?php include 'php_tools/query.php'?>
     </div>
     <script src="js/modal.js"></script>
 </div>
-
-<footer>
-
-</footer>
+<div class="footer"></div>
 </body>
 </html>
