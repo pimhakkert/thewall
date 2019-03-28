@@ -34,14 +34,14 @@
 
 
 
-<div class="login">
-    <input type="text" placeholder="Username" id="username">
-  <input type="password" placeholder="Password" id="password">
-  <a href="#" class="forgot">forgot password?</a>
-  <input type="submit" value="Sign In">
-  <input type="submit2" value="Sign Up">
-</div>
-<div class="shadow"></div>
+          <div class="login">
+              <input type="text" placeholder="Username" id="username">
+            <input type="password" placeholder="Password" id="password">
+            <a href="#" class="forgot">forgot password?</a>
+            <input type="button" value="Sign In" id="submit">
+            <input type="button" value="Sign Up" onclick="location.href = 'registratie.php'" id="submit2">
+          </div>
+          <div class="shadow"></div>
 
 
 
