@@ -11,7 +11,7 @@
   <script src="js/bootstrap.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="css/master.css">
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/registratie.css">
 </head>
 <body>
 
@@ -24,19 +24,18 @@
         </nav>
 
         <nav class="customNavbar">
-            <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
+            <img class="navbarLogo" src="images/TheWallLogo.png" onclick="location.href = 'index.php'" alt="">
             <button class="modalButton upload" id="uploadButton" type="button" name="button" style="margin-left: auto">Upload</button>
             <button type="button" name="button" onclick="location.href = 'login.php'">Login</button>
-            <label for="toggleMenu" id="navHamburger" &#9776</label>
-            </nav>
-
+            <label for="toggleMenu" id="navHamburger">&#9776;</label>
+        </nav>
 
 
             <div class="login">
                 <input type="text" placeholder="Username" id="username">
                 <input type="text" placeholder="E-mail" id="username">
               <input type="password" placeholder="Password" id="password">
-              <input type="password" placeholder="Password again" id="password">
+              <input type="password" placeholder="Confirm password" id="password">
               <input type="button" value="Sign Up" id="submit">
             </div>
             <div class="shadow"></div>
