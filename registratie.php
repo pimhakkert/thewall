@@ -30,18 +30,37 @@
             <label for="toggleMenu" id="navHamburger">&#9776;</label>
         </nav>
 
+        <form class="login" action="" method="post">
+            <input type="text" placeholder="Username" id="username" name="username">
+            <input type="text" placeholder="E-mail" id="username" name="email">
+            <input type="password" placeholder="Password" id="password" name="password">
+            <input type="password" placeholder="Confirm password" id="password" name="passwordconfirm">
+            <input type="submit" value="Sign Up" id="submit" name="submit">
+        </form>
+        <div class="shadow"></div>
+        <?php
+        $fields = array('username', 'email', 'password', 'passwordconfirm');
+        $fieldnames = array('Username', 'E-mail', 'Password', 'Password confirmation');
+        $error = false;
 
-            <div class="login">
-                <input type="text" placeholder="Username" id="username">
-                <input type="text" placeholder="E-mail" id="username">
-              <input type="password" placeholder="Password" id="password">
-              <input type="password" placeholder="Confirm password" id="password">
-              <input type="button" value="Sign Up" id="submit">
-            </div>
-            <div class="shadow"></div>
+        if('POST' === $_SERVER['REQUEST_METHOD']){
+            for($i=0;$i<sizeof($fields);$i++) {
+                $field = $fields[$i];
+                $fieldname = $fieldnames[$i];
+                if(!isset($_POST[$field]) || empty($_POST[$field])) {
+                    echo '<p id="error">'.$fieldname.' has not been filled in.</p>';
+                    $error = true;
+                }
+            }
+        }
+        else {
+            $error = true;
+        }
 
+        if(!$error) {
 
-
+        }
+        ?>
 <footer>
 
 </footer>
