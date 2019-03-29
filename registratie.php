@@ -35,32 +35,11 @@
             <input type="text" placeholder="E-mail" id="username" name="email">
             <input type="password" placeholder="Password" id="password" name="password">
             <input type="password" placeholder="Confirm password" id="password" name="passwordconfirm">
+            <?php include 'php_tools/signupbackend.php' ?>
             <input type="submit" value="Sign Up" id="submit" name="submit">
         </form>
         <div class="shadow"></div>
-        <?php
-        $fields = array('username', 'email', 'password', 'passwordconfirm');
-        $fieldnames = array('Username', 'E-mail', 'Password', 'Password confirmation');
-        $error = false;
 
-        if('POST' === $_SERVER['REQUEST_METHOD']){
-            for($i=0;$i<sizeof($fields);$i++) {
-                $field = $fields[$i];
-                $fieldname = $fieldnames[$i];
-                if(!isset($_POST[$field]) || empty($_POST[$field])) {
-                    echo '<p id="error">'.$fieldname.' has not been filled in.</p>';
-                    $error = true;
-                }
-            }
-        }
-        else {
-            $error = true;
-        }
-
-        if(!$error) {
-
-        }
-        ?>
 <footer>
 
 </footer>
