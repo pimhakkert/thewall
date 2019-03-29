@@ -198,7 +198,7 @@ nav.upperNav input:hover{
 .modalUploadDescription{
     margin-bottom: 0.4em;
     height: 5em;
-    width: 50vw;
+    width: 40vw;
     max-width: 90%;
 
     -webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
@@ -207,7 +207,7 @@ nav.upperNav input:hover{
 }
 .modalUploadTitle{
     margin-bottom: 0.4em;
-    width: 50vw;
+    width: 40vw;
     max-width: 90%;
 
     -webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
@@ -216,7 +216,7 @@ nav.upperNav input:hover{
 }
 .modalUploadTags{
     margin-bottom: 0.4em;
-    width: 50vw;
+    width: 40vw;
     max-width: 90%;
 
     -webkit-box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.75);
@@ -446,7 +446,6 @@ nav.upperNav input:hover{
         width: 110%;
         height: auto;
         padding-top: 2em;
-        padding-bottom: 2em;
         margin-left: auto;
         margin-right: auto;
     }
