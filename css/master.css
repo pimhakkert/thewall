@@ -1,6 +1,7 @@
 html, body{
     height: 100%;
     background-color: #e8a43f;
+
 }
 nav.upperNav {
 display: flex;
@@ -55,6 +56,10 @@ nav.upperNav input:hover{
 }
 
 .customNavbar{
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw !important;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -63,10 +68,43 @@ nav.upperNav input:hover{
     background-color: #0A0702;
 
 
-    -webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
-    box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 30px 30px 22px 0px rgba(0,0,0,0.36);
+    -moz-box-shadow: 30px 30px 22px 0px rgba(0,0,0,0.36);
+    box-shadow: 30px 30px 22px 0px rgba(0,0,0,0.36);
+
+    animation-duration: 0.8s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+    animation-name: CustomNavbarAnimation;
+
+    /*-webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
+    /*-moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
+    /*box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
 }
+
+@keyframes CustomNavbarAnimation {
+    0%{
+        margin-top: -60em;
+    }
+    70%{
+        margin-top: 3em;
+    }
+    100%{
+        margin-top: 2em;
+    }
+}
+@keyframes galleryAnimation {
+    0%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 30%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
 .customNavbar button{
     width: 10em;
     margin-right: 1em;
@@ -131,6 +169,9 @@ nav.upperNav input:hover{
     grid-template-rows: auto;
     grid-column-gap: 30px;
     grid-row-gap: 50px;
+
+    animation-duration: 1s;
+    animation-name: galleryAnimation;
 }
 .galleryItem{
     grid-column: auto;
@@ -360,9 +401,10 @@ nav.upperNav input:hover{
     }
 
     #navHamburger{
-        display: contents;
+
+        display: block;
         font-size: 4em;
-        transform: translateX(10px)!important;
+        margin-right: 20px;
     }
 
 
