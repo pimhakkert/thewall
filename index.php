@@ -12,12 +12,14 @@
     <link rel="icon" href="images/TheWallLogo.png">
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="css/master.css">
+    <script src="js/jquery.smoothState.min.js"></script>
+    <script src="js/pagetransition.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/master.scss">
 </head>
 <body>
 
 <input type="checkbox" id="toggleMenu">
-<div class="wrapper">
+<div class="wrapper" id="main">
 
     <!--<nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" id="no" href="#"><img src="images/TheWallLogo.png" alt="" style="height: 100%;"></a>
@@ -80,6 +82,7 @@
     <div class="container gallery">
         <?php include 'php_tools/query.php'?>
     </div>
+
     <script src="js/modal.js"></script>
 </div>
 <div class="footer"></div>

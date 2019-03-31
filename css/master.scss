@@ -1,6 +1,8 @@
 html, body{
     height: 100%;
     background-color: #e8a43f;
+    max-width: 100%;
+    overflow-x: hidden;
 
 }
 nav.upperNav {
@@ -81,6 +83,12 @@ nav.upperNav input:hover{
     /*-moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
     /*box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
 }
+&.is-exiting {
+    .customNavbar {
+        animation-direction: alternate-reverse;
+    }
+}
+
 
 @keyframes CustomNavbarAnimation {
     0%{
@@ -184,8 +192,19 @@ nav.upperNav input:hover{
     transform: scale(1.1);
     transition: .1s ease-in;
 }
+.galleryItemImg:hover ~ .galleryItemTitle{
+    display: block;
+}
 .galleryItemTitle{
-
+    background-color: rgba(0,0,0,0.5);;
+    display: none;
+    position: relative;
+    margin-top: -7em;
+    color: white;
+    text-align: center;
+}
+.galleryItemTitle:hover{
+    display: block;
 }
 .galleryItemImg{
 
