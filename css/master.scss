@@ -245,13 +245,15 @@ nav.upperNav input:hover {
 }
 
 .gallery {
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
   transform: translateY(50px);
   width: 100vw;
   display: grid;
   align-self: center;
   justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 250px));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: auto;
   grid-column-gap: 40px;
   grid-row-gap: 40px;
@@ -634,5 +636,8 @@ nav.upperNav input:hover {
   .modalItemTitle2 {
     width: 115%;
     left: 15%;
+  }
+  .modal{
+    overflow-y:scroll;
   }
 }
