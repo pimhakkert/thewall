@@ -74,5 +74,6 @@ if(!$error2){
     $safe_username = filter_var($username,FILTER_SANITIZE_STRING);
     $insertSql = "INSERT into users (user_name, user_email, user_password) VALUES (?,?,?)";
     $database->prepare($insertSql)->execute([$safe_username,$safe_email,$password_hash]);
+    header("Location: index.php");
 }
 ?>
