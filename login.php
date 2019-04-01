@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="en">
 <?php include 'php_tools/settings.php';?>
 <head>
@@ -33,20 +34,16 @@
           <label for="toggleMenu" id="navHamburger">&#9776;</label>
           </nav>
 
-
-
-
-          <div class="login">
-              <input type="text" placeholder="Username" id="username">
-            <input type="password" placeholder="Password" id="password">
+          <form class="login" method="post" action="">
+            <input type="text" placeholder="Username" id="username" name="username">
+            <input type="password" placeholder="Password" id="password" name="password">
             <a href="#" class="forgot">forgot password?</a>
-            <input type="button" value="Sign In" id="submit">
+            <?php include 'php_tools/loginbackend.php'; ?>
+            <input type="submit" value="Sign In" id="submit">
             <input type="button" value="Sign Up" onclick="location.href = 'registratie.php'" id="submit2">
-          </div>
+          </form>
+
           <div class="shadow"></div>
-
-
-
 
 <footer>
 
