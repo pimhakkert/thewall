@@ -60,7 +60,7 @@
                 </div>
                 <div class="modalUploadInput">
                     <input class="modalUploadTitle" type="text" >
-                    <input class="modalUploadDescription" type="text" >
+                    <textarea name="" class="modalUploadDescription" cols="30" rows="10"></textarea>
                     <input class="modalUploadTags" type="text" >
                 </div>
                 <div class="modalUploadSubmit">
