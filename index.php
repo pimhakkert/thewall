@@ -21,7 +21,6 @@
 
 <input type="checkbox" id="toggleMenu">
 <div class="wrapper" id="main">
-
     <!--<nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" id="no" href="#"><img src="images/TheWallLogo.png" alt="" style="height: 100%;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
