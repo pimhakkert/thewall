@@ -32,7 +32,6 @@ const closeModal = () => {
 };
 
 closeButton.addEventListener('click', closeModal);
-modalBackground.addEventListener('click', closeModal);
 
 for(let i=0; i<modalButton.length; i++) {
     modalButtonArray.push(modalButton[i]);
