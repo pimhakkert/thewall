@@ -46,7 +46,7 @@
 
     <div class="modalContent">
         <div class="modalItemTitle2"></div>
-        <form class="modalUploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+        <form class="modalUploadForm" action="" method="post" enctype="multipart/form-data">
 
             <div class="ModalUploadDiv">
                 Select image to upload:
@@ -59,9 +59,9 @@
                     <p style="margin-top: 4em">Tags:</p>
                 </div>
                 <div class="modalUploadInput">
-                    <input class="modalUploadTitle" type="text" >
-                    <input class="modalUploadDescription" type="text" >
-                    <input class="modalUploadTags" type="text" >
+                    <input class="modalUploadTitle" name="modalUploadTitle" type="text" >
+                    <textarea class="modalUploadDescription" name="modalUploadDescription"></textarea>
+                    <input class="modalUploadTags" name="modalUploadTags" type="text" >
                 </div>
                 <div class="modalUploadSubmit">
                     <input class="modalUploadSubmit" type="submit" value="Upload Image" name="submit">
@@ -70,6 +70,7 @@
 
             </div>
         </form>
+        <?php include 'php_tools/uploadbackend.php'; ?>
     </div>
 
     <nav class="customNavbar">
