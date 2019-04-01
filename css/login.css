@@ -33,7 +33,9 @@ input[type="checkbox"]:checked {
   left: 29px;
   width: 58px;
 }
-
+.wrapper{
+  transform: translatey(0);
+}
 input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
 .forgot {
   color: black;
