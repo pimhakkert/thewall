@@ -85,6 +85,7 @@
             echo "<a href='php_tools/logout.php'><button type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
         }
         else {
+            echo "<button class=\"modalButton upload\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
             echo "<button type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
         }
         ?>
