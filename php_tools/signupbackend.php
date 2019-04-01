@@ -15,7 +15,7 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
         $fieldname = $fieldnames[$i];
         if(!isset($_POST[$field]) || empty($_POST[$field])) {
             echo '<p id="error">'.$fieldname.' has not been filled in.</p>';
-            $error = true;
+            $error1 = true;
         }
     }
 }

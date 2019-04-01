@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="en">
 <?php include 'php_tools/settings.php';?>
 <head>
