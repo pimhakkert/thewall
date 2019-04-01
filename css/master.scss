@@ -278,14 +278,16 @@ nav.upperNav input:hover {
   animation-name: galleryAnimation;
 }
 
-.galleryItem {
-
-}
 
 .galleryItemImg {
   position: relative;
-  max-width: 300px;
+  height: 300px;
+  width: 300px;
   object-fit: cover;
+}
+.galleryItem{
+  overflow-y:hidden;
+  height: 300px;
 }
 
 .galleryItem:hover {
@@ -304,7 +306,7 @@ nav.upperNav input:hover {
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   position: relative;
-  margin-top: -50%;
+  top: -55%;
   color: white;
   text-align: center;
 }
@@ -451,6 +453,9 @@ nav.upperNav input:hover {
   grid-column: 3;
   width: 30px;
   height: 30px;
+}
+.wrapper .modalContent{
+  display: none;
 }
 
 .modalContent {
