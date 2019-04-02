@@ -24,7 +24,11 @@ nav.upperNav input {
 nav.upperNav input:hover {
   background-color: grey;
 }
-
+#logout{
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  height: 3.25em;
+}
 .uploadButtonLabel {
   padding-top: 0.3em;
   text-align: center;
@@ -178,7 +182,6 @@ nav.upperNav input:hover {
     justify-items: center;
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-template-rows: auto;
-    grid-column-gap: 30px;
     grid-row-gap: 50px;
     animation-duration: 1s;
     animation-name: galleryAnimation;
@@ -246,17 +249,18 @@ nav.upperNav input:hover {
 }
 
 .gallery {
-  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
   transform: translateY(50px);
   width: 100vw;
   display: grid;
   align-self: center;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: auto;
-  grid-column-gap: 30px;
-  grid-row-gap: 50px;
-
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
   animation-duration: 1s;
   animation-name: galleryAnimation;
 }
@@ -264,13 +268,13 @@ nav.upperNav input:hover {
 
 .galleryItemImg {
   position: relative;
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   object-fit: cover;
 }
 .galleryItem{
   overflow-y:hidden;
-  height: 300px;
+  height: 250px;
 }
 
 .galleryItem:hover {
@@ -636,5 +640,8 @@ nav.upperNav input:hover {
   .modalItemTitle2 {
     width: 115%;
     left: 15%;
+  }
+  .modal{
+    overflow-y:scroll;
   }
 }
