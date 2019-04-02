@@ -44,8 +44,11 @@
             if(isset($_SESSION['username'])){
                 echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\">Upload</label>";
             }
+            else {
+                echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
+            }
         ?>
-        <input type="button" value="Login" onclick="location.href = 'login.php'">
+
     </nav>
 
     <div class="modalContent">
