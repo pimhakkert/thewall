@@ -43,6 +43,7 @@
         <?php
             if(isset($_SESSION['username'])){
                 echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\">Upload</label>";
+                echo "<a href='php_tools/logout.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
             }
             else {
                 echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
@@ -57,7 +58,7 @@
 
             <div class="ModalUploadDiv">
                 Select image to upload:
-            <input class="modalUploadFile" type="file" name="fileToUpload" id="fileToUpload">
+            <input class="modalUploadFile" type="file" name="fileToUpload" id="fileToUpload" accept="images/*">
             </div>
             <div class="modalUploadContent">
                 <div>
