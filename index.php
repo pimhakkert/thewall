@@ -101,6 +101,9 @@
     <div class="container gallery">
         <?php include 'php_tools/query.php'?>
     </div>
+    <div class="aside sort">
+
+    </div>
 
     <script src="js/modal.js"></script>
 </div>
