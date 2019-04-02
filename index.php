@@ -21,23 +21,6 @@
 
 <input type="checkbox" id="toggleMenu">
 <div class="wrapper" id="main">
-    <!--<nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" id="no" href="#"><img src="images/TheWallLogo.png" alt="" style="height: 100%;"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
-                </li>
-                <li class="nav-item modalButton">
-                    <a class="nav-link" href="#">Upload</a>
-                </li>
-            </ul>
-        </div>
-    </nav>--->
 
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php
