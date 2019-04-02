@@ -4,8 +4,7 @@ html, body {
   max-width: 100%;
   overflow-x: hidden;
 
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
+
 }
 
 nav.upperNav {
@@ -536,6 +535,7 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 992px) {
+  .
   .customNavbar button {
     display: none;
   }
@@ -633,9 +633,18 @@ nav.upperNav input:hover {
     margin-right: auto;
   }
 
+  html{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
 }
 
 @media screen and (max-width: 414px) {
+  html{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
   .modalItemTItle {
     width: 115%;
     left: 15%;
