@@ -9,7 +9,7 @@ $title = null;
 $desc = null;
 $tags = null;
 
-if('POST' === $_SERVER['REQUEST_METHOD']){
+if('POST' === $_SERVER['REQUEST_METHOD'] && $_SESSION['username']!=null){
     for($i=0;$i<sizeof($fields);$i++) {
         $field = $fields[$i];
         $fieldname = $fieldnames[$i];
