@@ -25,7 +25,7 @@
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php
             if(isset($_SESSION['username'])){
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\">Upload</label>";
+                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
                 echo "<a href='php_tools/logout.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
             }
             else {
@@ -68,7 +68,7 @@
         <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<button class=\"modalButton upload\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
+            echo "<button class=\"modalButton upload\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
             echo "<a href='php_tools/logout.php'><button type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
         }
         else {
@@ -89,6 +89,7 @@
     </div>
 
     <script src="js/modal.js"></script>
+    <script src="js/sessioncheck.js"></script>
 </div>
 <div class="footer"></div>
 </body>

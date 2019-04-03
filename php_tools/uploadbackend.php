@@ -9,7 +9,7 @@ $title = null;
 $desc = null;
 $tags = null;
 
-if('POST' === $_SERVER['REQUEST_METHOD'] && isset($_SESSION['username'])){
+if('POST' === $_SERVER['REQUEST_METHOD']){
     for($i=0;$i<sizeof($fields);$i++) {
         $field = $fields[$i];
         $fieldname = $fieldnames[$i];
@@ -23,7 +23,6 @@ if('POST' === $_SERVER['REQUEST_METHOD'] && isset($_SESSION['username'])){
 }
 else {
     $error1 = true;
-    header("Location: ../index.php");
 }
 
 if(!$error1) {
