@@ -24,7 +24,7 @@
         </nav>
 
         <nav class="customNavbar">
-            <img class="navbarLogo" src="images/TheWallLogo.png" onclick="location.href = 'index.php'" alt="">
+            <img class="navbarLogoImg" style="margin-bottom: 0.5em" src="images/TheWallLogo.png" onclick="location.href = 'index.php'" alt="">
             <button class="modalButton upload" id="uploadButton" type="button" name="button" style="margin-left: auto">Upload</button>
             <button type="button" name="button" onclick="location.href = 'login.php'">Login</button>
             <label for="toggleMenu" id="navHamburger">&#9776;</label>

@@ -23,7 +23,7 @@
   <div class="wrapper">
 
       <nav class="customNavbar">
-          <img class="navbarLogo" src="images/TheWallLogo.png"  onclick="location.href = 'index.php'" alt="">
+          <img class="navbarLogoImg" src="images/TheWallLogo.png" style="margin-bottom: 0.5em"  onclick="location.href = 'index.php'" alt="">
           <label for="toggleMenu" id="navHamburger">&#9776;</label>
           </nav>
 

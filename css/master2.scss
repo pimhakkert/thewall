@@ -592,6 +592,9 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 992px) {
+  .searchMenuToggle{
+    display: none;
+  }
   .navButton{
     z-index: 2;
     display: none;
@@ -702,6 +705,12 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 414px) {
+  .searchMenu{
+    display: none;
+  }
+  .searchMenuToggle{
+    display: none;
+  }
   html{
     -webkit-overflow-scrolling: touch;
   }

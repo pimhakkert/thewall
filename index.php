@@ -85,7 +85,7 @@
 
     <nav class="searchMenu">
         <input type="text" placeholder="Search..">
-        <button>Search</button>
+        <button onclick="window.alert("Haha werkt nog niet.");">Search</button>
         <select name="sortby" id="sortby">
             <option value="sortby">Sort By</option>
             <option value="newtoold">New/old</option>
