@@ -26,7 +26,7 @@ else {
 if(!$error1){
     $usernameInput = $_POST['username'];
     $passwordInput = $_POST['password'];
-    $stmt = $database->prepare('SELECT * FROM users WHERE user_name=?');
+    $stmt = $database->prepare('SELECT * FROM users WHERE UPPER(user_name)=UPPER(?)');
     $stmt->bindParam(1, $usernameInput, PDO::PARAM_STR);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
