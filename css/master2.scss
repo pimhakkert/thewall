@@ -755,6 +755,8 @@ nav.upperNav input:hover {
     margin-right: auto;
   }
 
+
+
   html{
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -763,6 +765,35 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 414px) {
+  .navbarLogo{
+    width: 50px;
+    display: flex;
+    flex-grow: 1;
+  }
+  .navbarLogoImg{
+    margin-top: 20px;
+    width: 75px;
+    height: 60px;
+  }
+  #navHamburger{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 40px;
+    justify-self: flex-end;
+  }
+  .navProfile{
+    display: grid;
+    width: 150px;
+  }
+  .navProfileUsername{
+    font-size: 1em;
+  }
+  .navProfilePosts{
+    font-size: 0.7em;
+  }
+  .navProfileLogout{
+    margin-left: 0;
+  }
   .searchMenu{
     display: none;
   }
