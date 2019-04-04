@@ -20,6 +20,7 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
     }
     $title = $_POST['modalUploadTitle'];
     $desc = $_POST['modalUploadDescription'];
+    $tags = $_POST['modalUploadTags'];
 }
 else {
     $error1 = true;
@@ -89,6 +90,17 @@ if(!$error1) {
         $imageDate = date("d/m/Y");
         $insertSql = "INSERT into images (image_name, image_size, image_date, user_id, image_title, image_description) VALUES (?,?,?,?,?,?)";
         $database->prepare($insertSql)->execute([$safe_fileName, $imageSize,$imageDate,$userID,$safe_title,$safe_desc]);
+        $imageID = $database->lastInsertId();
+        $tagArray = explode(',', $tags);
+        $tagSQL = "INSERT into tags (tag_name) VALUES (?)";
+        $tagIdSQL = "INSERT into image_tags (image_id, tag_id) VALUES (?,?)";
+
+        foreach($tagArray as $tag) {
+            $database->prepare($tagSQL)->execute([$tag]);
+            $tagID = $database->lastInsertId();
+            $database->prepare($tagIdSQL)->execute([$imageID,$tagID]);
+        }
     }
 }
+
 ?>
