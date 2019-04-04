@@ -258,6 +258,64 @@ nav.upperNav input:hover {
   -moz-box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75)
 }
+.navProfile{
+  display:grid;
+  grid-template-columns: 0.2fr 0.6fr 0.6fr;
+  grid-template-rows: 0.5fr 0.5fr;
+  margin-right: 20px;
+  justify-self: flex-end;
+  height: 3.3em;
+  border-style: solid;
+  border-color: white;
+  color: #e29828;
+  width: 250px;
+  background-color: #0A0702;
+}
+.navProfileLogout{
+  transform: translateY(-0.2em);
+  grid-row: 2;
+  color: #c17400;
+  font-size: 0.8em;
+  grid-column: 3;
+  margin-left: 40%;
+}
+.navProfileLogout:hover{
+  color: #e8a43f;
+  cursor: pointer;
+}
+.navProfileIcon{
+  grid-column: 1;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  height: 2.9em;
+  width: 3.2em;
+}
+.navProfilePosts{
+  grid-column: 2;
+  grid-row: 2;
+  margin-left: 5px;
+  font-size: 0.8em;
+  color: #e8a43f;
+}
+.navProfileUsername{
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row: 1;
+  text-decoration: underline;
+  margin-bottom: 0;
+  margin-left: 5px;
+  font-size: 1.3em;
+  color: #c17400;
+
+}
+.navProfileUsername:hover{
+  transform: translateY(-0.1em);
+  color: #e8a43f;
+  cursor: pointer;
+}
+.navProfileIcon:hover{
+  cursor: pointer;
+}
 .searchMenu{
   display: flex;
   flex-direction: row;

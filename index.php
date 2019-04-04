@@ -69,8 +69,10 @@
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>XRaider</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logout.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
-            echo "<a href='php_tools/logout.php'><button class='navButton' type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
+            //echo "<a href='php_tools/logout.php'><button class='navButton' type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
+
         }
         else {
             echo "<button class=\"modalButton upload navButton\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
@@ -85,7 +87,7 @@
 
     <nav class="searchMenu">
         <input type="text" placeholder="Search..">
-        <button onclick="window.alert("Haha werkt nog niet.");">Search</button>
+        <button onclick="window.alert('Haha, werkt nog niet')">Search</button>
         <select name="sortby" id="sortby">
             <option value="sortby">Sort By</option>
             <option value="newtoold">New/old</option>
