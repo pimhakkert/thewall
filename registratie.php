@@ -10,7 +10,7 @@
   <link rel="icon" href="images/TheWallLogo.png">
   <script src="js/bootstrap.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
-  <link rel="stylesheet" href="css/master.scss">
+  <link rel="stylesheet" href="css/master2.scss">
   <link rel="stylesheet" href="css/registratie.css">
 </head>
 <body>
@@ -24,7 +24,7 @@
         </nav>
 
         <nav class="customNavbar">
-            <img class="navbarLogo" src="images/TheWallLogo.png" onclick="location.href = 'index.php'" alt="">
+            <img class="navbarLogoImg" style="margin-bottom: 0.5em" src="images/TheWallLogo.png" onclick="location.href = 'index.php'" alt="">
             <button class="modalButton upload" id="uploadButton" type="button" name="button" style="margin-left: auto">Upload</button>
             <button type="button" name="button" onclick="location.href = 'login.php'">Login</button>
             <label for="toggleMenu" id="navHamburger">&#9776;</label>

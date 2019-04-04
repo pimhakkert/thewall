@@ -15,12 +15,12 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.smoothState.min.js"></script>
     <script src="js/pagetransition.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/master.scss">
+    <link rel="stylesheet" type="text/css" href="css/master2.scss">
 </head>
 <body>
-
 <input type="checkbox" id="toggleMenu">
 <div class="wrapper" id="main">
+    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em)">
 
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php
@@ -65,20 +65,34 @@
     </div>
 
     <nav class="customNavbar">
-        <img class="navbarLogo" src="images/TheWallLogo.png" alt="">
+        <div class="navbarLogo"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
+        <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<button class=\"modalButton upload\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
-            echo "<a href='php_tools/logout.php'><button type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>XRaider</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logout.php'>Logout</a></div>";
+            echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
+            //echo "<a href='php_tools/logout.php'><button class='navButton' type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
+
         }
         else {
-            echo "<button class=\"modalButton upload\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
-            echo "<button type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
+            echo "<button class=\"modalButton upload navButton\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
+            echo "<button class='navButton' type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
         }
         ?>
-
-
         <label for="toggleMenu" id="navHamburger">&#9776;</label>
+        <label for="searchMenuToggle" class="searchMenuToggle" style="font-size: 4em; margin-right: 10px">&#9776;</label>
+        </div>
+
+    </nav>
+
+    <nav class="searchMenu">
+        <input type="text" placeholder="Search..">
+        <button onclick="window.alert('Haha, werkt nog niet')">Search</button>
+        <select name="sortby" id="sortby">
+            <option value="sortby">Sort By</option>
+            <option value="newtoold">New/old</option>
+            <option value="oldtonew">Old/new</option>
+        </select>
     </nav>
 
     <div class="container gallery">
