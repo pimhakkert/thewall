@@ -25,12 +25,12 @@ $_SESSION['timeout'] = time();
     <link rel="icon" href="images/TheWallLogo.png">
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/master2.scss">
+    <link rel="stylesheet" type="text/css" href="css/master2.css">
 </head>
 <body>
 <input type="checkbox" id="toggleMenu">
 <div class="wrapper" id="main">
-    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em)">
+    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em); opacity: 0;">
 
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php

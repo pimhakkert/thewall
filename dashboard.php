@@ -20,7 +20,7 @@
 <body>
 <input type="checkbox" id="toggleMenu">
 <div class="wrapper" id="main">
-    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em)">
+    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em); opacity: 0;">
 
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php
@@ -62,10 +62,10 @@
             </div>
         </form>
         <?php include 'php_tools/uploadbackend.php'; ?>
-    </div>
+    </div>      
 
     <nav class="customNavbar">
-        <div class="navbarLogo"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
+        <div class="navbarLogo" onclick="window.location = 'index.php';"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
         <div class="navButtons">
             <?php
             if(isset($_SESSION['username'])){
@@ -100,15 +100,19 @@
        <div style="overflow-y: scroll; grid-column-start: 1; grid-column-end: 3;">
 
        <form class="dashboardProfileSettings">
-            <div class="dashboardProfileSetting"><h4>Username:</h4><input class="usernameSetting" type="text" value="CURRENTUSERNAME"></div>
-           <div class="dashboardProfileSetting">setting</div>
-           <div class="dashboardProfileSetting">setting</div>
-           <div class="dashboardProfileSetting">setting</div>
-           <div style="display: flex; justify-content: flex-end"><input type="submit" class="dashboardEditButton" style="background-color: #1e7e34" ></div>
+           <h3 style="margin-bottom: 1em">Settings</h3>
+            <div class="dashboardProfileSetting"><h5>Username:</h5><input class="usernameSetting" type="text" value="CURRENTUSERNAME"></div>
+           <div class="dashboardProfileSetting"><h5>Email:</h5><input class="emailSetting" type="text" value="CURRENTEMAIL"></div>
+           <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*">
+
+
+           </div>
+           <div style="display: flex; justify-content: flex-end"><input type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
        </form>
 
-
        <div class="dashboardContent">
+           <h3 style="margin-bottom: 1em">Posts</h3>
+
            <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button>
 
                <div class="modalContent">
@@ -129,8 +133,10 @@
                        <h6 class="modalItemDate"><?php/* echo $image_results['image_date'];*/?></h6>
                        <!--               Need to finish search functionality for following for loop to be completed.-->
                        <input type="text" placeholder="Tags" style="text-align: left; grid-row: 11; grid-column: 2;">
-                       <button class="dashboardEditButton" style="align-self: right; grid-row: 12;grid-column: 2;">Delete</button>
-                       <input type="submit" style="text-align: left;grid-row: 12;grid-column: 1;">
+                       <div style="grid-row: 12; grid-column: 2; display: flex;margin-top: 1em;">
+                           <input type="submit" style="flex-grow: 1;">
+                           <button class="dashboardEditButton" style="justify-self: flex-end">Delete</button>
+                       </div>
                    </div>
 
                </div>
