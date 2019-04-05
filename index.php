@@ -37,6 +37,7 @@ $_SESSION['timeout'] = time();
             if(isset($_SESSION['username'])){
                 echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
                 echo "<a href='php_tools/logoutbackend.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
+
             }
             else {
                 echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
@@ -79,7 +80,7 @@ $_SESSION['timeout'] = time();
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {

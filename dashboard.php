@@ -62,7 +62,7 @@
             </div>
         </form>
         <?php include 'php_tools/uploadbackend.php'; ?>
-    </div>      
+    </div>
 
     <nav class="customNavbar">
         <div class="navbarLogo" onclick="window.location = 'index.php';"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
