@@ -4,8 +4,12 @@ $('#uploadButton1').click(function() {
         data: {
             'return' : null
         },
+        xhrFields: {
+          withCredentials: true
+        },
         url: 'php_tools/sessioncheck.php',
         success: function(data){
+            console.log(data);
             if(data === "login"){
                 window.location = 'login.php';
             }
@@ -18,6 +22,9 @@ $('#uploadButton2').click(function() {
         type: 'POST',
         data: {
           'return' : null
+        },
+        xhrFields: {
+            withCredentials: true
         },
         url: 'php_tools/sessioncheck.php',
         success: function(data){

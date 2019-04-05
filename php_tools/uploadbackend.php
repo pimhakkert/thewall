@@ -84,7 +84,6 @@ if(!$error1) {
         $safe_desc = filter_var($desc, FILTER_SANITIZE_STRING);
         $safe_tags = filter_var($tags, FILTER_SANITIZE_STRING);
         $safe_fileName = basename( $_FILES['fileToUpload']['name']);
-        echo $safe_fileName;
         $imageRawSize = filesize($target_file);
         $imageSize = $imageRawSize / 1000000 . " MB";
         $imageDate = date("d/m/Y");

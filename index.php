@@ -1,4 +1,16 @@
-<?php session_start(); ?>
+<?php
+session_start();
+$timeout = 1199;
+if(isset($_SESSION['timeout'])){
+    $duration = time() - (int)$_SESSION['timeout'];
+    if($duration > $timeout){
+        session_unset();
+        session_destroy();
+        session_start();
+    }
+}
+$_SESSION['timeout'] = time();
+?>
 <html lang="en">
 <?php include 'php_tools/settings.php';?>
 <head>
@@ -24,7 +36,7 @@
         <?php
             if(isset($_SESSION['username'])){
                 echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
-                echo "<a href='php_tools/logout.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
+                echo "<a href='php_tools/logoutbackend.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
             }
             else {
                 echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
@@ -67,13 +79,10 @@
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>XRaider</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logout.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
-            //echo "<a href='php_tools/logout.php'><button class='navButton' type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
-
         }
         else {
-            echo "<button class=\"modalButton upload navButton\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
             echo "<button class='navButton' type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
         }
         ?>
@@ -84,8 +93,8 @@
     </nav>
 
     <nav class="searchMenu">
-        <input type="text" placeholder="Search..">
-        <button onclick="window.alert('Haha, werkt nog niet')">Search</button>
+        <input id="searchInput" type="text" placeholder="Search..">
+        <button id="searchButton">Search</button>
         <select name="sortby" id="sortby">
             <option value="sortby">Sort By</option>
             <option value="newtoold">New/old</option>
@@ -102,6 +111,7 @@
 
     <script src="js/modal.js"></script>
     <script src="js/sessioncheck.js"></script>
+    <script src="js/search.js"></script>
 </div>
 <div class="footer"></div>
 </body>
