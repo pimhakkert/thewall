@@ -101,8 +101,8 @@
 
        <form class="dashboardProfileSettings">
            <h3 style="margin-bottom: 1em">Settings</h3>
-            <div class="dashboardProfileSetting"><h5>Username:</h5><input class="usernameSetting" type="text" value="CURRENTUSERNAME"></div>
-           <div class="dashboardProfileSetting"><h5>Email:</h5><input class="emailSetting" type="text" value="CURRENTEMAIL"></div>
+            <div class="dashboardProfileSetting"><h5>Username:</h5><input name="newUsername" class="usernameSetting" type="text" value="CURRENTUSERNAME"></div>
+           <div class="dashboardProfileSetting"><h5>Email:</h5><input name="newEmail" class="emailSetting" type="text" value="CURRENTEMAIL"></div>
            <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*">
 
 
