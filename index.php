@@ -76,7 +76,7 @@ $_SESSION['timeout'] = time();
     </div>
 
     <nav class="customNavbar">
-        <div class="navbarLogo"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
+        <div class="navbarLogo"><a href=""><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></a></div>
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
