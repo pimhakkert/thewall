@@ -289,6 +289,7 @@ nav.upperNav input:hover {
   grid-row-end: 3;
   height: 2.9em;
   width: 3.2em;
+  object-fit: cover;
 }
 .navProfilePosts{
   grid-column: 2;
@@ -316,6 +317,86 @@ nav.upperNav input:hover {
 .navProfileIcon:hover{
   cursor: pointer;
 }
+
+.dashboard{
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 1;
+  border-radius: 2em;
+  margin-top: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  height: 70vh;
+  width: 60vw;
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+
+
+
+  -webkit-box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
+}
+.dashboardBar{
+  z-index: 1;
+  border-top-right-radius: 2em;
+  border-top-left-radius: 2em;
+  overflow: hidden;
+  color: white;
+  background-color: #0A0702;
+  height: 100%;
+  text-align: center;
+  padding-top: 1em;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.dashboardProfileSettings{
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 4em;
+  display: grid;
+  grid-template-rows: repeat(auto-fill,auto);
+  padding-bottom: 4em;
+}
+.dashboardProfileSetting{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  display: flex;
+  padding-left: 30px;
+  border-top-style: solid;
+  border-top-color: #0A0702;
+}
+.dashboardContent {
+
+  padding-top: 3em;
+  padding-left: 30px;
+  padding-right: 30px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-rows: repeat(auto-fill,2.5em);
+}
+.dashboardItem{
+  display: flex;
+  padding-left: 30px;
+  border-top-style: solid;
+  border-top-color: #0A0702;
+}
+
+.dashboardPostTitle{
+  flex-grow: 0.2;
+}
+.dashboardPostUploadDate{
+  flex-grow: 0.75;
+}
+.dashboardEditButton{
+  color: white;
+  background-color: #a71d2a;
+  width: 100px;
+  border-radius: 5px;
+}
+
 .searchMenu{
   display: flex;
   flex-direction: row;
@@ -356,6 +437,10 @@ nav.upperNav input:hover {
 }
 .searchMenuToggle{
   z-index: 2;
+}
+.searchMenuToggle:hover{
+  cursor: pointer;
+  color: darkgray;
 }
 
 #no {

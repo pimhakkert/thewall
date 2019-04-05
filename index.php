@@ -13,8 +13,6 @@
     <link rel="icon" href="images/TheWallLogo.png">
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery.smoothState.min.js"></script>
-    <script src="js/pagetransition.js"></script>
     <link rel="stylesheet" type="text/css" href="css/master2.scss">
 </head>
 <body>
