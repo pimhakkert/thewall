@@ -88,7 +88,7 @@ $_SESSION['timeout'] = time();
         }
         ?>
         <label for="toggleMenu" id="navHamburger">&#9776;</label>
-        <label for="searchMenuToggle" class="searchMenuToggle" style="font-size: 4em; margin-right: 10px">&#9776;</label>
+        <label for="searchMenuToggle" class="searchMenuToggleLabel" style="font-size: 4em; margin-right: 10px">&#9776;</label>
         </div>
 
     </nav>

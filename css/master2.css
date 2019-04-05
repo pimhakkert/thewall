@@ -400,10 +400,9 @@ nav.upperNav input:hover {
   transition: transform 0.25s ease-in-out; }
 
 .searchMenuToggle {
-  z-index: 2;
-  display: none; }
+  z-index: 2; }
 
-.searchMenuToggle:hover {
+.searchMenuToggleLabel:hover {
   cursor: pointer;
   color: darkgray; }
 
