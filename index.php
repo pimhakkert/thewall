@@ -25,18 +25,19 @@ $_SESSION['timeout'] = time();
     <link rel="icon" href="images/TheWallLogo.png">
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/master2.scss">
+    <link rel="stylesheet" type="text/css" href="css/master2.css">
 </head>
 <body>
 <input type="checkbox" id="toggleMenu">
 <div class="wrapper" id="main">
-    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em)">
+    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em); opacity: 0;">
 
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php
             if(isset($_SESSION['username'])){
                 echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
                 echo "<a href='php_tools/logoutbackend.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
+
             }
             else {
                 echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
@@ -79,7 +80,7 @@ $_SESSION['timeout'] = time();
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {
@@ -87,7 +88,7 @@ $_SESSION['timeout'] = time();
         }
         ?>
         <label for="toggleMenu" id="navHamburger">&#9776;</label>
-        <label for="searchMenuToggle" class="searchMenuToggle" style="font-size: 4em; margin-right: 10px">&#9776;</label>
+        <label for="searchMenuToggle" class="searchMenuToggleLabel" style="font-size: 4em; margin-right: 10px">&#9776;</label>
         </div>
 
     </nav>
