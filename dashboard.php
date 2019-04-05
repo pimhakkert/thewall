@@ -99,13 +99,13 @@
         <div class="dashboardBar" id="dashboardBar">Dashboard</div>
        <div style="overflow-y: scroll; grid-column-start: 1; grid-column-end: 3;">
 
-       <div class="dashboardProfileSettings">
-            <div class="dashboardProfileSetting"><h4>Username:</h4><input type="text" value="CURRENTUSERNAME"></div>
+       <form class="dashboardProfileSettings">
+            <div class="dashboardProfileSetting"><h4>Username:</h4><input class="usernameSetting" type="text" value="CURRENTUSERNAME"></div>
            <div class="dashboardProfileSetting">setting</div>
            <div class="dashboardProfileSetting">setting</div>
            <div class="dashboardProfileSetting">setting</div>
            <div style="display: flex; justify-content: flex-end"><input type="submit" class="dashboardEditButton" style="background-color: #1e7e34" ></div>
-       </div>
+       </form>
 
 
        <div class="dashboardContent">
@@ -114,23 +114,23 @@
                <div class="modalContent">
 
                    <div class="modalItemTitle">
-                       <h1><?php echo $image_results['image_title'];?></h1>
+                       <h1><?php/* echo $image_results['image_title'];*/?></h1>
                    </div>
 
                    <div class="modalItemRight">
                        <div class="modalItemImg">
-                           <img src="images/<?php echo $image_results['image_name'];?>"alt="Picture: <?php echo $image_results['image_title'];?>">
+                           <img src="images/<?php /*echo $image_results['image_name'];?>"alt="Picture: <?php echo $image_results['image_title'];*/?>">
                        </div>
                    </div>
 
                    <div class="modalItemLeft">
-                       <textarea class="modalItemDesc"> <?php echo $image_results['image_description'];?></textarea>
-                       <h3 class="modalItemOwner">Uploaded by:<br><?php echo $username;?></h3>
-                       <h6 class="modalItemDate"><?php echo $image_results['image_date'];?></h6>
+                       <textarea class="modalItemDesc"> <?php/* echo $image_results['image_description'];*/?></textarea>
+                       <h3 class="modalItemOwner">Uploaded by:<br><?php/* echo $username;*/?></h3>
+                       <h6 class="modalItemDate"><?php/* echo $image_results['image_date'];*/?></h6>
                        <!--               Need to finish search functionality for following for loop to be completed.-->
-                       <input type="text" placeholder="Tags">
-                       <button class="dashboardEditButton">Delete</button>
-                       <input type="submit">
+                       <input type="text" placeholder="Tags" style="text-align: left; grid-row: 11; grid-column: 2;">
+                       <button class="dashboardEditButton" style="align-self: right; grid-row: 12;grid-column: 2;">Delete</button>
+                       <input type="submit" style="text-align: left;grid-row: 12;grid-column: 1;">
                    </div>
 
                </div>

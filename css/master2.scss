@@ -359,11 +359,18 @@ nav.upperNav input:hover {
   grid-template-rows: repeat(auto-fill,auto);
   padding-bottom: 4em;
 }
+.usernameSetting{
+  margin-left: 20px;
+  -webkit-box-shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
 .dashboardProfileSetting{
   padding-top: 1em;
   padding-bottom: 1em;
   display: flex;
   padding-left: 30px;
+  border-top-width: 1px;
   border-top-style: solid;
   border-top-color: #0A0702;
 }
@@ -375,11 +382,14 @@ nav.upperNav input:hover {
   grid-column-start: 1;
   grid-column-end: 3;
   display: grid;
-  grid-template-rows: repeat(auto-fill,2.5em);
+  grid-template-rows: repeat(auto-fill,auto);
 }
 .dashboardItem{
+  padding-top: 3px;
+  padding-bottom: 3px;
   display: flex;
   padding-left: 30px;
+  border-top-width: 1px;
   border-top-style: solid;
   border-top-color: #0A0702;
 }
