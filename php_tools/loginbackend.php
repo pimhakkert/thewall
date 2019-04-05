@@ -42,6 +42,7 @@ if(!$error1){
 
     if(!$error2 && password_verify($passwordInput,$passwordDatabase)){
         $_SESSION['username'] = $usernameInput;
+        session_write_close();
         header("Location: index.php");
     }
     else {

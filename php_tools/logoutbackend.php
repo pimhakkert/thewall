@@ -1,6 +1,7 @@
 <?php
 session_start();
-if(session_status()== PHP_SESSION_ACTIVE){
+if(isset($_SESSION['username'])){
+    session_unset();
     session_destroy();
     echo "<meta http-equiv='refresh' content='0;url=../index.php'>";
     exit();

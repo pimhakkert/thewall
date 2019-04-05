@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+if(isset($_SESSION['username'])){
+    session_write_close();
+    header("Location: index.php");
+}
+?>
 <html lang="en">
 <?php include 'php_tools/settings.php';?>
 <head>
