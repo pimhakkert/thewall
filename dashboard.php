@@ -71,7 +71,7 @@
             <?php
             if(isset($_SESSION['username'])){
                 echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>XRaider</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logout.php'>Logout</a></div>";
-                echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
+//                echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
                 //echo "<a href='php_tools/logout.php'><button class='navButton' type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
 
             }
@@ -104,12 +104,12 @@
            <h3 style="margin-bottom: 1em">Settings</h3>
             <div class="dashboardProfileSetting"><h5>Username:</h5><input name="newUsername" class="usernameSetting" type="text" value="CURRENTUSERNAME"></div>
            <div class="dashboardProfileSetting"><h5>Email:</h5><input name="newEmail" class="emailSetting" type="text" value="CURRENTEMAIL"></div>
-           <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*">
-
-
-           </div>
-           <div style="display: flex; justify-content: flex-end"><input type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
+           <div style="display: flex; justify-content: flex-end"><input name="SalamiMet" type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
        </form>
+           <form action="" class="dashboardProfileSettings">
+                 <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
+                 <div style="display: flex; justify-content: flex-end"><input name="Kaas" type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
+            </form>
 
        <div class="dashboardContent">
            <h3 style="margin-bottom: 1em">Posts</h3>
