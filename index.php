@@ -35,7 +35,7 @@ $_SESSION['timeout'] = time();
     <nav class="upperNav" style="height: 11em; background-color: #3d3d3d; padding-top:15px; border-bottom-style: solid">
         <?php
             if(isset($_SESSION['username'])){
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
+                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\">Upload</label>";
                 echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
             <option value=\"sortby\">Sort By</option>
             <option value=\"newtoold\">New/old</option>
@@ -50,7 +50,7 @@ $_SESSION['timeout'] = time();
                 echo "<button class='searchMenuSearchButton' id=\"searchButton2\">&#x1F50E;</button>";
             }
             else {
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
+                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
                 echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
             }
         ?>
