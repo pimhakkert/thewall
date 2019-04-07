@@ -432,18 +432,24 @@ nav.upperNav input:hover {
   border-style: solid;
   transition: transform 0.15s ease-in-out;
 
+  &SearchSelect{
+    flex-grow: 0.1;
+  }
 }
 .searchMenu input[type=text]{
   flex-grow: 0.7;
+  margin-left: 1em;
 }
 .searchMenu button{
   flex-grow: 0.05;
   margin-left: 1em;
 }
-.searchMenu select{
+.searchMenuSortBy{
   margin-left: 1em;
   flex-grow: 0.22;
+  margin-right: 1em;
 }
+
 #searchMenuToggle:checked ~ .searchMenu{
   transform: translateY(-3px);
   -webkit-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
