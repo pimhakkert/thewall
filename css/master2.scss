@@ -881,6 +881,19 @@ nav.upperNav input:hover {
     font-size: 4em;
     margin-right: 20px;
   }
+  .searchMenuToggleLabel{
+    display: none;
+  }
+  .searchMenuSearchButton{
+    margin-left: 20px;
+    margin-top: 2px;
+
+    height: 2.2em;
+    border-width: 0;
+    border-radius: 5px;
+    width: 70%;
+  }
+
 
 
   .modalItemImg {
@@ -984,13 +997,13 @@ nav.upperNav input:hover {
     flex-grow: 20;
   }
   .navbarLogoImg{
-    margin-top: 25px;
+    margin-top: 24px;
     width: 60px;
     height: 50px;
   }
   #navHamburger{
     flex-grow: 1;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: auto;
     font-size: 50px;
     justify-self: flex-end;
@@ -1037,5 +1050,14 @@ nav.upperNav input:hover {
   }
   .navButtons{
     flex-grow: 1;
+  }
+  .searchMenuSearchButton{
+    margin-left: 37%;
+    margin-top: 2px;
+
+    height: 2.2em;
+    border-width: 0;
+    border-radius: 5px;
+    width: 50%;
   }
 }
