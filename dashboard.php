@@ -16,6 +16,7 @@
     <script src="js/jquery.smoothState.min.js"></script>
     <script src="js/pagetransition.js"></script>
     <link rel="stylesheet" type="text/css" href="css/master2.scss">
+    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
 </head>
 <body>
 <input type="checkbox" id="toggleMenu">
@@ -25,7 +26,7 @@
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
+//            echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
             echo "<a href='php_tools/logout.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
         }
         else {
