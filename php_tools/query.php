@@ -16,7 +16,14 @@ if(isset($_GET['tag'])){
     }
 }
 elseif(isset($_GET['user'])){
-    $sql = "SELECT * FROM images WHERE user_id = ?";
+    $userName = $_GET['user'];
+    $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE users.user_name = ?";
+    $sth = $database->prepare($sql);
+    $sth->execute([$userName]);
+    $results = $sth->fetchAll();
+    foreach ($results as $image_results){
+        include('display.php');
+    }
 }
 else {
     $sql = "SELECT * FROM images";

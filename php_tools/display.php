@@ -32,7 +32,6 @@ $username = $sth2->fetchColumn();
             <p class="modalItemDesc"> <?php echo $image_results['image_description'];?></p>
             <h3 class="modalItemOwner">Uploaded by:<br><?php echo $username;?></h3>
             <h6 class="modalItemDate"><?php echo $image_results['image_date'];?></h6>
-            <!--               Need to finish search functionality for following for loop to be completed.-->
             <div class="modalItemTags"> <?php for($i=0;$i<sizeof($tagArray);$i++){ ?>
                     <a class="modalItemTags" href="index.php/search">
                         <?php echo $tagArray[$i];?>
