@@ -29,6 +29,43 @@ nav.upperNav input:hover {
   margin-bottom: 1.5em;
   height: 3.25em;
 }
+.login2{
+  grid-row: 3;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 95% !important;
+  font-weight: bolder;
+
+
+  background: linear-gradient(221deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 300% 300%;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+
+  -webkit-animation: AnimationName 6s ease infinite;
+  -moz-animation: AnimationName 6s ease infinite;
+  animation: AnimationName 6s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+  }
+  @keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+  }
+}
 .searchMenuSearchButton{
   margin-left: 37%;
   margin-top: 2px;
@@ -46,7 +83,7 @@ nav.upperNav input:hover {
   margin-right: 1px;
   border-radius: 5px;
   height: 2.5em;
-  width: 80%;
+  width: 105% !important;
 }
 .searchMenuSearchSelect2{
   grid-column-start: 1;
@@ -994,9 +1031,9 @@ nav.upperNav input:hover {
   .navbarLogo{
     width: 50px;
     display: flex;
-    flex-grow: 20;
   }
   .navbarLogoImg{
+    flex-grow: 1;
     margin-top: 24px;
     width: 60px;
     height: 50px;

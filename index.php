@@ -51,7 +51,19 @@ $_SESSION['timeout'] = time();
             }
             else {
                 echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
-                echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
+                echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
+            <option value=\"sortby\">Sort By</option>
+            <option value=\"newtoold\">New/old</option>
+            <option value=\"oldtonew\">Old/new</option>
+        </select>";
+                echo "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"\">
+            <option value=\"title\">Title</option>
+            <option value=\"tag\">Tag</option>
+            <option value=\"user\">User</option>
+        </select>";
+                echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
+                echo "<button class='searchMenuSearchButton' id=\"searchButton2\">&#x1F50E;</button>";
+                echo "<input class='login2' type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
             }
         ?>
 
