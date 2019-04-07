@@ -1,6 +1,8 @@
 <?php
 $imageID = $image_results['id'];
 $userID = $image_results['user_id'];
+$imageDate = $image_results['image_date'];
+$goodDate = date("d-m-Y", strtotime($imageDate));
 
 //Get tag names
 $sql2 = "SELECT tags.tag_name FROM tags  LEFT JOIN tags  ON tags.tag_name = image_tags.tag_id WHERE image_tags.image_id = ?";
@@ -31,7 +33,7 @@ $username = $sth2->fetchColumn();
         <div class="modalItemLeft">
             <p class="modalItemDesc"> <?php echo $image_results['image_description'];?></p>
             <h3 class="modalItemOwner">Uploaded by:<br><?php echo $username;?></h3>
-            <h6 class="modalItemDate"><?php echo $image_results['image_date'];?></h6>
+            <h6 class="modalItemDate"><?php echo $goodDate;?></h6>
             <div class="modalItemTags"> <?php for($i=0;$i<sizeof($tagArray);$i++){ ?>
                     <a class="modalItemTags" href="index.php/search">
                         <?php echo $tagArray[$i];?>

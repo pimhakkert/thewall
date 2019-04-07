@@ -125,7 +125,7 @@ $_SESSION['timeout'] = time();
         </select>
         <input id="searchInput" type="text" placeholder="Search..">
         <button id="searchButton" onclick="searchFunction()">Search</button>
-        <select class="searchMenuSortBy" name="sortby" id="sortby">
+        <select class="searchMenuSortBy" name="sortby" id="sortby" onchange="sortFunction()">
             <option value="sortby">Sort By</option>
             <option value="newtoold">New/old</option>
             <option value="oldtonew">Old/new</option>
