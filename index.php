@@ -106,13 +106,13 @@ $_SESSION['timeout'] = time();
     </nav>
 
     <nav class="searchMenu">
-        <select class="searchMenuSearchSelect" name="searchSelect" id="">
+        <select class="searchMenuSearchSelect" name="searchSelect" id="searchMenuSelect">
             <option value="title">Title</option>
             <option value="tag">Tag</option>
             <option value="user">User</option>
         </select>
         <input id="searchInput" type="text" placeholder="Search..">
-        <button id="searchButton">Search</button>
+        <button id="searchButton" onclick="searchFunction()">Search</button>
         <select class="searchMenuSortBy" name="sortby" id="sortby">
             <option value="sortby">Sort By</option>
             <option value="newtoold">New/old</option>
