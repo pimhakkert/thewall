@@ -103,7 +103,7 @@ $_SESSION['timeout'] = time();
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/Screenshot_1.png' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {
