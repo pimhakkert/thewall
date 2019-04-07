@@ -5,12 +5,13 @@ html, body {
   overflow-x: hidden; }
 
 nav.upperNav {
-  display: flex;
-  flex-direction: column; }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr; }
 
 nav.upperNav input {
   height: 2.5em;
-  width: 100vw;
+  width: 100%;
   background-color: dimgray;
   color: black;
   border-color: black;
@@ -25,17 +26,84 @@ nav.upperNav input:hover {
   margin-bottom: 1.5em;
   height: 3.25em; }
 
-.uploadButtonLabel {
-  padding-top: 0.3em;
-  text-align: center;
-  margin-bottom: -0.2em;
-  height: 2.5em;
-  width: 100vw;
-  background-color: dimgray;
-  color: black;
-  border-color: black;
-  border-style: inset; }
+.searchMenuSearchButton {
+  margin-left: 37%;
+  margin-top: 2px;
+  height: 2.2em;
+  border-width: 0;
+  border-radius: 5px;
+  width: 50%; }
 
+.searchMenuinput {
+  background-color: lightgray !important;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  margin-left: 10px;
+  margin-right: 1px;
+  border-radius: 5px;
+  height: 2.5em;
+  width: 80%; }
+
+.searchMenuSearchSelect2 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 2;
+  margin-left: 10px;
+  margin-right: 1px;
+  border-radius: 5px;
+  height: 2.5em;
+  width: 95%; }
+
+.searchMenuSortBy2 {
+  grid-column: span 3;
+  grid-row: 2;
+  margin-left: 10px;
+  margin-right: 1px;
+  border-radius: 5px;
+  height: 2.5em;
+  width: 92%; }
+
+.uploadButtonLabel {
+  grid-row: 3;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  padding-top: 0.45em;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 1px;
+  height: 2.5em;
+  width: 95%;
+  font-weight: bolder;
+  background: linear-gradient(221deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 300% 300%;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  -webkit-animation: AnimationName 6s ease infinite;
+  -moz-animation: AnimationName 6s ease infinite;
+  animation: AnimationName 6s ease infinite; }
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 93% 0%; }
+  50% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 93% 0%; } }
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 93% 0%; }
+  50% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 93% 0%; } }
+@keyframes AnimationName {
+  0% {
+    background-position: 93% 0%; }
+  50% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 93% 0%; } }
 .uploadButtonLabel:hover {
   background-color: grey; }
 
@@ -46,14 +114,14 @@ nav.upperNav input:hover {
   display: none; }
 
 #toggleMenu:checked ~ div.wrapper {
-  margin-top: 5em;
+  margin-top: 11.2em;
   transition: margin-top ease-in-out 0.2s; }
 
 .wrapper {
   min-height: 100vh;
   width: 100%;
   height: 105vh;
-  transform: translatey(-5.9em);
+  transform: translatey(-12em);
   background-color: #e8a43f;
   transition: margin-top ease-in-out 0.2s;
   padding-bottom: 2.5rem; }
@@ -244,6 +312,7 @@ nav.upperNav input:hover {
   box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75); }
 
 .navProfile {
+  flex-grow: 0.5;
   display: grid;
   grid-template-columns: 0.2fr 0.6fr 0.6fr;
   grid-template-rows: 0.5fr 0.5fr;
@@ -791,22 +860,27 @@ nav.upperNav input:hover {
   .navbarLogo {
     width: 50px;
     display: flex;
-    flex-grow: 1; }
+    flex-grow: 20; }
 
   .navbarLogoImg {
-    margin-top: 20px;
-    width: 75px;
-    height: 60px; }
+    margin-top: 25px;
+    width: 60px;
+    height: 50px; }
 
   #navHamburger {
-    margin-top: auto;
+    flex-grow: 1;
+    margin-top: 10px;
     margin-bottom: auto;
-    font-size: 40px;
+    font-size: 50px;
     justify-self: flex-end; }
 
   .navProfile {
+    height: 50px;
+    margin-left: 40px;
+    margin-right: 15px;
+    flex-grow: 1;
     display: grid;
-    width: 150px; }
+    width: 170px; }
 
   .navProfileUsername {
     font-size: 1em; }
@@ -820,7 +894,7 @@ nav.upperNav input:hover {
   .searchMenu {
     display: none; }
 
-  .searchMenuToggle {
+  .searchMenuToggleLabel {
     display: none; }
 
   html {
@@ -835,6 +909,9 @@ nav.upperNav input:hover {
     left: 15%; }
 
   .modal {
-    overflow-y: scroll; } }
+    overflow-y: scroll; }
+
+  .navButtons {
+    flex-grow: 1; } }
 
 /*# sourceMappingURL=master2.css.map */
