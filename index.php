@@ -35,7 +35,7 @@ $_SESSION['timeout'] = time();
     <nav class="upperNav" style="height: 11em; background-color: #3d3d3d; padding-top:15px; border-bottom-style: solid">
         <?php
             if(isset($_SESSION['username'])){
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
+                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\">Upload</label>";
                 echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
             <option value=\"sortby\">Sort By</option>
             <option value=\"newtoold\">New/old</option>
@@ -50,8 +50,20 @@ $_SESSION['timeout'] = time();
                 echo "<button class='searchMenuSearchButton' id=\"searchButton2\">&#x1F50E;</button>";
             }
             else {
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
-                echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
+                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
+                echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
+            <option value=\"sortby\">Sort By</option>
+            <option value=\"newtoold\">New/old</option>
+            <option value=\"oldtonew\">Old/new</option>
+        </select>";
+                echo "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"\">
+            <option value=\"title\">Title</option>
+            <option value=\"tag\">Tag</option>
+            <option value=\"user\">User</option>
+        </select>";
+                echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
+                echo "<button class='searchMenuSearchButton' id=\"searchButton2\">&#x1F50E;</button>";
+                echo "<input class='login2' type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
             }
         ?>
 
@@ -91,7 +103,7 @@ $_SESSION['timeout'] = time();
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/Screenshot_1.png' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {

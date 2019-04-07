@@ -29,6 +29,43 @@ nav.upperNav input:hover {
   margin-bottom: 1.5em;
   height: 3.25em;
 }
+.login2{
+  grid-row: 3;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 95% !important;
+  font-weight: bolder;
+
+
+  background: linear-gradient(221deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  background-size: 300% 300%;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+
+  -webkit-animation: AnimationName 6s ease infinite;
+  -moz-animation: AnimationName 6s ease infinite;
+  animation: AnimationName 6s ease infinite;
+
+  @-webkit-keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+  }
+  @-moz-keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+  }
+  @keyframes AnimationName {
+    0%{background-position:93% 0%}
+    50%{background-position:0% 100%}
+    100%{background-position:93% 0%}
+  }
+}
 .searchMenuSearchButton{
   margin-left: 37%;
   margin-top: 2px;
@@ -46,7 +83,7 @@ nav.upperNav input:hover {
   margin-right: 1px;
   border-radius: 5px;
   height: 2.5em;
-  width: 80%;
+  width: 105% !important;
 }
 .searchMenuSearchSelect2{
   grid-column-start: 1;
@@ -863,13 +900,40 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 992px) {
+  .navbarLogo{
+    width: 95px;
+    display: flex;
+    flex-grow: 1;
+  }
+  .navbarLogoImg{
+    margin-top: 15px;
+    width: 95px;
+    height: 70px;
+  }
+
   .searchMenuToggle{
     display: none;
   }
   .navButton{
     z-index: 2;
-    display: none;
-    justify-self: flex-end;
+  }
+  .navProfile{
+    height: 50px;
+    margin-top: 27px;
+    margin-left: 40px;
+    margin-right: 15px;
+    flex-grow: 1;
+    display: grid;
+    width: 170px;
+  }
+  .navProfileUsername{
+    font-size: 1em;
+  }
+  .navProfilePosts{
+    font-size: 0.7em;
+  }
+  .navProfileLogout{
+    margin-left: 0;
   }
   .customNavbar button {
     display: none;
@@ -980,6 +1044,9 @@ nav.upperNav input:hover {
     margin-left: auto;
     margin-right: auto;
   }
+  .searchMenuSortBy{
+    display: none;
+  }
 
 
 
@@ -991,18 +1058,20 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 414px) {
+  .searchMenuSortBy{
+    display: none;
+  }
   .navbarLogo{
     width: 50px;
     display: flex;
-    flex-grow: 20;
+    flex-grow: 1;
   }
   .navbarLogoImg{
-    margin-top: 24px;
+    margin-top: 27px;
     width: 60px;
     height: 50px;
   }
   #navHamburger{
-    flex-grow: 1;
     margin-top: 8px;
     margin-bottom: auto;
     font-size: 50px;
@@ -1047,9 +1116,6 @@ nav.upperNav input:hover {
   }
   .modal{
     overflow-y:scroll;
-  }
-  .navButtons{
-    flex-grow: 1;
   }
   .searchMenuSearchButton{
     margin-left: 37%;

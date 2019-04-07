@@ -27,10 +27,11 @@ if(isset($_SESSION['username'])){
 <input type="checkbox" id="toggleMenu">
   <div class="wrapper">
 
+
       <nav class="customNavbar">
-          <img class="navbarLogoImg" src="images/TheWallLogo.png" style="margin-bottom: 0.5em"  onclick="location.href = 'index.php'" alt="">
+          <div class="navbarLogo"><a href="index.php"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></a></div>
           <label for="toggleMenu" id="navHamburger">&#9776;</label>
-          </nav>
+      </nav>
 
           <form class="login" method="post" action="">
             <input type="text" placeholder="Username" id="username" name="username">
