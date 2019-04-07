@@ -40,6 +40,7 @@ $_SESSION['timeout'] = time();
 
             }
             else {
+                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
                 echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
             }
         ?>
@@ -85,6 +86,7 @@ $_SESSION['timeout'] = time();
         }
         else {
             echo "<button class='navButton' type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
+            echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
         }
         ?>
         <label for="toggleMenu" id="navHamburger">&#9776;</label>
