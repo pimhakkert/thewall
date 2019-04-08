@@ -25,21 +25,45 @@ $_SESSION['timeout'] = time();
     <link rel="icon" href="images/TheWallLogo.png">
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/master2.scss">
+    <link rel="stylesheet" type="text/css" href="css/master2.css">
 </head>
 <body>
 <input type="checkbox" id="toggleMenu">
 <div class="wrapper" id="main">
-    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em)">
+    <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em); opacity: 0;">
 
-    <nav class="upperNav" style="height: 5em; background-color: dimgrey">
+    <nav class="upperNav" style="height: 11em; background-color: #3d3d3d; padding-top:15px; border-bottom-style: solid">
         <?php
             if(isset($_SESSION['username'])){
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
-                echo "<a href='php_tools/logoutbackend.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
+                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\">Upload</label>";
+                echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
+            <option value=\"sortby\">Sort By</option>
+            <option value=\"newtoold\">New/old</option>
+            <option value=\"oldtonew\">Old/new</option>
+        </select>";
+                echo "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"\">
+            <option value=\"title\">Title</option>
+            <option value=\"tag\">Tag</option>
+            <option value=\"user\">User</option>
+        </select>";
+                echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
+                echo "<button class='searchMenuSearchButton' id=\"searchButton2\">&#x1F50E;</button>";
             }
             else {
-                echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
+                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
+                echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
+            <option value=\"sortby\">Sort By</option>
+            <option value=\"newtoold\">New/old</option>
+            <option value=\"oldtonew\">Old/new</option>
+        </select>";
+                echo "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"\">
+            <option value=\"title\">Title</option>
+            <option value=\"tag\">Tag</option>
+            <option value=\"user\">User</option>
+        </select>";
+                echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
+                echo "<button class='searchMenuSearchButton' id=\"searchButton2\">&#x1F50E;</button>";
+                echo "<input class='login2' type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
             }
         ?>
 
@@ -75,27 +99,33 @@ $_SESSION['timeout'] = time();
     </div>
 
     <nav class="customNavbar">
-        <div class="navbarLogo"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
+        <div class="navbarLogo"><a href="index.php"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></a></div>
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
-            echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/Screenshot_1.png' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {
             echo "<button class='navButton' type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
+            echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
         }
         ?>
         <label for="toggleMenu" id="navHamburger">&#9776;</label>
-        <label for="searchMenuToggle" class="searchMenuToggle" style="font-size: 4em; margin-right: 10px">&#9776;</label>
+        <label for="searchMenuToggle" class="searchMenuToggleLabel" style="font-size: 4em; margin-right: 10px">&#9776;</label>
         </div>
 
     </nav>
 
     <nav class="searchMenu">
+        <select class="searchMenuSearchSelect" name="searchSelect" id="searchMenuSelect">
+            <option value="title">Title</option>
+            <option value="tag">Tag</option>
+            <option value="user">User</option>
+        </select>
         <input id="searchInput" type="text" placeholder="Search..">
-        <button id="searchButton">Search</button>
-        <select name="sortby" id="sortby">
+        <button id="searchButton" onclick="searchFunction()">Search</button>
+        <select class="searchMenuSortBy" name="sortby" id="sortby" onchange="sortFunction()">
             <option value="sortby">Sort By</option>
             <option value="newtoold">New/old</option>
             <option value="oldtonew">Old/new</option>
