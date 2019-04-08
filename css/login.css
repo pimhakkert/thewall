@@ -1,9 +1,12 @@
 html { height: 100% }
 .login {
+  display: flex;
+  flex-direction: column;
   background: white ;
   border: 1px solid #42464b;
   border-radius: 6px;
-  height: 300px;
+  height: auto;
+  padding-bottom: 30px;
   margin: 20px auto 0;
   width: 298px;
   margin-bottom: 14%;
@@ -40,10 +43,9 @@ input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
 .forgot {
   color: black;
   display: inline-block;
-  float: right;
   font: 12px/1 sans-serif;
-  left: -19px;
   position: relative;
+  left: 180px;
   text-decoration: none;
   top: 5px;
   transition: color .4s;
@@ -88,7 +90,16 @@ input[id="submit2"] {
   border: none;
   border: 1px solid #42464b;
 }
-
+.errorMessage{
+  padding: 20px 10px 10px 10px;
+  background-color: #fcdfd9;
+  border-color: #ff8c75;
+  border-style: solid;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
 html, body {
   height: 100%;
   margin: 0;

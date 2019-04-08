@@ -37,7 +37,7 @@ if(isset($_SESSION['username'])){
             <input type="text" placeholder="Username" id="username" name="username">
             <input type="password" placeholder="Password" id="password" name="password">
             <a href="#" class="forgot">forgot password?</a>
-            <?php include 'php_tools/loginbackend.php'; ?>
+              <div class="errorMessage"><?php include 'php_tools/loginbackend.php'; ?></div>
             <input type="submit" value="Sign In" id="submit">
             <input type="button" value="Sign Up" onclick="location.href = 'registratie.php'" id="submit2">
           </form>

@@ -1,13 +1,18 @@
 html { height: 100% }
+.wrapper{
+  margin-top: 7em;
+}
 .login {
+  display: flex;
+  flex-direction: column;
   background: white ;
   border: 1px solid #42464b;
   border-radius: 6px;
-  height: 375px;
+  height: auto;
   margin: 20px auto 0;
   width: 298px;
-  margin-bottom: 14%;
-  margin-top:5%;
+  margin-top: 80px;
+  padding-bottom: 20px;
 }
 input[type="password"], input[type="text"] {
   box-sizing: border-box;
@@ -86,7 +91,16 @@ input[id="submit2"] {
   border: none;
   border: 1px solid #42464b;
 }
-
+.errorMessage{
+  padding: 20px 10px 10px 10px;
+  background-color: #fcdfd9;
+  border-color: #ff8c75;
+  border-style: solid;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
 html, body {
   height: 100%;
   margin: 0;

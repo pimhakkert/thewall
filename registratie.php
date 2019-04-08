@@ -38,7 +38,7 @@ if(isset($_SESSION['username'])){
             <input type="text" placeholder="E-mail" id="username" name="email">
             <input type="password" placeholder="Password" id="password" name="password">
             <input type="password" placeholder="Confirm password" id="password" name="passwordconfirm">
-            <?php include 'php_tools/signupbackend.php' ?>
+            <div class="errorMessage"><?php include 'php_tools/signupbackend.php' ?></div>
             <input type="submit" value="Sign Up" id="submit" name="submit">
         </form>
         <div class="shadow"></div>
