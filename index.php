@@ -87,9 +87,10 @@ $_SESSION['timeout'] = time();
                     <input class="modalUploadTitle" name="modalUploadTitle" type="text" >
                     <textarea class="modalUploadDescription" name="modalUploadDescription"></textarea>
                     <input class="modalUploadTags" name="modalUploadTags" type="text" >
+                    <br><p>Separate Tags with commas</p>
                 </div>
                 <div class="modalUploadSubmit">
-                    <input class="modalUploadSubmit" type="submit" value="Upload Image" name="submit">
+                    <input style="transform: translateY(-3em)" class="modalUploadSubmit" type="submit" value="Upload Image" name="submit">
                 </div>
 
 

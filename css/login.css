@@ -96,9 +96,12 @@ input[id="submit2"] {
   border-color: #ff8c75;
   border-style: solid;
   border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-top: 20px;
+}
+.errorMessage:empty{
+  display: none;
 }
 html, body {
   height: 100%;
