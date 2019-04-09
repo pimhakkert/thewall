@@ -7,12 +7,22 @@ if(isset($_SESSION['timeout'])){
         session_unset();
         session_destroy();
         session_start();
+        header('Location: login.php');
     }
 }
 $_SESSION['timeout'] = time();
+
+include 'php_tools/settings.php';
+
+if(isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+    $sql = "SELECT profilepicture FROM users WHERE user_name = ?";
+    $statement = $database->prepare($sql);
+    $statement->execute([$username]);
+    $profilePicture = $statement->fetchColumn();
+}
 ?>
 <html lang="en">
-<?php include 'php_tools/settings.php';?>
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">
@@ -103,7 +113,7 @@ $_SESSION['timeout'] = time();
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/Screenshot_1.png' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {

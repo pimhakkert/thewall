@@ -41,7 +41,7 @@ if(!$error1){
     }
 
     if(!$error2 && password_verify($passwordInput,$passwordDatabase)){
-        $_SESSION['username'] = $usernameInput;
+        $_SESSION['username'] = $row['user_name'];
         session_write_close();
         header("Location: index.php");
     }
