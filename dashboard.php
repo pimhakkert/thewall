@@ -100,15 +100,15 @@
         <div class="dashboardBar" id="dashboardBar">Dashboard</div>
        <div style="overflow-y: scroll; grid-column-start: 1; grid-column-end: 3;">
 
-       <form class="dashboardProfileSettings">
+       <form class="dashboardProfileSettings" style="width: 80vw">
            <h3 style="margin-bottom: 1em">Settings</h3>
             <div class="dashboardProfileSetting"><h5>Username:</h5><input name="newUsername" class="usernameSetting" type="text" value="CURRENTUSERNAME"></div>
            <div class="dashboardProfileSetting"><h5>Email:</h5><input name="newEmail" class="emailSetting" type="text" value="CURRENTEMAIL"></div>
-           <div style="display: flex; justify-content: flex-end"><input name="SalamiMet" type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
+           <div style="display: flex; justify-content: flex-end"><input name="SalamiMet" type="submit" class="dashboardEditButton" style="background-color: #1e7e34;" ></div>
        </form>
-           <form action="" class="dashboardProfileSettings">
-                 <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
-                 <div style="display: flex; justify-content: flex-end"><input name="Kaas" type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
+           <form action="" class="dashboardProfileSettings" style="width: 80vw;">
+                 <div class="dashboardProfileSetting" style="width: 80vw"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
+                 <div style="display: flex; justify-content: flex-end"><input name="Kaas" type="submit" class="dashboardEditButton" style="background-color: #1e7e34;" ></div>
             </form>
 
        <div class="dashboardContent">
