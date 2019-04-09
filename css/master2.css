@@ -823,6 +823,9 @@ nav.upperNav input:hover {
     display: grid;
     width: 170px; }
 
+  .navProfileIcon {
+    height: 44px; }
+
   .navProfileUsername {
     font-size: 1em; }
 
@@ -934,6 +937,10 @@ nav.upperNav input:hover {
   html {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch; } }
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  #searchButton2 {
+    width: 50%;
+    margin-left: 50px; } }
 @media screen and (max-width: 414px) {
   .searchMenuSortBy {
     display: none; }
@@ -974,6 +981,9 @@ nav.upperNav input:hover {
   .searchMenu {
     display: none; }
 
+  .navProfileIcon {
+    height: 44px; }
+
   .searchMenuToggleLabel {
     display: none; }
 
@@ -986,7 +996,8 @@ nav.upperNav input:hover {
 
   .modalItemTitle2 {
     width: 115%;
-    left: 15%; }
+    left: 15%;
+    height: 60px; }
 
   .modal {
     overflow-y: scroll; }

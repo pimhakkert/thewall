@@ -1,7 +1,4 @@
 html { height: 100% }
-.wrapper{
-  margin-top: 7em;
-}
 .login {
   display: flex;
   flex-direction: column;
@@ -9,12 +6,21 @@ html { height: 100% }
   border: 1px solid #42464b;
   border-radius: 6px;
   height: auto;
+  padding-bottom: 30px;
   margin: 20px auto 0;
   width: 298px;
-  margin-top: 80px;
-  padding-bottom: 20px;
+  margin-bottom: 14%;
+  margin-top:5%;
+  align-content: center;
+
+
+  -webkit-box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
 }
 input[type="password"], input[type="text"] {
+  outline: none;
+  justify-self: center;
   box-sizing: border-box;
   font-family:Arial, sans-serif;
   font-size:16px;
@@ -22,10 +28,32 @@ input[type="password"], input[type="text"] {
   color: black;
   height: 39px;
   margin: 31px 0 0 29px;
-  padding-left: 37px;
+  padding-left: 12px;
   width: 240px;
+  border-width: 1;
   background-color: #F3F3F3;
+  transition: transform 0.2s ease-in-out;
 }
+input[type="text"]:focus{
+  border-style: solid;
+  border-width: 1px;
+  transform: scale(1.8);
+
+  -webkit-box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
+}
+
+input[type="password"]:focus{
+  transform: scale(1.8);
+  border-style: solid;
+  border-width: 1px;
+
+  -webkit-box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 60px 6px rgba(0,0,0,0.75);
+}
+
 
 input[type="checkbox"] {
   cursor: pointer;
@@ -39,14 +67,29 @@ input[type="checkbox"]:checked {
   width: 58px;
 }
 
+html{
+  width: 100vw;
+  background-image: url("../images/monochrome.jpg");
+  background-size: cover;
+  //background-color: rgba(232,164,63,0.10);
+}
+body{
+  background-color: rgba(232,164,63,0.42);
+}
+.wrapper{
+  background-color: rgba(0,0,0,0);
+  transform: translateY(0);
+  padding-bottom: 0;
+  height: 90vh;
+}
 input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
 .forgot {
+  margin-top: 1em;
   color: black;
   display: inline-block;
-  float: right;
   font: 12px/1 sans-serif;
-  left: -19px;
   position: relative;
+  left: 180px;
   text-decoration: none;
   top: 5px;
   transition: color .4s;
@@ -70,13 +113,14 @@ input[id="submit"] {
   cursor:pointer;
   border: none;
   border: 1px solid #42464b;
+  border-radius: 6px;
 }
 .forgot:hover { color: #3b3b3b }
 input[id="submit2"] {
   width:240px;
   height:35px;
   display:block;
-  background-color: #ecb45d;
+  background-color: #ecb45d2b;
   font-family:Arial, sans-serif;
   font-size:16px;
   font-weight:bold;
@@ -90,6 +134,7 @@ input[id="submit2"] {
   cursor:pointer;
   border: none;
   border: 1px solid #42464b;
+  border-radius: 6px;
 }
 .errorMessage{
   padding: 20px 10px 10px 10px;
@@ -119,3 +164,21 @@ html, body {
     clear: both;
     bottom: 0;
   }
+
+@media screen and (max-width: 375px) {
+  #navHamburger{
+    display: none;
+  }
+  input[type="text"]:focus{
+    border-style: solid;
+    border-width: 3px;
+    transform: scale(1.5);
+  }
+
+  input[type="password"]:focus{
+    transform: scale(1.5);
+    border-style: solid;
+    border-width: 3px;
+  }
+
+}

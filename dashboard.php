@@ -1,6 +1,31 @@
-<?php session_start(); ?>
+<?php
+session_start();
+$timeout = 1199;
+if(isset($_SESSION['timeout'])){
+    $duration = time() - (int)$_SESSION['timeout'];
+    if($duration > $timeout){
+        session_unset();
+        session_destroy();
+        session_start();
+        header('Location: login.php');
+    }
+}
+$_SESSION['timeout'] = time();
+
+include 'php_tools/settings.php';
+
+if(isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+    $sql = "SELECT * FROM users WHERE user_name = ?";
+    $statement = $database->prepare($sql);
+    $statement->execute([$username]);
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+}
+
+include ('php_tools/dashboardbackend.php');
+
+?>
 <html lang="en">
-<?php include 'php_tools/settings.php';?>
 <head>
     <title>The Wall</title>
     <meta charset="utf-8">
@@ -26,7 +51,6 @@
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php
         if(isset($_SESSION['username'])){
-//            echo "<label class=\"uploadButtonLabel\" for=\"uploadButton\" id=\"uploadButton1\">Upload</label>";
             echo "<a href='php_tools/logout.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
         }
         else {
@@ -36,44 +60,12 @@
 
     </nav>
 
-    <div class="modalContent">
-        <div class="modalItemTitle2"></div>
-        <form class="modalUploadForm" action="" method="post" enctype="multipart/form-data">
-
-            <div class="ModalUploadDiv">
-                Select image to upload:
-                <input class="modalUploadFile" type="file" name="fileToUpload" id="fileToUpload" accept="images/*">
-            </div>
-            <div class="modalUploadContent">
-                <div>
-                    <p>Title:</p>
-                    <p>Description:</p>
-                    <p style="margin-top: 4em">Tags:</p>
-                </div>
-                <div class="modalUploadInput">
-                    <input class="modalUploadTitle" name="modalUploadTitle" type="text" >
-                    <textarea class="modalUploadDescription" name="modalUploadDescription"></textarea>
-                    <input class="modalUploadTags" name="modalUploadTags" type="text" >
-                </div>
-                <div class="modalUploadSubmit">
-                    <input class="modalUploadSubmit" type="submit" value="Upload Image" name="submit">
-                </div>
-
-
-            </div>
-        </form>
-        <?php include 'php_tools/uploadbackend.php'; ?>
-    </div>
-
     <nav class="customNavbar">
         <div class="navbarLogo" onclick="window.location = 'index.php';"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
         <div class="navButtons">
             <?php
             if(isset($_SESSION['username'])){
-                echo "<div class='navProfile navButton'><img class='navProfileIcon' src='images/angerypigeon.jpg' alt=''><h3 class='navProfileUsername'>XRaider</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logout.php'>Logout</a></div>";
-//                echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
-                //echo "<a href='php_tools/logout.php'><button class='navButton' type=\"button\" name=\"button\" id=\"logout\">Logout</button></a>";
-
+                echo "<div class='navProfile navButton'><img class='navProfileIcon' src='profilepictures/".$result['profilepicture']."' alt=''><h3 class='navProfileUsername'>".$_SESSION['username']."</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             }
             else {
                 echo "<button class=\"modalButton upload navButton\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
@@ -81,85 +73,64 @@
             }
             ?>
             <label for="toggleMenu" id="navHamburger">&#9776;</label>
-<!--            <label for="searchMenuToggle" class="searchMenuToggle" style="font-size: 4em; margin-right: 10px">&#9776;</label>-->
         </div>
-
     </nav>
 
-<!--    <nav class="searchMenu">-->
-<!--        <input type="text" placeholder="Search..">-->
-<!--        <button onclick="window.alert('Haha, werkt nog niet')">Search</button>-->
-<!--        <select name="sortby" id="sortby">-->
-<!--            <option value="sortby">Sort By</option>-->
-<!--            <option value="newtoold">New/old</option>-->
-<!--            <option value="oldtonew">Old/new</option>-->
-<!--        </select>-->
-<!--    </nav>-->
-
    <div class="dashboard" id="dashboard">
-        <div class="dashboardBar" id="dashboardBar">Dashboard</div>
+       <div class="dashboardBar" id="dashboardBar">Dashboard</div>
        <div style="overflow-y: scroll; grid-column-start: 1; grid-column-end: 3;">
-
-       <form class="dashboardProfileSettings" style="width: 80vw">
-           <h3 style="margin-bottom: 1em">Settings</h3>
-            <div class="dashboardProfileSetting"><h5>Username:</h5><input name="newUsername" class="usernameSetting" type="text" value="CURRENTUSERNAME"></div>
-           <div class="dashboardProfileSetting"><h5>Email:</h5><input name="newEmail" class="emailSetting" type="text" value="CURRENTEMAIL"></div>
-           <div style="display: flex; justify-content: flex-end"><input name="SalamiMet" type="submit" class="dashboardEditButton" style="background-color: #1e7e34;" ></div>
-       </form>
-           <form action="" class="dashboardProfileSettings" style="width: 80vw;">
-                 <div class="dashboardProfileSetting" style="width: 80vw"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
-                 <div style="display: flex; justify-content: flex-end"><input name="Kaas" type="submit" class="dashboardEditButton" style="background-color: #1e7e34;" ></div>
-            </form>
-
-       <div class="dashboardContent">
-           <h3 style="margin-bottom: 1em">Posts</h3>
-
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button>
-
-               <div class="modalContent">
-
-                   <div class="modalItemTitle">
-                       <h1><?php/* echo $image_results['image_title'];*/?></h1>
-                   </div>
-
-                   <div class="modalItemRight">
-                       <div class="modalItemImg">
-                           <img src="images/<?php /*echo $image_results['image_name'];?>"alt="Picture: <?php echo $image_results['image_title'];*/?>">
+           <div class="dashboardContent">
+               <h3 style="margin-bottom: 1em">Posts</h3>
+               <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button>
+                   <div class="modalContent">
+                       <div class="modalItemTitle">
+                           <h1><?php/* echo $image_results['image_title'];*/?></h1>
+                       </div>
+                       <div class="modalItemRight">
+                           <div class="modalItemImg">
+                               <img src="images/<?php /*echo $image_results['image_name'];?>"alt="Picture: <?php echo $image_results['image_title'];*/?>">
+                           </div>
+                       </div>
+                       <div class="modalItemLeft">
+                           <textarea class="modalItemDesc"> <?php/* echo $image_results['image_description'];*/?></textarea>
+                           <h3 class="modalItemOwner">Uploaded by:<br><?php/* echo $username;*/?></h3>
+                           <h6 class="modalItemDate"><?php/* echo $image_results['image_date'];*/?></h6>
+                           <input type="text" placeholder="Tags" style="text-align: left; grid-row: 11; grid-column: 2;">
+                           <div style="grid-row: 12; grid-column: 2; display: flex;margin-top: 1em;">
+                               <input type="submit" style="flex-grow: 1;">
+                               <button class="dashboardEditButton" style="justify-self: flex-end">Delete</button>
+                           </div>
                        </div>
                    </div>
-
-                   <div class="modalItemLeft">
-                       <textarea class="modalItemDesc"> <?php/* echo $image_results['image_description'];*/?></textarea>
-                       <h3 class="modalItemOwner">Uploaded by:<br><?php/* echo $username;*/?></h3>
-                       <h6 class="modalItemDate"><?php/* echo $image_results['image_date'];*/?></h6>
-                       <!--               Need to finish search functionality for following for loop to be completed.-->
-                       <input type="text" placeholder="Tags" style="text-align: left; grid-row: 11; grid-column: 2;">
-                       <div style="grid-row: 12; grid-column: 2; display: flex;margin-top: 1em;">
-                           <input type="submit" style="flex-grow: 1;">
-                           <button class="dashboardEditButton" style="justify-self: flex-end">Delete</button>
-                       </div>
-                   </div>
-
                </div>
-
            </div>
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button></div>
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button></div>
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button></div>
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button></div>
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button></div>
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button></div>
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button></div>
-           <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button></div>
        </div>
-       </div>
+
    </div>
-
-
-
-    <script src="js/modal.js"></script>
-    <script src="js/sessioncheck.js"></script>
+   <script src="js/sessioncheck.js"></script><!--on submit check if in session-->
 </div>
+
+<form method="post" action="" class="dashboardProfileSettings">
+    <h3 style="margin-bottom: 1em">Settings</h3>
+    <div class="dashboardProfileSetting"><h5>New username:</h5><input name="newUsername" class="usernameSetting" type="text" value="<?php echo $result['user_name']; ?>"></div>
+    <div class="dashboardProfileSetting"><h5>New email:</h5><input name="newEmail" class="emailSetting" type="text" value="<?php echo $result['user_email']; ?>"></div>
+    <div style="display: flex; justify-content: flex-end"><input name="SalamiMet" type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
+</form>
+
+<form method="post" action="" class="dashboardProfileSettings" enctype="multipart/form-data">
+    <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
+    <div style="display: flex; justify-content: flex-end">
+        <input type="submit" name="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)">
+    </div>
+</form>
+
+<?php
+//Hier errors laten zien als die er zijn.
+foreach($errorsArray as $echo){
+    echo $echo;
+}
+?>
+
 <div class="footer"></div>
 </body>
 </html>

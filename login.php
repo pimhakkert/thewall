@@ -17,7 +17,7 @@ if(isset($_SESSION['username'])){
   <link rel="icon" href="images/TheWallLogo.png">
   <script src="js/bootstrap.js"></script>
   <script src="js/jquery-3.3.1.min.js"></script>
-  <link rel="stylesheet" href="css/master2.scss">
+  <link rel="stylesheet" href="css/master2.css">
   <link rel="stylesheet" href="css/login.css">
 
 </head>
@@ -33,11 +33,11 @@ if(isset($_SESSION['username'])){
           <label for="toggleMenu" id="navHamburger">&#9776;</label>
       </nav>
 
-          <form class="login" method="post" action="">
+          <form autocomplete="off" class="login" method="post" action="">
             <input type="text" placeholder="Username" id="username" name="username">
             <input type="password" placeholder="Password" id="password" name="password">
             <a href="#" class="forgot">forgot password?</a>
-            <?php include 'php_tools/loginbackend.php'; ?>
+              <div class="errorMessage"><?php include 'php_tools/loginbackend.php'; ?></div>
             <input type="submit" value="Sign In" id="submit">
             <input type="button" value="Sign Up" onclick="location.href = 'registratie.php'" id="submit2">
           </form>
