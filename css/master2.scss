@@ -192,7 +192,7 @@ nav.upperNav input:hover {
   animation-duration: 0.8s;
   transition-timing-function: ease-in;
   animation-fill-mode: both;
-  animation-name: CustomNavbarAnimation;
+  animation-name: CustomNavbarAnimationIn;
 
   /*-webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
   /*-moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
@@ -247,8 +247,8 @@ nav.upperNav input:hover {
 }
 
 
-@keyframes CustomNavbarAnimation {
-  0% {
+@keyframes CustomNavbarAnimationIn {
+    0% {
     margin-top: -60em;
   }
   70% {
@@ -811,6 +811,7 @@ nav.upperNav input:hover {
 .wrapper .modalContent{
   display: none;
 }
+
 
 .modalContent {
   margin-left: auto;

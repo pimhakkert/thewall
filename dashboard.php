@@ -130,7 +130,7 @@ foreach($errorsArray as $echo){
     echo $echo;
 }
 ?>
-
+<script src="js/modal.js"></script>
 <div class="footer"></div>
 </body>
 </html>

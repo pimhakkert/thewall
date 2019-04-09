@@ -39,7 +39,7 @@ if(isset($_SESSION['username'])){
 </head>
 <body>
 <input type="checkbox" id="toggleMenu">
-<div class="wrapper" id="main">
+<div class="wrapper" id="wrapper">
     <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em); opacity: 0;">
 
     <nav class="upperNav" style="height: 11em; background-color: #3d3d3d; padding-top:15px; border-bottom-style: solid">
@@ -114,7 +114,7 @@ if(isset($_SESSION['username'])){
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><img onclick='window.location = \" dashboard.php\"' class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {
