@@ -65,7 +65,7 @@ include ('php_tools/dashboardbackend.php');
         <div class="navButtons">
             <?php
             if(isset($_SESSION['username'])){
-                echo "<div class='navProfile navButton'><img class='navProfileIcon' src='profilepictures/".$result['profilepicture']."' alt=''><h3 class='navProfileUsername'>".$_SESSION['username']."</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logout.php'>Logout</a></div>";
+                echo "<div class='navProfile navButton'><img class='navProfileIcon' src='profilepictures/".$result['profilepicture']."' alt=''><h3 class='navProfileUsername'>".$_SESSION['username']."</h3><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             }
             else {
                 echo "<button class=\"modalButton upload navButton\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
