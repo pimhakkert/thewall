@@ -3,6 +3,7 @@ $fields = array('username', 'password');
 $fieldnames = array('Username', 'Password');
 $error1 = false;
 $error2 = false;
+$errorDisplay = false;
 
 $username = null;
 $email = null;
@@ -34,7 +35,7 @@ if(!$error1){
     $error2 = false;
 
     if(!$row){
-        echo '<p id="error">This username or password is incorrect!</p>';
+        $errorDisplay = true;
     }
     else {
         $passwordDatabase = $row['user_password'];
@@ -46,7 +47,11 @@ if(!$error1){
         header("Location: index.php");
     }
     else {
-        echo '<p id="error">The username or password is incorrect!</p>';
+        $errorDisplay = true;
     }
+}
+
+if($errorDisplay){
+    echo '<p id="error">This username or password is incorrect!</p>';
 }
 ?>
