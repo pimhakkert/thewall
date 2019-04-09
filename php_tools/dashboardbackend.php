@@ -49,7 +49,7 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
         }
 
         if(!$error){
-            $insertSql = "UPDATE users SET profilepicture = LOWER(?) WHERE user_name = LOWER(?)";
+            $insertSql = "UPDATE users SET profilepicture = ? WHERE user_name = ?";
             $database->prepare($insertSql)->execute([$dbname,$_SESSION['username']]);
         }
     }
