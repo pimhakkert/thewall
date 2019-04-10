@@ -70,3 +70,67 @@ function getParameterByName(variable)
     }
     return(false);
 }
+
+//Mobile
+
+function searchFunction2(){
+    var selectOption = document.getElementById("searchSelect2").value;
+    var searchQuery = document.getElementById("searchInput2").value;
+
+    switch (selectOption) {
+        case 'title':
+            window.location = "index.php?title=" + searchQuery;
+            break;
+        case 'tag':
+            window.location = "index.php?tag=" + searchQuery;
+            break;
+        case 'user':
+            window.location = "index.php?user=" + searchQuery;
+            break;
+    }
+}
+
+function sortFunction2() {
+    var searchQuery = null;
+    var sort = document.getElementById("sortby2").value;
+    switch (sort) {
+        case 'newtoold':
+            sort = 'DESC';
+            break;
+        case 'oldtonew':
+            sort = 'ASC';
+            break;
+    }
+
+    if(getParameterByName('title')){
+        searchQuery = getParameterByName('title');
+        window.location = "index.php?title=" + searchQuery + "&order=" + sort;
+    }
+    else if(getParameterByName('tag')){
+        searchQuery = getParameterByName('tag');
+        window.location = "index.php?tag=" + searchQuery + "&order=" + sort;
+    }
+    else if(getParameterByName('user')){
+        searchQuery = getParameterByName('user');
+        window.location = "index.php?user=" + searchQuery + "&order=" + sort;
+    }
+    else {
+        if(document.getElementById("searchMenuSelect2").value !== '' && document.getElementById("searchInput2").value !== ''){
+            if(getParameterByName('title')){
+                searchQuery = getParameterByName('title');
+                window.location = "index.php?title=" + searchQuery + "&order=" + sort;
+            }
+            else if(getParameterByName('tag')){
+                searchQuery = getParameterByName('tag');
+                window.location = "index.php?tag=" + searchQuery + "&order=" + sort;
+            }
+            else if(getParameterByName('user')){
+                searchQuery = getParameterByName('user');
+                window.location = "index.php?user=" + searchQuery + "&order=" + sort;
+            }
+        }
+        else {
+            window.location = "index.php?order=" + sort;
+        }
+    }
+}

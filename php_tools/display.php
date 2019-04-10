@@ -5,7 +5,7 @@ $imageDate = $image_results['image_date'];
 $goodDate = date("d-m-Y", strtotime($imageDate));
 
 //Get tag names
-$sql2 = "SELECT tags.tag_name FROM tags  LEFT JOIN tags  ON tags.tag_name = image_tags.tag_id WHERE image_tags.image_id = ?";
+$sql2 = "SELECT tags.tag_name FROM tags  LEFT JOIN image_tags  ON tags.tag_id = image_tags.tag_id WHERE image_tags.image_id = ?";
 $tagArray = array();
 $sth = $database->prepare($sql2);
 $sth->execute([$imageID]);
