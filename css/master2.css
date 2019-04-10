@@ -187,7 +187,7 @@ nav.upperNav input:hover {
   animation-duration: 0.8s;
   transition-timing-function: ease-in;
   animation-fill-mode: both;
-  animation-name: CustomNavbarAnimation;
+  animation-name: CustomNavbarAnimationIn;
   /*-webkit-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
   /*-moz-box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/
   /*box-shadow: -1px 0px 46px 0px rgba(0,0,0,0.75);*/ }
@@ -228,7 +228,7 @@ nav.upperNav input:hover {
 .is-exiting .customNavbar {
   animation-direction: alternate-reverse; }
 
-@keyframes CustomNavbarAnimation {
+@keyframes CustomNavbarAnimationIn {
   0% {
     margin-top: -60em; }
   70% {
@@ -418,7 +418,7 @@ nav.upperNav input:hover {
   position: relative;
   z-index: 1;
   border-radius: 2em;
-  margin-top: 5em;
+  margin-top: 3em;
   margin-left: auto;
   margin-right: auto;
   background-color: white;

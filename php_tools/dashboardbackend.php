@@ -1,15 +1,8 @@
 <?php
-$edit = false;
+$edit = true;
 $error = false;
 $errorsArray = array();
 if('POST' === $_SERVER['REQUEST_METHOD']){
-
-    if((isset($_POST['newUsername'])&&!empty($_POST['newUsername']))&&(isset($_POST['newEmail'])&&!empty($_POST['newEmail']))){
-        $edit = true;
-    }
-    else{
-        array_push($errorsArray,'<p id="dashboardError">Error: New username or email not filled in!</p>');
-    }
 
     if(isset($_FILES["fileToUpload"]["name"])) {
         $target_dir = "profilepictures/";
@@ -56,7 +49,7 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
         }
 
         if(!$error){
-            $insertSql = "UPDATE users SET profilepicture = LOWER(?) WHERE user_name = LOWER(?)";
+            $insertSql = "UPDATE users SET profilepicture = ? WHERE user_name = ?";
             $database->prepare($insertSql)->execute([$dbname,$_SESSION['username']]);
         }
     }
