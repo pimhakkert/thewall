@@ -20,23 +20,28 @@ $username = $sth2->fetchColumn();
 ?>
 <div class="galleryItem">
     <img class="galleryItemImg modalButton" src="images/<?php echo $image_results['image_name']; ?>"alt="Picture: <?php echo $image_results['image_title']; ?>"/>
-    <h3 class="galleryItemTitle"><?php echo $image_results['image_title'];?></h3>
+    <h3 class="galleryItemTitle"><?php echo $image_results['image_title']; ?></h3>
+    <div class="galleryItemScore">
+        <div id="galleryItemUpvote" onclick="scoreImage(<?php echo $image_results['image_id']; ?>,'up')"></div>
+        <p id="galleryItemScoreText"><?php echo $image_results['score']; ?></p>
+        <div id="galleryItemDownvote" onclick="scoreImage(<?php echo $image_results['image_id']; ?>,'down')"></div>
+    </div>
     <div class="modalContent">
         <div class="modalItemTitle">
             <h1><?php echo $image_results['image_title'];?></h1>
         </div>
         <div class="modalItemRight">
             <div class="modalItemImg">
-                <img src="images/<?php echo $image_results['image_name'];?>"alt="Picture: <?php echo $image_results['image_title'];?>">
+                <img src="images/<?php echo $image_results['image_name']; ?>"alt="Picture: <?php echo $image_results['image_title']; ?>">
             </div>
         </div>
         <div class="modalItemLeft">
-            <p class="modalItemDesc"> <?php echo $image_results['image_description'];?></p>
-            <h3 class="modalItemOwner">Uploaded by:<br><?php echo $username;?></h3>
+            <p class="modalItemDesc"> <?php echo $image_results['image_description']; ?></p>
+            <h3 class="modalItemOwner">Uploaded by:<br><?php echo $username; ?></h3>
             <h6 class="modalItemDate"><?php echo $goodDate;?></h6>
             <div class="modalItemTags"> <?php for($i=0;$i<sizeof($tagArray);$i++){ ?>
                     <a class="modalItemTags" href="index.php/search">
-                        <?php echo $tagArray[$i];?>
+                        <?php echo $tagArray[$i]; ?>
                     </a>
                 <?php } ?>
             </div>

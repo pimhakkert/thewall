@@ -147,6 +147,7 @@ if(isset($_SESSION['username'])){
     <script src="js/modal.js"></script>
     <script src="js/sessioncheck.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/imagescore.js"></script>
 </div>
 <div class="footer"></div>
 </body>
