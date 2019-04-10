@@ -64,6 +64,11 @@ nav.upperNav input:hover {
     background-position: 0% 100%; }
   100% {
     background-position: 93% 0%; } }
+.loginButton {
+  background-color: #e29828 !important;
+  border-radius: 6px;
+  border-color: #e8a43f; }
+
 .searchMenuSearchButton {
   margin-left: 37%;
   margin-top: 2px;

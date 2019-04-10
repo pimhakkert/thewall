@@ -118,7 +118,7 @@ if(isset($_SESSION['username'])){
             echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {
-            echo "<button class='navButton' type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
+            echo "<button class='navButton loginButton' type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
             echo "<button class=\"modalButton upload navButton\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
         }
         ?>

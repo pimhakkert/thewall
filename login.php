@@ -19,6 +19,7 @@ if(isset($_SESSION['username'])){
   <script src="js/jquery-3.3.1.min.js"></script>
   <link rel="stylesheet" href="css/master2.css">
   <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
 </head>
 <body>

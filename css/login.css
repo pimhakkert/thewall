@@ -22,7 +22,7 @@ input[type="password"], input[type="text"] {
   outline: none;
   justify-self: center;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: Raleway;
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -37,13 +37,13 @@ input[type="password"], input[type="text"] {
 input[type="text"]:focus {
   border-style: solid;
   border-width: 1px;
-  transform: scale(1.8);
+  transform: scale(1.5);
   -webkit-box-shadow: 0px 0px 60px 6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 60px 6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 60px 6px rgba(0, 0, 0, 0.75); }
 
 input[type="password"]:focus {
-  transform: scale(1.8);
+  transform: scale(1.5);
   border-style: solid;
   border-width: 1px;
   -webkit-box-shadow: 0px 0px 60px 6px rgba(0, 0, 0, 0.75);
@@ -97,7 +97,7 @@ input[id="submit"] {
   height: 35px;
   display: block;
   background-color: #e8a43f;
-  font-family: Arial, sans-serif;
+  font-family: Raleway;
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -120,7 +120,7 @@ input[id="submit2"] {
   height: 35px;
   display: block;
   background-color: #ecb45d2b;
-  font-family: Arial, sans-serif;
+  font-family: Raleway;
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -169,12 +169,12 @@ html, body {
 
   input[type="text"]:focus {
     border-style: solid;
-    border-width: 3px;
-    transform: scale(1.5); }
+    border-width: 1px;
+    transform: scale(1.45); }
 
   input[type="password"]:focus {
-    transform: scale(1.5);
+    transform: scale(1.45);
     border-style: solid;
-    border-width: 3px; } }
+    border-width: 1px; } }
 
 /*# sourceMappingURL=login.css.map */
