@@ -556,6 +556,9 @@ nav.upperNav input:hover {
   height: 84px;
   background-color: rgba(0, 0, 0, 0); }
 
+.mobileUpload {
+  display: none; }
+
 .gallery {
   margin-left: auto;
   margin-right: auto;
@@ -947,6 +950,29 @@ nav.upperNav input:hover {
     width: 50%;
     margin-left: 50px; } }
 @media screen and (max-width: 414px) {
+  .mobileUpload {
+    display: block;
+    bottom: 1%;
+    left: 80%;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    padding-top: 2px;
+    text-align: center;
+    height: 1.9em;
+    width: 60px;
+    border-radius: 50px;
+    color: white;
+    background: linear-gradient(180deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75); }
+
   .searchMenuSortBy {
     display: none; }
 

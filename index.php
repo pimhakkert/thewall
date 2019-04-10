@@ -45,11 +45,11 @@ if(isset($_SESSION['username'])){
     <nav class="upperNav" style="height: 11em; background-color: #3d3d3d; padding-top:15px; border-bottom-style: solid">
         <?php
             if(isset($_SESSION['username'])){
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\">Upload</label>";
+                echo "<label class=\"uploadButtonLabel\" for=\"searchButton2\"  id=\"searchButton2\">Search</label>";
                 echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
             <option value=\"sortby\">Sort By</option>
             <option value=\"newtoold\">New/old</option>
-            <option value=\"oldtonew\">Old/new</option>
+            <option value=\"oldtonew\">Old/new</option> 
         </select>";
                 echo "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"\">
             <option value=\"title\">Title</option>
@@ -154,6 +154,7 @@ if(isset($_SESSION['username'])){
     <script src="js/sessioncheck.js"></script>
     <script src="js/search.js"></script>
 </div>
-<div class="footer"></div>
+
+<div class="footer"><label class="mobileUpload" for="uploadButton2">&plus;</label></div>
 </body>
 </html>
