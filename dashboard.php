@@ -21,7 +21,6 @@ if(isset($_SESSION['username'])){
     $statement->execute([$username]);
     $result = $statement->fetch(PDO::FETCH_ASSOC);
 }
-
 include ('php_tools/dashboardbackend.php');
 
 ?>
@@ -80,7 +79,27 @@ include ('php_tools/dashboardbackend.php');
        <div class="dashboardBar" id="dashboardBar">Dashboard</div>
        <div style="overflow-y: scroll; grid-column-start: 1; grid-column-end: 3;">
            <div class="dashboardContent">
+
+               <form method="post" action="" class="dashboardProfileSettings">
+                   <h3 style="margin-bottom: 1em">Settings</h3>
+                   <div class="dashboardProfileSetting"><h5>New username:</h5><input name="newUsername" class="usernameSetting" type="text" value="<?php echo $result['user_name']; ?>"></div>
+                   <div class="dashboardProfileSetting"><h5>New email:</h5><input name="newEmail" class="emailSetting" type="text" value="<?php echo $result['user_email']; ?>"></div>
+                   <div style="display: flex; justify-content: flex-end"><input name="SalamiMet" type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
+               </form>
+
+               <form method="post" action="" class="dashboardProfileSettings" enctype="multipart/form-data">
+                   <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
+                   <div style="display: flex; justify-content: flex-end">
+                       <input type="submit" name="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)">
+                   </div>
+               </form>
+
+
+
                <h3 style="margin-bottom: 1em">Posts</h3>
+
+
+
                <div class="dashboardItem"><h4 class="dashboardPostTitle">Title</h4><h4 class="dashboardPostUploadDate">upload-date</h4><button class="dashboardEditButton modalButton">Edit</button>
                    <div class="modalContent">
                        <div class="modalItemTitle">
@@ -110,19 +129,9 @@ include ('php_tools/dashboardbackend.php');
    <script src="js/sessioncheck.js"></script><!--on submit check if in session-->
 </div>
 
-<form method="post" action="" class="dashboardProfileSettings">
-    <h3 style="margin-bottom: 1em">Settings</h3>
-    <div class="dashboardProfileSetting"><h5>New username:</h5><input name="newUsername" class="usernameSetting" type="text" value="<?php echo $result['user_name']; ?>"></div>
-    <div class="dashboardProfileSetting"><h5>New email:</h5><input name="newEmail" class="emailSetting" type="text" value="<?php echo $result['user_email']; ?>"></div>
-    <div style="display: flex; justify-content: flex-end"><input name="SalamiMet" type="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
-</form>
 
-<form method="post" action="" class="dashboardProfileSettings" enctype="multipart/form-data">
-    <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
-    <div style="display: flex; justify-content: flex-end">
-        <input type="submit" name="submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)">
-    </div>
-</form>
+
+
 
 <?php
 //Hier errors laten zien als die er zijn.
