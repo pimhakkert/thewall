@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])){
   <input type="checkbox" id="toggleMenu">
     <div class="wrapper">
 
-        <nav class="upperNav" style="height: 5em; background-color: dimgrey">
+        <nav class="upperNav" style=" opacity: 0%; height: 5em; background-color: dimgrey">
             <label class="uploadButtonLabel" for="uploadButton">Upload</label>
             <input type="button" value="Login" onclick="location.href = 'login.php'">
         </nav>
