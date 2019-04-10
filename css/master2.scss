@@ -84,12 +84,12 @@ nav.upperNav input:hover {
 .searchMenuinput{
   background-color: lightgray !important;
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 7;
   margin-left: 10px;
   margin-right: 1px;
   border-radius: 5px;
   height: 2.5em;
-  width: 105% !important;
+  width: 95% !important;
 }
 .searchMenuSearchSelect2{
   grid-column-start: 1;
@@ -175,6 +175,8 @@ nav.upperNav input:hover {
   background-color: #e8a43f;
   transition: margin-top ease-in-out 0.2s;
   padding-bottom: 2.5rem;
+
+
 }
 
 .customNavbar {
@@ -191,9 +193,14 @@ nav.upperNav input:hover {
   background-color: #0A0702;
 
 
-  -webkit-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
-  box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+
+
+  //-webkit-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
+  //-moz-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
+  //box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
 
   animation-duration: 0.8s;
   transition-timing-function: ease-in;
@@ -948,9 +955,7 @@ nav.upperNav input:hover {
   .navProfileLogout{
     margin-left: 0;
   }
-  .customNavbar button {
-    display: none;
-  }
+
 
   #navHamburger {
     z-index: 2;
