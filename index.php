@@ -55,11 +55,11 @@ if(isset($_SESSION['username'])){
 <option value=\"user\">User</option>
 </select>";
             if(isset($_SESSION['username'])){
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\">Upload</label>";
+                echo "<label class=\"uploadButtonLabel\" for=\"searchButton2\" id=\"uploadButton1\">Search</label>";
                 echo $sortText;
                 echo $searchText;
                 echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
-                echo "<button class='searchMenuSearchButton' id=\"searchButton2\" onclick=\"searchFunction2()\">&#x1F50E;</button>";
+                echo "<button style='display: none' class='searchMenuSearchButton' id=\"searchButton2\" onclick=\"searchFunction2()\">&#x1F50E;</button>";
             }
             else {
                 echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
@@ -149,6 +149,7 @@ if(isset($_SESSION['username'])){
     <script src="js/search.js"></script>
     <script src="js/imagescore.js"></script>
 </div>
-<div class="footer"></div>
+
+<div class="footer"><label class="mobileUpload" for="uploadButton2">&plus;</label></div>
 </body>
 </html>
