@@ -82,6 +82,7 @@ nav.upperNav input:hover {
   width: 50%;
  }
 .searchMenuinput{
+  padding-left: 10px;
   background-color: lightgray !important;
   grid-column-start: 1;
   grid-column-end: 7;
@@ -424,7 +425,7 @@ nav.upperNav input:hover {
   background-color: #0A0702;
 }
 .navProfileLogout{
-  transform: translateY(-0.2em);
+  transform: translateY(-1.7em);
   grid-row: 2;
   color: #c17400;
   font-size: 0.8em;
@@ -444,6 +445,7 @@ nav.upperNav input:hover {
   object-fit: cover;
 }
 .navProfilePosts{
+  transform: translateY(-1.5em);
   grid-column: 2;
   grid-row: 2;
   margin-left: 5px;
@@ -687,7 +689,7 @@ nav.upperNav input:hover {
 
 .modal {
   height: 50em;
-  width: 1000px;
+  width: 60vw;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -708,7 +710,7 @@ nav.upperNav input:hover {
     max-height: 15%;
   }
   100% {
-    max-width: 80%;
+    max-width: 100%;
     max-height: 90%;
   }
 }
@@ -984,12 +986,12 @@ nav.upperNav input:hover {
 
 
   .modalItemImg img {
+    top: 50;
     margin-top: auto;
     margin-bottom: auto;
     height: auto;
     width: auto;
     max-height: 30vh;
-    max-width: 70vw;
   }
   .modalContent {
     grid-template-rows: 0.3fr 35vh 0.5fr;
@@ -1082,6 +1084,9 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 414px) {
+  #uploadButton2{
+    display: none;
+  }
   .mobileUpload{
     display: block;
     bottom: 1%;
@@ -1097,11 +1102,15 @@ nav.upperNav input:hover {
     border-radius: 50px;
     color: white;
 
-    background: linear-gradient(180deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     background-size: 300% 300%;
     border-width: 2px;
     border-style: solid;
     border-color: black;
+
+    -webkit-animation: AnimationName 6s ease infinite;
+    -moz-animation: AnimationName 6s ease infinite;
+    animation: AnimationName 6s ease infinite;
     //background-color: rgba(255,255,255,0.5);
 
     -webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
@@ -1156,9 +1165,19 @@ nav.upperNav input:hover {
   html{
     -webkit-overflow-scrolling: touch;
   }
+  @keyframes modalKey {
+    0% {
+      max-width: 30%;
+      max-height: 15%;
+    }
+    100% {
+      max-width: 98%;
+      max-height: 100%;
+    }
+  }
   .modalItemTItle {
     width: 115%;
-    left: 15%;
+    left: 13%;
   }
   .modalItemTitle2 {
     width: 115%;
@@ -1167,6 +1186,8 @@ nav.upperNav input:hover {
   }
   .modal{
     overflow-y:scroll;
+    width: 100vw;
+    max-width: 100vw;
   }
   .searchMenuSearchButton{
     margin-left: 37%;
