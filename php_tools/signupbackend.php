@@ -63,8 +63,13 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
     if($error2 === 1){
         $safe_email = filter_var($email,FILTER_SANITIZE_EMAIL);
         $safe_username = filter_var($username,FILTER_SANITIZE_STRING);
-        $insertSql = "INSERT into users (user_name, user_email, user_password) VALUES (?,?,?)";
-        $database->prepare($insertSql)->execute([$safe_username,$safe_email,$password_hash]);
+        $tempFile = "images/standarduser.png";
+        $profilePic = "profilepictures/".$safe_username.".png";
+        copy($tempFile,$profilePic);
+        $profilePic = $safe_username.".png";
+        $insertSql = "INSERT into users (user_name, user_email, user_password, profilepicture) VALUES (?,?,?,?)";
+        $database->prepare($insertSql)->execute([$safe_username,$safe_email,$password_hash,$profilePic]);
+
         session_write_close();
         header("Location: index.php");
     }
