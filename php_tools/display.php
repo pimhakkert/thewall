@@ -40,7 +40,7 @@ $username = $sth2->fetchColumn();
             <h3 class="modalItemOwner">Uploaded by:<br><?php echo $username; ?></h3>
             <h6 class="modalItemDate"><?php echo $goodDate;?></h6>
             <div class="modalItemTags"> <?php for($i=0;$i<sizeof($tagArray);$i++){ ?>
-                    <a class="modalItemTags" href="index.php/search">
+                    <a class="modalItemTags" href="index.php?tag=<?php echo $tagArray[$i]; ?>">
                         <?php echo $tagArray[$i]; ?>
                     </a>
                 <?php } ?>
