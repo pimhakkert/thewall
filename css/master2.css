@@ -575,7 +575,17 @@ nav.upperNav input:hover {
   animation-name: galleryAnimation; }
 
 .galleryItemScore {
-  transform: translateY(-7em); }
+  position: relative;
+  transform: translateY(-7em);
+  margin-left: 10px;
+  color: white; }
+
+.galleryItemScore:hover ~ galleryItem {
+  transform: scale(1.1);
+  -webkit-box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
+  transition: .1s ease-in; }
 
 .galleryItemImg {
   position: relative;
