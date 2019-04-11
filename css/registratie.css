@@ -39,6 +39,13 @@ input[type="checkbox"]:checked {
   width: 58px;
 }
 
+
+.wrapper {
+  background-color: rgba(0, 0, 0, 0);
+  transform: translateY(0);
+  padding-bottom: 0;
+  height: 90vh; }
+
 input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
 .forgot {
   color: black;
