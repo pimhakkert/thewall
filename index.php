@@ -7,7 +7,7 @@ if(isset($_SESSION['timeout'])){
         session_unset();
         session_destroy();
         session_start();
-        header('Location: login.php');
+        header('Refresh:0');
     }
 }
 $_SESSION['timeout'] = time();

@@ -17,14 +17,20 @@ $sth2 = $database->prepare($sql3);
 $sth2->execute([$userID]);
 $username = null;
 $username = $sth2->fetchColumn();
+
+$user = '';
+if(isset($_SESSION['username'])){
+    $user = $_SESSION['username'];
+}
+
 ?>
 <div class="galleryItem">
     <img class="galleryItemImg modalButton" src="images/<?php echo $image_results['image_name']; ?>"alt="Picture: <?php echo $image_results['image_title']; ?>"/>
     <h3 class="galleryItemTitle"><?php echo $image_results['image_title']; ?></h3>
     <div class="galleryItemScore">
-        <div id="galleryItemUpvote" onclick="scoreImage(<?php echo $image_results['image_id']; ?>,'up')"></div>
+        <div id="galleryItemUpvote" onclick="scoreImage(<?php echo $imageID; ?>,'up')"></div>
         <p id="galleryItemScoreText"><?php echo $image_results['score']; ?></p>
-        <div id="galleryItemDownvote" onclick="scoreImage(<?php echo $image_results['image_id']; ?>,'down')"></div>
+        <div id="galleryItemDownvote" onclick="scoreImage(<?php echo $imageID." ".$user; ?>,'down')"></div>
     </div>
     <div class="modalContent">
         <div class="modalItemTitle">

@@ -27,8 +27,8 @@ if($order == 'ASC'){
         }
     }
     elseif(isset($_GET['user'])){
-        $userName = $_GET['user'];
-        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) = UPPER(?) ORDER BY image_date ASC";
+        $userName = '%'.$_GET['user'].'%';
+        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) LIKE UPPER(?) ORDER BY image_date ASC";
         $sth = $database->prepare($sql);
         $sth->execute([$userName]);
         $results = $sth->fetchAll();
@@ -37,8 +37,8 @@ if($order == 'ASC'){
         }
     }
     elseif(isset($_GET['title'])){
-        $title = $_GET['title'];
-        $sql = "SELECT * FROM images WHERE UPPER(image_title) = UPPER(?) ORDER BY image_date ASC";
+        $title = '%'.$_GET['title'].'%';
+        $sql = "SELECT * FROM images WHERE UPPER(image_title) LIKE UPPER('%'?'%') ORDER BY image_date ASC";
         $sth = $database->prepare($sql);
         $sth->execute([$title]);
         $results = $sth->fetchAll();
@@ -74,8 +74,8 @@ else {
         }
     }
     elseif(isset($_GET['user'])){
-        $userName = $_GET['user'];
-        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) = UPPER(?) ORDER BY image_date DESC";
+        $userName = '%'.$_GET['user'].'%';
+        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) LIKE UPPER(?) ORDER BY image_date DESC";
         $sth = $database->prepare($sql);
         $sth->execute([$userName]);
         $results = $sth->fetchAll();
@@ -84,8 +84,8 @@ else {
         }
     }
     elseif(isset($_GET['title'])){
-        $title = $_GET['title'];
-        $sql = "SELECT * FROM images WHERE UPPER(image_title) = UPPER(?) ORDER BY image_date DESC";
+        $title = '%'.$_GET['title'].'%';
+        $sql = "SELECT * FROM images WHERE UPPER(image_title) LIKE UPPER(?) ORDER BY image_date DESC";
         $sth = $database->prepare($sql);
         $sth->execute([$title]);
         $results = $sth->fetchAll();
