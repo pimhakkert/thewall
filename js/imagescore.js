@@ -19,7 +19,7 @@ function scoreImage(imageID,user,upDown) {
     else {
         switch(upDown){
             case 'up':
-                scoreElement.innerHTML = score+1;
+                scoreElement.innerHTML = ""+score+1;
                 scoreIncrease = true;
                 break;
             case 'down':

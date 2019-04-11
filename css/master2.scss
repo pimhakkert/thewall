@@ -2,7 +2,6 @@ html, body {
   height: 100%;
   background-color: #e8a43f;
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 nav.upperNav {
@@ -646,7 +645,9 @@ nav.upperNav input:hover {
   animation-duration: 1s;
   animation-name: galleryAnimation;
 }
-
+.galleryItemScore{
+  transform: translateY(-7em);
+}
 
 .galleryItemImg {
   position: relative;
