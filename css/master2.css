@@ -78,14 +78,15 @@ nav.upperNav input:hover {
   width: 50%; }
 
 .searchMenuinput {
+  padding-left: 10px;
   background-color: lightgray !important;
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 7;
   margin-left: 10px;
   margin-right: 1px;
   border-radius: 5px;
   height: 2.5em;
-  width: 105% !important; }
+  width: 95% !important; }
 
 .searchMenuSearchSelect2 {
   grid-column-start: 1;
@@ -161,11 +162,8 @@ nav.upperNav input:hover {
   transition: margin-top ease-in-out 0.2s; }
 
 .wrapper {
+  transform: translateY(-12em);
   min-height: 100vh;
-  width: 100%;
-  height: 105vh;
-  transform: translatey(-12em);
-  background-color: #e8a43f;
   transition: margin-top ease-in-out 0.2s;
   padding-bottom: 2.5rem; }
 
@@ -181,9 +179,9 @@ nav.upperNav input:hover {
   color: white;
   height: 100px;
   background-color: #0A0702;
-  -webkit-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
-  box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75);
   animation-duration: 0.8s;
   transition-timing-function: ease-in;
   animation-fill-mode: both;
@@ -369,7 +367,7 @@ nav.upperNav input:hover {
   background-color: #0A0702; }
 
 .navProfileLogout {
-  transform: translateY(-0.2em);
+  transform: translateY(-1.7em);
   grid-row: 2;
   color: #c17400;
   font-size: 0.8em;
@@ -389,6 +387,7 @@ nav.upperNav input:hover {
   object-fit: cover; }
 
 .navProfilePosts {
+  transform: translateY(-1.5em);
   grid-column: 2;
   grid-row: 2;
   margin-left: 5px;
@@ -560,6 +559,7 @@ nav.upperNav input:hover {
   display: none; }
 
 .gallery {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -609,7 +609,7 @@ nav.upperNav input:hover {
 
 .modal {
   height: 50em;
-  width: 1000px;
+  width: 60vw;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -628,7 +628,7 @@ nav.upperNav input:hover {
     max-width: 30%;
     max-height: 15%; }
   100% {
-    max-width: 80%;
+    max-width: 100%;
     max-height: 90%; } }
 .modalUploadForm {
   transform: translateY(20vh);
@@ -805,6 +805,30 @@ nav.upperNav input:hover {
   grid-row-start: 2;
   grid-row-end: 9; }
 
+.footer {
+  left: 5%;
+  position: absolute;
+  display: flex;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-3em);
+  background-color: black;
+  width: 90vw;
+  height: 5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 16px 0px rgba(0, 0, 0, 0.75); }
+  .footer span {
+    flex-grow: 1; }
+  .footer h6 {
+    margin-right: 20px;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto; }
+
 @media screen and (max-width: 992px) {
   .navbarLogo {
     width: 95px;
@@ -843,9 +867,6 @@ nav.upperNav input:hover {
   .navProfileLogout {
     margin-left: 0; }
 
-  .customNavbar button {
-    display: none; }
-
   #navHamburger {
     z-index: 2;
     display: block;
@@ -867,12 +888,12 @@ nav.upperNav input:hover {
     height: 30vh; }
 
   .modalItemImg img {
+    top: 50%;
     margin-top: auto;
     margin-bottom: auto;
     height: auto;
     width: auto;
-    max-height: 30vh;
-    max-width: 70vw; }
+    max-height: 30vh; }
 
   .modalContent {
     grid-template-rows: 0.3fr 35vh 0.5fr; }
@@ -950,6 +971,9 @@ nav.upperNav input:hover {
     width: 50%;
     margin-left: 50px; } }
 @media screen and (max-width: 414px) {
+  #uploadButton2 {
+    display: none; }
+
   .mobileUpload {
     display: block;
     bottom: 1%;
@@ -964,11 +988,14 @@ nav.upperNav input:hover {
     width: 60px;
     border-radius: 50px;
     color: white;
-    background: linear-gradient(180deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
     background-size: 300% 300%;
     border-width: 2px;
     border-style: solid;
     border-color: black;
+    -webkit-animation: AnimationName 6s ease infinite;
+    -moz-animation: AnimationName 6s ease infinite;
+    animation: AnimationName 6s ease infinite;
     -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75); }
@@ -1021,9 +1048,16 @@ nav.upperNav input:hover {
   html {
     -webkit-overflow-scrolling: touch; }
 
+  @keyframes modalKey {
+    0% {
+      max-width: 30%;
+      max-height: 15%; }
+    100% {
+      max-width: 98%;
+      max-height: 100%; } }
   .modalItemTItle {
     width: 115%;
-    left: 15%; }
+    left: 13%; }
 
   .modalItemTitle2 {
     width: 115%;
@@ -1031,7 +1065,9 @@ nav.upperNav input:hover {
     height: 60px; }
 
   .modal {
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    width: 100vw;
+    max-width: 100vw; }
 
   .searchMenuSearchButton {
     margin-left: 37%;

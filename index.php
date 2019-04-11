@@ -66,8 +66,8 @@ if(isset($_SESSION['username'])){
                 echo $sortText;
                 echo $searchText;
                 echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
-                echo "<button class='searchMenuSearchButton' id=\"searchButton2\" onclick=\"searchFunction2()\">&#x1F50E;</button>";
-                echo "<input class='login2' type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
+                echo "<button style='display: none' class='searchMenuSearchButton'  onclick=\"searchFunction2()\">&#x1F50E;</button>";
+                echo "<button style='height: 2.9em;' class='login2' id=\"searchButton2\" type=\"button\" value=\"Search\" onclick=\"searchFunction2()\">Search</button>";
             }
         ?>
 
@@ -148,8 +148,16 @@ if(isset($_SESSION['username'])){
     <script src="js/sessioncheck.js"></script>
     <script src="js/search.js"></script>
     <script src="js/imagescore.js"></script>
+
+
+    <div class="footer">
+        <span></span>
+        <h6>&#169; CRAP</h6>
+    </div>
 </div>
 
-<div class="footer"><label class="mobileUpload" for="uploadButton2">&plus;</label></div>
+
+<label class="mobileUpload" for="uploadButton2">&plus;</label
+
 </body>
 </html>
