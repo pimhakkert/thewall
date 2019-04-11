@@ -40,7 +40,7 @@ function sortFunction() {
         window.location = "index.php?user=" + searchQuery + "&order=" + sort;
     }
     else {
-        if(document.getElementById("searchMenuSelect").value != '' && document.getElementById("searchInput").value != ''){
+        if(document.getElementById("searchMenuSelect").value !== '' && document.getElementById("searchInput").value !== ''){
             if(getParameterByName('title')){
                 searchQuery = getParameterByName('title');
                 window.location = "index.php?title=" + searchQuery + "&order=" + sort;

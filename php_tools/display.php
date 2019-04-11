@@ -25,12 +25,12 @@ if(isset($_SESSION['username'])){
 
 ?>
 <div class="galleryItem">
-    <img class="galleryItemImg modalButton" src="images/<?php echo $image_results['image_name']; ?>"alt="Picture: <?php echo $image_results['image_title']; ?>"/>
+    <img class="galleryItemImg modalButton" src="images/<?php echo $image_results['image_name']; ?>" alt="Picture: <?php echo $image_results['image_title']; ?>"/>
     <h3 class="galleryItemTitle"><?php echo $image_results['image_title']; ?></h3>
     <div class="galleryItemScore">
-        <div id="galleryItemUpvote" onclick="scoreImage(<?php echo $imageID; ?>,'up')">asdasd</div>
+        <div id="galleryItemUpvote" onclick="scoreImage(<?php echo $imageID.","."'".$user."'"; ?>,'up')">asdasd</div>
         <p id="galleryItemScoreText"><?php echo $image_results['score']; ?></p>
-        <div id="galleryItemDownvote" onclick="scoreImage(<?php echo $imageID." ".$user; ?>,'down')">sadasd</div>
+        <div id="galleryItemDownvote" onclick="scoreImage(<?php echo $imageID.","."'".$user."'"; ?>,'down')">sadasd</div>
     </div>
     <div class="modalContent">
         <div class="modalItemTitle">
@@ -38,7 +38,7 @@ if(isset($_SESSION['username'])){
         </div>
         <div class="modalItemRight">
             <div class="modalItemImg">
-                <img src="images/<?php echo $image_results['image_name']; ?>"alt="Picture: <?php echo $image_results['image_title']; ?>">
+                <img src="images/<?php echo $image_results['image_name']; ?>" alt="Picture: <?php echo $image_results['image_title']; ?>">
             </div>
         </div>
         <div class="modalItemLeft">

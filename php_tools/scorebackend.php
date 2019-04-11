@@ -25,9 +25,9 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
     $userID = $userstm->fetchColumn();
 
     //get image_votes data
-    $userCheckSql = "SELECT * from image_votes WHERE user_id = ?";
+    $userCheckSql = "SELECT * from image_votes WHERE image_id = ? AND user_id = ?";
     $userCheck = $database->prepare($userCheckSql);
-    $userCheck->execute([$userID]);
+    $userCheck->execute([$imageID,$userID]);
     $isUser = $userCheck->fetch();
 
     //get score from image id
