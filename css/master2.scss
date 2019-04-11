@@ -503,7 +503,6 @@ nav.upperNav input:hover {
   grid-column-end: 3;
 }
 .dashboardProfileSettings{
-  margin-left: 20px;
   margin-right: 20px;
   padding-top: 4em;
   display: grid;
@@ -559,7 +558,7 @@ nav.upperNav input:hover {
   flex-grow: 0.2;
 }
 .dashboardPostUploadDate{
-  flex-grow: 0.75;
+  flex-grow: 0.68;
 }
 .dashboardEditButton{
   color: white;
@@ -720,6 +719,8 @@ nav.upperNav input:hover {
 }
 
 .galleryItemTitle {
+  padding-top: auto;
+  padding-bottom: auto;
   width: 100%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
@@ -1164,6 +1165,14 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 414px) {
+  .dashboardItem{
+    padding-left: 0;
+  }
+  .dashboardPostUploadDate{flex-grow: 0.2;}
+  .dashboard{
+    width: 98vw;
+    height: 72vh;
+  }
   .modalItemRight{
     transform: translateY(-3em);
   }
