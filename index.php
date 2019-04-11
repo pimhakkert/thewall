@@ -148,8 +148,16 @@ if(isset($_SESSION['username'])){
     <script src="js/sessioncheck.js"></script>
     <script src="js/search.js"></script>
     <script src="js/imagescore.js"></script>
+
+
+    <div class="footer">
+        <span></span>
+        <h6>&#169; CRAP</h6>
+    </div>
 </div>
 
-<div class="footer"><label class="mobileUpload" for="uploadButton2">&plus;</label></div>
+
+<label class="mobileUpload" for="uploadButton2">&plus;</label
+
 </body>
 </html>

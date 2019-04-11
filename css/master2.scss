@@ -171,7 +171,7 @@ nav.upperNav input:hover {
 .wrapper {
   min-height: 100vh;
   width: 100%;
-  height: 105vh;
+  height: 100%;
   transform: translatey(-12em);
   background-color: #e8a43f;
   transition: margin-top ease-in-out 0.2s;
@@ -632,6 +632,7 @@ nav.upperNav input:hover {
 }
 
 .gallery {
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -917,7 +918,32 @@ nav.upperNav input:hover {
   grid-row-start: 2;
   grid-row-end: 9;
 }
-
+.footer{
+  left: 5%;
+  position: absolute;
+  display: flex;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-3em);
+  background-color: black;
+  width: 90vw;
+  height: 5em;
+  padding-left: 20px;
+  padding-right: 20px;
+  -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+  span{
+    flex-grow: 1;
+  }
+  h6{
+    margin-right: 20px;
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
 @media screen and (max-width: 992px) {
   .navbarLogo{
     width: 95px;
@@ -986,7 +1012,7 @@ nav.upperNav input:hover {
 
 
   .modalItemImg img {
-    top: 50;
+    top: 50%;
     margin-top: auto;
     margin-bottom: auto;
     height: auto;
