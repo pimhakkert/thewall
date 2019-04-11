@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:dbname=thewall;host=127.0.0.1';
+$dsn = 'mysql:dbname=u39498p34938_thewall;host=127.0.0.1';
 $user = 'root';
 $password = '';
 

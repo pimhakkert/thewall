@@ -673,17 +673,21 @@ nav.upperNav input:hover {
   height: 250px;
   position: relative;
 }
-
+.galleryItemScore{
+  height: 100%;
+  transform: translateY(-100%);
+}
 .galleryItem:hover {
   transform: scale(1.1);
-  -webkit-box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
+
+  filter: drop-shadow(0px 0px 30px rgba(0,0,0,0.7));
   transition: .1s ease-in;
 
   cursor: pointer;
 }
-
+.galleryItem:hover .galleryItemImg{
+  -webkit-filter: change_color(red);
+}
 .galleryItem:hover .galleryItemTitle, .galleryItem:hover .galleryItemScore{
   display: block;
 }
@@ -692,26 +696,27 @@ nav.upperNav input:hover {
   background-size: 40px;
   width: 40px;
   height: 40px;
-  transform: translateY(5px);
+  transform: translateY(140px);
 }
 #galleryItemUpvote:hover{
-  transform: scale(1.2);
+  transform: scale(1.2) translateY(115px);
 }
 #galleryItemDownvote{
-  transform: translateY(-20px);
+  transform: translateY(135px);
   background-image: url("../images/downvote.png");
   background-size: 40px;
   width: 40px;
   height: 40px;
 }
 #galleryItemDownvote:hover{
-  transform: scale(1.2) translateY(-15px);
+  transform: scale(1.2) translateY(115px);
 
 }
 #galleryItemScoreText{
+  margin-bottom: 0;
   text-align: center;
   margin-left: -200px;
-  margin-top: 5px;
+  transform: translateY(140px);
 }
 
 .galleryItemTitle {
@@ -757,7 +762,6 @@ nav.upperNav input:hover {
     max-height: 90%;
   }
 }
-
 .modalUploadForm {
   transform: translateY(20vh);
   grid-column-start: 1;
@@ -871,6 +875,9 @@ nav.upperNav input:hover {
 }
 .wrapper .modalContent{
   display: none;
+}
+.closeButton:hover{
+  cursor: pointer;
 }
 
 
@@ -987,6 +994,9 @@ nav.upperNav input:hover {
   }
 }
 @media screen and (max-width: 992px) {
+  .footer{
+    display: none;
+  }
   .navbarLogo{
     width: 95px;
     display: flex;
@@ -1049,12 +1059,11 @@ nav.upperNav input:hover {
 
 
   .modalItemImg {
-    height: 30vh;
+    height: 39vh;
   }
 
 
   .modalItemImg img {
-    top: 50%;
     margin-top: auto;
     margin-bottom: auto;
     height: auto;
@@ -1065,12 +1074,12 @@ nav.upperNav input:hover {
     grid-template-rows: 0.3fr 35vh 0.5fr;
   }
   .modalItemLeft {
-    transform: translateY(-1.6em);
+    transform: translateY(-5em);
   }
   .modalItemDesc {
     grid-column-start: 1;
     grid-column-end: 3;
-    grid-row-start: 1;
+    grid-row-start: 2;
     grid-row-end: 4;
   }
   .modalItemOwner {
@@ -1099,10 +1108,14 @@ nav.upperNav input:hover {
     grid-column-start: 1;
     grid-column-end: 3;
     width: 110%;
-    height: auto;
+    height: 6em;
     padding-top: 2em;
     margin-left: auto;
     margin-right: auto;
+
+    h1{
+      transform: translateY(-0.2em)!important;
+    }
   }
   .modal {
     max-width: 100%;
@@ -1111,9 +1124,7 @@ nav.upperNav input:hover {
   .closeButton {
     left: 85%;
   }
-  .modalUploadDiv {
 
-  }
   .modalUploadContent {
     margin-top: 20px;
   }
@@ -1131,6 +1142,7 @@ nav.upperNav input:hover {
     padding-top: 2em;
     margin-left: auto;
     margin-right: auto;
+
   }
   .searchMenuSortBy{
     display: none;
@@ -1152,6 +1164,18 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 414px) {
+  .modalItemRight{
+    transform: translateY(-3em);
+  }
+  .modalUploadSubmit{
+    transform: translateY(0) !important;
+  }
+  .modalUploadFile{
+    margin-left: 70px;
+  }
+  .modalUploadDiv{
+    text-align: center;
+  }
   #uploadButton2{
     display: none;
   }

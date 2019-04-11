@@ -81,7 +81,7 @@ if(isset($_SESSION['username'])){
                 Select image to upload:
             <input class="modalUploadFile" type="file" name="fileToUpload" id="fileToUpload" accept="images/*">
             </div>
-            <div class="modalUploadContent">
+            <div class="modalUploadContent modalUpload">
                 <div>
                     <p>Title:</p>
                     <p>Description:</p>
