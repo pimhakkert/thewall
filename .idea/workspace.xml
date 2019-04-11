@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b339c0d-f696-481d-96bc-5fbc52396f37" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/.sass-cache/2eb8901e604e682505d0f32ff68f9f97a72b3fc0/master2.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/css/.sass-cache/2eb8901e604e682505d0f32ff68f9f97a72b3fc0/master2.scssc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/master2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/master2.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/master2.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/master2.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/master2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/master2.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php_tools/display.php" beforeDir="false" afterPath="$PROJECT_DIR$/php_tools/display.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/master2.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="659" column="1" selection-start-line="659" selection-start-column="1" selection-end-line="659" selection-end-column="1" />
+            <state relative-caret-position="314">
+              <caret line="697" column="24" selection-start-line="697" selection-start-column="24" selection-end-line="697" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -66,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1702">
-              <caret line="154" column="19" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
+            <state relative-caret-position="492">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -89,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php_tools/display.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+            <state relative-caret-position="629">
+              <caret line="32" column="109" selection-start-line="32" selection-start-column="109" selection-end-line="32" selection-end-column="109" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#!!top" />
               </folding>
@@ -102,7 +105,7 @@
         <entry file="file://$PROJECT_DIR$/js/imagescore.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="552">
-              <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -169,8 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.modal</find>
-      <find>navbar</find>
       <find>body</find>
       <find>galler</find>
       <find>modalc</find>
@@ -198,7 +199,9 @@
       <find>custom</find>
       <find>wrapper</find>
       <find>bod</find>
+      <find>galleryitemimg</find>
       <find>uppernav</find>
+      <find>galleryitemsc</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -234,10 +237,10 @@
         <option value="$PROJECT_DIR$/php_tools/scorebackend.php" />
         <option value="$PROJECT_DIR$/registratie.php" />
         <option value="$PROJECT_DIR$/php_tools/settings.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/css/registratie.css" />
-        <option value="$PROJECT_DIR$/php_tools/display.php" />
         <option value="$PROJECT_DIR$/js/imagescore.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/php_tools/display.php" />
         <option value="$PROJECT_DIR$/css/master2.scss" />
       </list>
     </option>
@@ -391,7 +394,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143211000" />
+    <option name="totallyTimeSpent" value="148354000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -627,13 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php_tools/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/registratie.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -655,10 +651,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/imagescore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php_tools/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1702">
-          <caret line="154" column="19" selection-start-line="154" selection-start-column="19" selection-end-line="154" selection-end-column="19" />
+        <state relative-caret-position="492">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
           <folding>
             <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -678,25 +688,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php_tools/display.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="54" column="10" lean-forward="true" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+        <state relative-caret-position="629">
+          <caret line="32" column="109" selection-start-line="32" selection-start-column="109" selection-end-line="32" selection-end-column="109" />
           <folding>
             <element signature="n#div#1;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/imagescore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/master2.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="659" column="1" selection-start-line="659" selection-start-column="1" selection-end-line="659" selection-end-column="1" />
+        <state relative-caret-position="314">
+          <caret line="697" column="24" selection-start-line="697" selection-start-column="24" selection-end-line="697" selection-end-column="24" />
         </state>
       </provider>
     </entry>

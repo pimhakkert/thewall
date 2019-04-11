@@ -646,6 +646,7 @@ nav.upperNav input:hover {
   animation-name: galleryAnimation;
 }
 .galleryItemScore{
+  display: none;
   position: relative;
   transform: translateY(-7em);
   margin-left: 10px;
@@ -659,7 +660,9 @@ nav.upperNav input:hover {
   transition: .1s ease-in;
 }
 
+
 .galleryItemImg {
+  border-radius: 7px;
   position: relative;
   height: 250px;
   width: 250px;
@@ -668,6 +671,7 @@ nav.upperNav input:hover {
 .galleryItem{
   overflow-y:hidden;
   height: 250px;
+  position: relative;
 }
 
 .galleryItem:hover {
@@ -676,17 +680,46 @@ nav.upperNav input:hover {
   -moz-box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
   box-shadow: -1px 0px 46px 0px rgba(0, 0, 0, 0.75);
   transition: .1s ease-in;
+
+  cursor: pointer;
 }
 
-.galleryItemImg:hover ~ .galleryItemTitle {
+.galleryItem:hover .galleryItemTitle, .galleryItem:hover .galleryItemScore{
   display: block;
+}
+#galleryItemUpvote{
+  background-image: url("../images/upvote.png");
+  background-size: 40px;
+  width: 40px;
+  height: 40px;
+  transform: translateY(5px);
+}
+#galleryItemUpvote:hover{
+  transform: scale(1.2);
+}
+#galleryItemDownvote{
+  transform: translateY(-20px);
+  background-image: url("../images/downvote.png");
+  background-size: 40px;
+  width: 40px;
+  height: 40px;
+}
+#galleryItemDownvote:hover{
+  transform: scale(1.2) translateY(-15px);
+
+}
+#galleryItemScoreText{
+  text-align: center;
+  margin-left: -200px;
+  margin-top: 5px;
 }
 
 .galleryItemTitle {
+  width: 100%;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  position: relative;
-  top: -55%;
+  top: 40%;
   color: white;
   text-align: center;
   word-break: break-all;
