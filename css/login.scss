@@ -1,4 +1,6 @@
-html { height: 100% }
+html { height: 100%;
+  overflow-y: none;
+}
 .login {
   display: flex;
   flex-direction: column;

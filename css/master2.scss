@@ -82,14 +82,15 @@ nav.upperNav input:hover {
   width: 50%;
  }
 .searchMenuinput{
+  padding-left: 10px;
   background-color: lightgray !important;
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 7;
   margin-left: 10px;
   margin-right: 1px;
   border-radius: 5px;
   height: 2.5em;
-  width: 105% !important;
+  width: 95% !important;
 }
 .searchMenuSearchSelect2{
   grid-column-start: 1;
@@ -175,14 +176,9 @@ nav.upperNav input:hover {
   background-image: url("../images/monochrome.jpg");
   background-size: cover;
   transition: margin-top ease-in-out 0.2s;
-  background-color: rgba(0,0,0,0);
-  transform: translateY(-12em);
-  padding-bottom: 0;
-  height: 90vh;
-}
+  padding-bottom: 2.5rem;
 
-body{
-  background-color: rgba(232,164,63,0.42);
+
 }
 
 .customNavbar {
@@ -199,9 +195,14 @@ body{
   background-color: #0A0702;
 
 
-  -webkit-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
-  box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 16px 0px rgba(0,0,0,0.75);
+
+
+  //-webkit-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
+  //-moz-box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
+  //box-shadow: 30px 30px 22px 0px rgba(0, 0, 0, 0.36);
 
   animation-duration: 0.8s;
   transition-timing-function: ease-in;
@@ -425,7 +426,7 @@ body{
   background-color: #0A0702;
 }
 .navProfileLogout{
-  transform: translateY(-0.2em);
+  transform: translateY(-1.7em);
   grid-row: 2;
   color: #c17400;
   font-size: 0.8em;
@@ -445,6 +446,7 @@ body{
   object-fit: cover;
 }
 .navProfilePosts{
+  transform: translateY(-1.5em);
   grid-column: 2;
   grid-row: 2;
   margin-left: 5px;
@@ -626,6 +628,9 @@ body{
   height: 84px;
   background-color: rgba(0, 0, 0, 0);
 }
+.mobileUpload{
+  display: none;
+}
 
 .gallery {
   margin-left: auto;
@@ -685,7 +690,7 @@ body{
 
 .modal {
   height: 50em;
-  width: 1000px;
+  width: 60vw;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -706,7 +711,7 @@ body{
     max-height: 15%;
   }
   100% {
-    max-width: 80%;
+    max-width: 100%;
     max-height: 90%;
   }
 }
@@ -953,9 +958,7 @@ body{
   .navProfileLogout{
     margin-left: 0;
   }
-  .customNavbar button {
-    display: none;
-  }
+
 
   #navHamburger {
     z-index: 2;
@@ -984,12 +987,12 @@ body{
 
 
   .modalItemImg img {
+    top: 50;
     margin-top: auto;
     margin-bottom: auto;
     height: auto;
     width: auto;
     max-height: 30vh;
-    max-width: 70vw;
   }
   .modalContent {
     grid-template-rows: 0.3fr 35vh 0.5fr;
@@ -1082,6 +1085,39 @@ body{
 }
 
 @media screen and (max-width: 414px) {
+  #uploadButton2{
+    display: none;
+  }
+  .mobileUpload{
+    display: block;
+    bottom: 1%;
+    left: 80%;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    padding-top: 2px;
+    text-align: center;
+    height: 1.9em;
+    width: 60px;
+    border-radius: 50px;
+    color: white;
+
+    background: linear-gradient(90deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    background-size: 300% 300%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+
+    -webkit-animation: AnimationName 6s ease infinite;
+    -moz-animation: AnimationName 6s ease infinite;
+    animation: AnimationName 6s ease infinite;
+    //background-color: rgba(255,255,255,0.5);
+
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px 0px rgba(0,0,0,0.75);
+  }
   .searchMenuSortBy{
     display: none;
   }
@@ -1130,9 +1166,19 @@ body{
   html{
     -webkit-overflow-scrolling: touch;
   }
+  @keyframes modalKey {
+    0% {
+      max-width: 30%;
+      max-height: 15%;
+    }
+    100% {
+      max-width: 98%;
+      max-height: 100%;
+    }
+  }
   .modalItemTItle {
     width: 115%;
-    left: 15%;
+    left: 13%;
   }
   .modalItemTitle2 {
     width: 115%;
@@ -1141,6 +1187,8 @@ body{
   }
   .modal{
     overflow-y:scroll;
+    width: 100vw;
+    max-width: 100vw;
   }
   .searchMenuSearchButton{
     margin-left: 37%;

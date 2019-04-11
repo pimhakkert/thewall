@@ -44,36 +44,30 @@ if(isset($_SESSION['username'])){
 
     <nav class="upperNav" style="height: 11em; background-color: #3d3d3d; padding-top:15px; border-bottom-style: solid">
         <?php
+        $sortText = "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\" onchange=\"sortFunction2()\">
+<option value=\"sortby\">Sort By</option>
+<option value=\"newtoold\">New/old</option>
+<option value=\"oldtonew\">Old/New</option>
+</select>";
+        $searchText = "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"searchSelect2\">
+<option value=\"title\">Title</option>
+<option value=\"tag\">Tag</option>
+<option value=\"user\">User</option>
+</select>";
             if(isset($_SESSION['username'])){
-                echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\">Upload</label>";
-                echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
-            <option value=\"sortby\">Sort By</option>
-            <option value=\"newtoold\">New/old</option>
-            <option value=\"oldtonew\">Old/new</option>
-        </select>";
-                echo "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"\">
-            <option value=\"title\">Title</option>
-            <option value=\"tag\">Tag</option>
-            <option value=\"user\">User</option>
-        </select>";
+                echo "<label class=\"uploadButtonLabel\" for=\"searchButton2\" id=\"uploadButton1\">Search</label>";
+                echo $sortText;
+                echo $searchText;
                 echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
-                echo "<button class='searchMenuSearchButton' id=\"searchButton2\">&#x1F50E;</button>";
+                echo "<button style='display: none' class='searchMenuSearchButton' id=\"searchButton2\" onclick=\"searchFunction2()\">&#x1F50E;</button>";
             }
             else {
                 echo "<label class=\"uploadButtonLabel\" for=\"uploadButton2\" id=\"uploadButton1\" style=\"display: none\">Upload</label>";
-                echo "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\">
-            <option value=\"sortby\">Sort By</option>
-            <option value=\"newtoold\">New/old</option>
-            <option value=\"oldtonew\">Old/new</option>
-        </select>";
-                echo "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"\">
-            <option value=\"title\">Title</option>
-            <option value=\"tag\">Tag</option>
-            <option value=\"user\">User</option>
-        </select>";
+                echo $sortText;
+                echo $searchText;
                 echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
-                echo "<button class='searchMenuSearchButton' id=\"searchButton2\">&#x1F50E;</button>";
-                echo "<input class='login2' type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
+                echo "<button style='display: none' class='searchMenuSearchButton'  onclick=\"searchFunction2()\">&#x1F50E;</button>";
+                echo "<button style='height: 2.9em;' class='login2' id=\"searchButton2\" type=\"button\" value=\"Search\" onclick=\"searchFunction2()\">Search</button>";
             }
         ?>
 
@@ -114,7 +108,7 @@ if(isset($_SESSION['username'])){
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><img onclick='window.location = \" dashboard.php\"' class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><a href='dashboard.php'><img onclick='window.location = \" dashboard.php\"' class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''></a><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {
@@ -153,7 +147,9 @@ if(isset($_SESSION['username'])){
     <script src="js/modal.js"></script>
     <script src="js/sessioncheck.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/imagescore.js"></script>
 </div>
-<div class="footer"></div>
+
+<div class="footer"><label class="mobileUpload" for="uploadButton2">&plus;</label></div>
 </body>
 </html>
