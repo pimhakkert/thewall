@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b339c0d-f696-481d-96bc-5fbc52396f37" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/.sass-cache/2eb8901e604e682505d0f32ff68f9f97a72b3fc0/login.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/css/.sass-cache/2eb8901e604e682505d0f32ff68f9f97a72b3fc0/login.scssc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/.sass-cache/2eb8901e604e682505d0f32ff68f9f97a72b3fc0/master2.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/css/.sass-cache/2eb8901e604e682505d0f32ff68f9f97a72b3fc0/master2.scssc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/master2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/master2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/master2.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/css/master2.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/master2.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/master2.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php_tools/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/php_tools/settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profilepictures/XRaider2.png" beforeDir="false" afterPath="$PROJECT_DIR$/profilepictures/XRaider2.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/master2.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="679" column="28" selection-start-line="679" selection-start-column="28" selection-end-line="679" selection-end-column="28" />
+            <state relative-caret-position="448">
+              <caret line="696" column="48" lean-forward="true" selection-start-line="696" selection-start-column="48" selection-end-line="696" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -396,7 +390,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155597000" />
+    <option name="totallyTimeSpent" value="155782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -700,8 +694,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/master2.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="679" column="28" selection-start-line="679" selection-start-column="28" selection-end-line="679" selection-end-column="28" />
+        <state relative-caret-position="448">
+          <caret line="696" column="48" lean-forward="true" selection-start-line="696" selection-start-column="48" selection-end-line="696" selection-end-column="48" />
         </state>
       </provider>
     </entry>
