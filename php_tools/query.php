@@ -21,7 +21,7 @@ if($order == 'ASC'){
             $sth = $database->prepare($sqlsss);
             $sth->execute([$tag_results['tag_id']]);
             $resultss = $sth->fetchAll();
-            foreach ($resultss as $image_results){
+            foreach ($resultss as $i=>$image_results){
                 include('display.php');
             }
         }
@@ -32,7 +32,7 @@ if($order == 'ASC'){
         $sth = $database->prepare($sql);
         $sth->execute([$userName]);
         $results = $sth->fetchAll();
-        foreach ($results as $image_results){
+        foreach ($results as $i=>$image_results){
             include('display.php');
         }
     }
@@ -42,7 +42,7 @@ if($order == 'ASC'){
         $sth = $database->prepare($sql);
         $sth->execute([$title]);
         $results = $sth->fetchAll();
-        foreach ($results as $image_results){
+        foreach ($results as $i=>$image_results){
             include('display.php');
         }
     }
@@ -51,7 +51,7 @@ if($order == 'ASC'){
         $sth = $database->prepare($sql);
         $sth->execute();
         $result = $sth->fetchAll();
-        foreach ($result as $image_results) {
+        foreach ($result as $i=>$image_results) {
             include('display.php');
         }
     }
@@ -68,7 +68,7 @@ else {
             $sth = $database->prepare($sqlsss);
             $sth->execute([$tag_results['tag_id']]);
             $resultss = $sth->fetchAll();
-            foreach ($resultss as $image_results){
+            foreach ($resultss as $i=>$image_results){
                 include('display.php');
             }
         }
@@ -79,7 +79,7 @@ else {
         $sth = $database->prepare($sql);
         $sth->execute([$userName]);
         $results = $sth->fetchAll();
-        foreach ($results as $image_results){
+        foreach ($results as $i=>$image_results){
             include('display.php');
         }
     }
@@ -89,7 +89,7 @@ else {
         $sth = $database->prepare($sql);
         $sth->execute([$title]);
         $results = $sth->fetchAll();
-        foreach ($results as $image_results){
+        foreach ($results as $i=>$image_results){
             include('display.php');
         }
     }
@@ -98,7 +98,7 @@ else {
         $sth = $database->prepare($sql);
         $sth->execute();
         $result = $sth->fetchAll();
-        foreach ($result as $image_results) {
+        foreach ($result as $i=>$image_results) {
             include('display.php');
         }
     }

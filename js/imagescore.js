@@ -1,6 +1,7 @@
 
-function scoreImage(imageID,user,upDown) {
-    var scoreElement = document.getElementById("galleryItemScoreText");
+function scoreImage(imageID,user,upDown,imageID) {
+    var idScore = "galleryItemScoreText["+imageID+"]";
+    var scoreElement = document.getElementsByClassName(idScore);
     var score = scoreElement.value;
     var scoreIncrease = null;
 
@@ -19,11 +20,12 @@ function scoreImage(imageID,user,upDown) {
     else {
         switch(upDown){
             case 'up':
-                scoreElement.innerHTML = score+1;
+
+                scoreElement.innerHTML = parseInt(score) + 1;
                 scoreIncrease = true;
                 break;
             case 'down':
-                scoreElement.innerHTML = score-1;
+                scoreElement.innerHTML = parseInt(score) - 1;
                 scoreIncrease = false;
                 break;
         }
