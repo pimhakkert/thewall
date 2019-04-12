@@ -676,6 +676,9 @@ nav.upperNav input:hover {
   height: 100%;
   transform: translateY(-100%);
 }
+::selection{
+  background-color: #e29828;
+}
 .galleryItem:hover {
   transform: scale(1.1);
 
@@ -685,7 +688,7 @@ nav.upperNav input:hover {
   cursor: pointer;
 }
 .galleryItem:hover .galleryItemImg{
-  -webkit-filter: change_color(red);
+  filter: blur(1px);
 }
 .galleryItem:hover .galleryItemTitle, .galleryItem:hover .galleryItemScore{
   display: block;
@@ -699,6 +702,7 @@ nav.upperNav input:hover {
 }
 #galleryItemUpvote:hover{
   transform: scale(1.2) translateY(115px);
+  background-image: url("../upvotegreen.png");
 }
 #galleryItemDownvote{
   transform: translateY(135px);
@@ -708,6 +712,7 @@ nav.upperNav input:hover {
   height: 40px;
 }
 #galleryItemDownvote:hover{
+  background-image: url("../downvotered.png");
   transform: scale(1.2) translateY(115px);
 
 }
