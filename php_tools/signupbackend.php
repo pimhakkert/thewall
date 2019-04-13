@@ -53,7 +53,7 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
             $error2 = 2;
         }
         else {
-            $password_hash = password_hash($password, PASSWORD_BCRYPT);
+            $password_hash = password_hash($password, PASSWORD_ARGON2I);
         }
     }
     else {

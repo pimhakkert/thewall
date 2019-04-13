@@ -1,8 +1,6 @@
-
-function scoreImage(imageID,user,upDown,imageID) {
-    var idScore = "galleryItemScoreText["+imageID+"]";
-    var scoreElement = document.getElementsByClassName(idScore);
-    var score = scoreElement.value;
+function scoreImage(imageID,user,upDown) {
+    var scoreElement = document.getElementById("scoreText"+imageID);
+    var score = scoreElement.innerHTML;
     var scoreIncrease = null;
 
     if(user===''){
@@ -20,12 +18,9 @@ function scoreImage(imageID,user,upDown,imageID) {
     else {
         switch(upDown){
             case 'up':
-
-                scoreElement.innerHTML = parseInt(score) + 1;
                 scoreIncrease = true;
                 break;
             case 'down':
-                scoreElement.innerHTML = parseInt(score) - 1;
                 scoreIncrease = false;
                 break;
         }
@@ -39,8 +34,32 @@ function scoreImage(imageID,user,upDown,imageID) {
             },
             url: 'php_tools/scorebackend.php',
             success: function(data){
-                if(data==="downvote"||data==="upvote"){
-                    alert('You can\'t '+data+' this image twice!');
+                alert(data);
+                switch(data){
+                    case 'upvote':
+                        scoreElement.innerHTML = parseInt(score)+1;
+                        //hold upvote div.
+                        break;
+                    case 'downvote':
+                        scoreElement.innerHTML = parseInt(score)-1;
+                        //hold downvote div.
+                        break;
+                    case 'upvoteBack':
+                        scoreElement.innerHTML = parseInt(score)-1;
+                        //hold no div.
+                        break;
+                    case 'downvoteBack':
+                        scoreElement.innerHTML = parseInt(score)+1;
+                        //hold no div.
+                        break;
+                    case 'downvoteDouble':
+                        scoreElement.innerHTML = parseInt(score)-2;
+                        //hold upvote div.
+                        break;
+                    case 'upvoteDouble':
+                        scoreElement.innerHTML = parseInt(score)+2;
+                        //hold downvote div.
+                        break;
                 }
             }
         });
