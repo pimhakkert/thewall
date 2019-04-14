@@ -700,6 +700,10 @@ nav.upperNav input:hover {
   height: 40px;
   transform: translateY(140px);
 }
+.galleryItemUpvoteClear:hover{
+  transform: scale(1.2) translateY(115px);
+  background-image: url("../upvotegreen.png");
+}
 .galleryItemUpvoted{
   background-image: url("../images/galleryItemUpvoted.gif");
   background-size: 40px;
@@ -713,10 +717,6 @@ nav.upperNav input:hover {
   background-size: 40px;
   width: 40px;
   height: 40px;
-}
-.galleryItemUpvoteClear:hover{
-  transform: scale(1.2) translateY(115px);
-  background-image: url("../upvotegreen.png");
 }
 .galleryItemDownvoteClear{
   transform: translateY(135px);

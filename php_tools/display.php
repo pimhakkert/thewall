@@ -27,7 +27,7 @@ if(isset($_SESSION['username'])){
 <div class="galleryItem">
     <img class="galleryItemImg" src="images/<?php echo $image_results['image_name']; ?>" alt="Picture: <?php echo $image_results['image_title']; ?>"/>
     <h3 class="galleryItemTitle"><?php echo $image_results['image_title']; ?></h3>
-    <div class="galleryItemScore">
+    <div class="galleryItemScore modalButton">
         <div class="galleryItemUpvoteClear" <?php echo "id='upvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."'"; ?>,'up')"></div>
         <p class="galleryItemScoreText" <?php echo "id='scoreText".$imageID."'"; ?>> <?php echo $image_results['score']; ?></p>
         <div class="galleryItemDownvoteClear" <?php echo "id='downvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."'"; ?>,'down')"></div>
