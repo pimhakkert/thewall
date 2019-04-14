@@ -18,13 +18,17 @@ $sth2->execute([$userID]);
 $username = null;
 $username = $sth2->fetchColumn();
 
-$sql4 = "SELECT vote FROM image_votes WHERE image_id = ?";
-$sth3 = $database->prepare($sql4);
-$sth3->execute([$imageID]);
-$vote = $sth3->fetchColumn();
+if($voteName==null){
+    $vote=0;
+}
+else{
+    $sql4 = "SELECT vote FROM image_votes WHERE image_id = ? AND user_id = ?";
+    $sth3 = $database->prepare($sql4);
+    $sth3->execute([$imageID,$userID]);
+    $vote = $sth3->fetchColumn();
+}
 $upvoteResult = null;
 $downvoteResult = null;
-//if upvote, change upvote, if downvote, change downvote. Else, just do clear
 switch($vote){
     case 1:
         $upvoteResult = 'galleryItemUpvoted';

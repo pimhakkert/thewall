@@ -1,6 +1,7 @@
 <?php
 session_start();
 $timeout = 1199;
+$voteName = null;
 if(isset($_SESSION['timeout'])){
     $duration = time() - (int)$_SESSION['timeout'];
     if($duration > $timeout){
@@ -16,6 +17,7 @@ include 'php_tools/settings.php';
 
 if(isset($_SESSION['username'])){
     $username = $_SESSION['username'];
+    $voteName = $_SESSION['username'];
     $sql = "SELECT profilepicture FROM users WHERE user_name = ?";
     $statement = $database->prepare($sql);
     $statement->execute([$username]);
