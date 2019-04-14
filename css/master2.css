@@ -618,7 +618,7 @@ nav.upperNav input:hover {
 .galleryItem:hover .galleryItemTitle, .galleryItem:hover .galleryItemScore {
   display: block; }
 
-.galleryItemUpvote {
+.galleryItemUpvoteClear {
   background-image: url("../images/upvote.png");
   background-size: 40px;
   width: 40px;
@@ -629,7 +629,7 @@ nav.upperNav input:hover {
   transform: scale(1.2) translateY(115px);
   background-image: url("../upvotegreen.png"); }
 
-.galleryItemDownvote {
+.galleryItemDownvoteClear {
   transform: translateY(135px);
   background-image: url("../images/downvote.png");
   background-size: 40px;
