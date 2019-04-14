@@ -18,6 +18,28 @@ $sth2->execute([$userID]);
 $username = null;
 $username = $sth2->fetchColumn();
 
+$sql4 = "SELECT vote FROM image_votes WHERE image_id = ?";
+$sth3 = $database->prepare($sql4);
+$sth3->execute([$imageID]);
+$vote = $sth3->fetchColumn();
+$upvoteResult = null;
+$downvoteResult = null;
+//if upvote, change upvote, if downvote, change downvote. Else, just do clear
+switch($vote){
+    case 1:
+        $upvoteResult = 'galleryItemUpvoted';
+        $downvoteResult = 'galleryItemDownvoteClear';
+        break;
+    case -1:
+        $downvoteResult = 'galleryItemDownvoted';
+        $upvoteResult = 'galleryItemUpvoteClear';
+        break;
+    case 0:
+        $downvoteResult = 'galleryItemDownvoteClear';
+        $upvoteResult = 'galleryItemUpvoteClear';
+        break;
+}
+
 $user = '';
 if(isset($_SESSION['username'])){
     $user = $_SESSION['username'];
@@ -28,9 +50,9 @@ if(isset($_SESSION['username'])){
     <img class="galleryItemImg" src="images/<?php echo $image_results['image_name']; ?>" alt="Picture: <?php echo $image_results['image_title']; ?>"/>
     <h3 class="galleryItemTitle"><?php echo $image_results['image_title']; ?></h3>
     <div class="galleryItemScore">
-        <div class="galleryItemUpvoteClear" <?php echo "id='upvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."'"; ?>,'up')"></div>
+        <div class=<?php echo "'".$upvoteResult."'"; ?><?php echo "id='upvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."'"; ?>,'up')"></div>
         <p class="galleryItemScoreText" <?php echo "id='scoreText".$imageID."'"; ?>> <?php echo $image_results['score']; ?></p>
-        <div class="galleryItemDownvoteClear" <?php echo "id='downvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."'"; ?>,'down')"></div>
+        <div class=<?php echo "'".$downvoteResult."'"; ?><?php echo "id='downvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."'"; ?>,'down')"></div>
     </div>
     <div class="modalContent">
         <div class="modalItemTitle">
