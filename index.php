@@ -17,7 +17,7 @@ $_SESSION['timeout'] = time();
 include 'php_tools/settings.php';
 
 if(isset($_SESSION['username'])){
-
+    $upvoteCount = 0;
     $username = $_SESSION['username'];
     $sql = "SELECT profilepicture FROM users WHERE user_name = ?";
     $statement = $database->prepare($sql);
@@ -27,11 +27,11 @@ if(isset($_SESSION['username'])){
     $statement = $database->prepare($sql2);
     $statement->execute([$username]);
     $userID = $statement->fetchColumn();
-    $countSql = "SELECT count(*) FROM image_votes WHERE user_id = ?";
+    $voteId = $userID;
+    $countSql = "SELECT SUM(score) FROM images WHERE user_id = ?";
     $statement = $database->prepare($countSql);
     $statement->execute([$userID]);
-    $voteId = $userID;
-    $upvoteCount = $statement->fetchColumn(0);//count not working
+    $upvoteCount = $statement->fetchColumn();
 }
 ?>
 <html lang="en">
