@@ -32,6 +32,9 @@ if(isset($_SESSION['username'])){
     $statement = $database->prepare($countSql);
     $statement->execute([$userID]);
     $upvoteCount = $statement->fetchColumn();
+    if($upvoteCount==null){
+        $upvoteCount = 0;
+    }
 }
 ?>
 <html lang="en">
@@ -171,6 +174,11 @@ if(isset($_SESSION['username'])){
     if(isset($_SESSION['username'])){
         echo '<label class="mobileUpload" for="uploadButton2">&plus;</label>';
     }
+if(isset($_GET['msg'])){
+    echo '<script language="javascript">';
+    echo 'alert("Error: Search results not found!")';
+    echo '</script>';
+}
 ?>
 </body>
 </html>
