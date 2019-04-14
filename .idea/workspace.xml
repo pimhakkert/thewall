@@ -43,20 +43,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php_tools/settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+            <state relative-caret-position="253">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/master2.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="560" column="17" selection-start-line="560" selection-start-column="17" selection-end-line="560" selection-end-column="17" />
+            <state relative-caret-position="741">
+              <caret line="727" column="32" lean-forward="true" selection-start-line="727" selection-start-column="32" selection-end-line="727" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -214,8 +214,8 @@
         <option value="$PROJECT_DIR$/css/registratie.css" />
         <option value="$PROJECT_DIR$/php_tools/display.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/css/master2.scss" />
         <option value="$PROJECT_DIR$/php_tools/settings.php" />
+        <option value="$PROJECT_DIR$/css/master2.scss" />
       </list>
     </option>
   </component>
@@ -370,12 +370,12 @@
       <workItem from="1554707226048" duration="2556000" />
       <workItem from="1554911097413" duration="3971000" />
       <workItem from="1555010367612" duration="5604000" />
-      <workItem from="1555240981607" duration="81000" />
+      <workItem from="1555240981607" duration="538000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155863000" />
+    <option name="totallyTimeSpent" value="156320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -649,17 +649,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/master2.scss">
+    <entry file="file://$PROJECT_DIR$/php_tools/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="560" column="17" selection-start-line="560" selection-start-column="17" selection-end-line="560" selection-end-column="17" />
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php_tools/settings.php">
+    <entry file="file://$PROJECT_DIR$/css/master2.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        <state relative-caret-position="741">
+          <caret line="727" column="32" lean-forward="true" selection-start-line="727" selection-start-column="32" selection-end-line="727" selection-end-column="32" />
         </state>
       </provider>
     </entry>
