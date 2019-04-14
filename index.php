@@ -167,9 +167,10 @@ if(isset($_SESSION['username'])){
         <h6>&#169; CRAP</h6>
     </div>
 </div>
-
-
-<label class="mobileUpload" for="uploadButton2">&plus;</label
-
+<?php
+    if(isset($_SESSION['username'])){
+        echo '<label class="mobileUpload" for="uploadButton2">&plus;</label>';
+    }
+?>
 </body>
 </html>
