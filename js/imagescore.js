@@ -1,5 +1,7 @@
 function scoreImage(imageID,user,upDown) {
     var scoreElement = document.getElementById("scoreText"+imageID);
+    var upvote = document.getElementById("upvote"+imageID);
+    var downvote = document.getElementById("downvote"+imageID);
     var score = scoreElement.innerHTML;
     var scoreIncrease = null;
 
@@ -34,31 +36,32 @@ function scoreImage(imageID,user,upDown) {
             },
             url: 'php_tools/scorebackend.php',
             success: function(data){
-                alert(data);
                 switch(data){
                     case 'upvote':
                         scoreElement.innerHTML = parseInt(score)+1;
-                        //hold upvote div.
+                        upvote.className = "galleryItemUpvoted";
                         break;
                     case 'downvote':
                         scoreElement.innerHTML = parseInt(score)-1;
-                        //hold downvote div.
+                        downvote.className = "galleryItemDownvoted";
                         break;
                     case 'upvoteBack':
                         scoreElement.innerHTML = parseInt(score)-1;
-                        //hold no div.
+                        upvote.className = "galleryItemUpvoteClear";
                         break;
                     case 'downvoteBack':
                         scoreElement.innerHTML = parseInt(score)+1;
-                        //hold no div.
+                        downvote.className = "galleryItemDownvoteClear";
                         break;
                     case 'downvoteDouble':
                         scoreElement.innerHTML = parseInt(score)-2;
-                        //hold upvote div.
+                        upvote.className = "galleryItemUpvoteClear";
+                        downvote.className = "galleryItemDownvoted";
                         break;
                     case 'upvoteDouble':
                         scoreElement.innerHTML = parseInt(score)+2;
-                        //hold downvote div.
+                        upvote.className = "galleryItemUpvoted";
+                        downvote.className = "galleryItemDownvoteClear";
                         break;
                 }
             }
