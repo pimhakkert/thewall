@@ -27,7 +27,6 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
     $result = $scorestm->fetchColumn();
 
     if($userCheck->rowCount()==0){
-        echo "error";
        $voteSql = "INSERT INTO image_votes VALUES (?,?,?)";
        $votestm = $database->prepare($voteSql);
        $votestm->execute([$imageID,$userID,0]);
@@ -38,9 +37,6 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
     }
     elseif($scoreIncrease == 'false'){
         Downvote();
-    }
-    else {
-        echo "error";
     }
 }
 
