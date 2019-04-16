@@ -21,9 +21,12 @@ if($order == 'ASC'){
         }
         else {
             foreach ($result as $tag_results) {
-                $sqlsss = "SELECT * FROM images  LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date ASC";
-                $sth = $database->prepare($sqlsss);
-                $sth->execute([$tag_results['tag_id']]);
+                $sql = "SELECT * FROM images LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date ASC LIMIT ?,?";
+                $sth = $database->prepare($sql);
+                $sth->bindValue(1,$tag_results['tag_id'], PDO::PARAM_STR);
+                $sth->bindValue(2,$offset, PDO::PARAM_INT);
+                $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+                $sth->execute();
                 $resultss = $sth->fetchAll();
                 foreach ($resultss as $i=>$image_results){
                     include('display.php');
@@ -33,9 +36,12 @@ if($order == 'ASC'){
     }
     elseif(isset($_GET['user'])){
         $userName = '%'.$_GET['user'].'%';
-        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) LIKE UPPER(?) ORDER BY image_date ASC";
+        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) LIKE UPPER(?) ORDER BY image_date ASC LIMIT ?,?";
         $sth = $database->prepare($sql);
-        $sth->execute([$userName]);
+        $sth->bindValue(1,$userName, PDO::PARAM_STR);
+        $sth->bindValue(2,$offset, PDO::PARAM_INT);
+        $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+        $sth->execute();
         $results = $sth->fetchAll();
         if(!$results){
             echo("<script>location.href ='index.php?msg=error';</script>");
@@ -48,9 +54,12 @@ if($order == 'ASC'){
     }
     elseif(isset($_GET['title'])){
         $title = '%'.$_GET['title'].'%';
-        $sql = "SELECT * FROM images WHERE UPPER(image_title) LIKE UPPER('%'?'%') ORDER BY image_date ASC";
+        $sql = "SELECT * FROM images WHERE UPPER(image_title) LIKE UPPER(?) ORDER BY image_date ASC LIMIT ?,?";
         $sth = $database->prepare($sql);
-        $sth->execute([$title]);
+        $sth->bindValue(1,$title, PDO::PARAM_STR);
+        $sth->bindValue(2,$offset, PDO::PARAM_INT);
+        $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+        $sth->execute();
         $results = $sth->fetchAll();
         if(!$results){
             echo("<script>location.href ='index.php?msg=error';</script>");
@@ -62,8 +71,10 @@ if($order == 'ASC'){
         }
     }
     else {
-        $sql = "SELECT * FROM images ORDER BY image_date ASC";
+        $sql = "SELECT * FROM images ORDER BY image_date ASC LIMIT ?,?";
         $sth = $database->prepare($sql);
+        $sth->bindValue(1,$offset, PDO::PARAM_INT);
+        $sth->bindValue(2,$rowsperpage, PDO::PARAM_INT);
         $sth->execute();
         $result = $sth->fetchAll();
         foreach ($result as $i=>$image_results) {
@@ -83,9 +94,12 @@ else {
         }
         else{
             foreach ($result as $tag_results) {
-                $sqlsss = "SELECT * FROM images  LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date DESC";
-                $sth = $database->prepare($sqlsss);
-                $sth->execute([$tag_results['tag_id']]);
+                $sql = "SELECT * FROM images LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date DESC LIMIT ?,?";
+                $sth = $database->prepare($sql);
+                $sth->bindValue(1,$tag_results['tag_id'], PDO::PARAM_STR);
+                $sth->bindValue(2,$offset, PDO::PARAM_INT);
+                $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+                $sth->execute();
                 $resultss = $sth->fetchAll();
                 foreach ($resultss as $i=>$image_results){
                     include('display.php');
@@ -95,9 +109,13 @@ else {
     }
     elseif(isset($_GET['user'])){
         $userName = '%'.$_GET['user'].'%';
-        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) LIKE UPPER(?) ORDER BY image_date DESC";
+        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) LIKE UPPER(?) ORDER BY image_date DESC LIMIT ?,?";
         $sth = $database->prepare($sql);
-        $sth->execute([$userName]);
+        $sth->bindValue(1,$userName, PDO::PARAM_STR);
+        $sth->bindValue(2,$offset, PDO::PARAM_INT);
+        $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+        $sth = $database->prepare($sql);
+        $sth->execute();
         $results = $sth->fetchAll();
         if(!$results){
             echo("<script>location.href ='index.php?msg=error';</script>");
@@ -110,9 +128,12 @@ else {
     }
     elseif(isset($_GET['title'])){
         $title = '%'.$_GET['title'].'%';
-        $sql = "SELECT * FROM images WHERE UPPER(image_title) LIKE UPPER(?) ORDER BY image_date DESC";
+        $sql = "SELECT * FROM images WHERE UPPER(image_title) LIKE UPPER(?) ORDER BY image_date DESC LIMIT ?,?";
         $sth = $database->prepare($sql);
-        $sth->execute([$title]);
+        $sth->bindValue(1,$title, PDO::PARAM_STR);
+        $sth->bindValue(2,$offset, PDO::PARAM_INT);
+        $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+        $sth->execute();
         $results = $sth->fetchAll();
         if(!$results){
             echo("<script>location.href ='index.php?msg=error';</script>");
@@ -124,8 +145,10 @@ else {
         }
     }
     else {
-        $sql = "SELECT * FROM images ORDER BY image_date DESC";
+        $sql = "SELECT * FROM images ORDER BY image_date DESC LIMIT ?,?";
         $sth = $database->prepare($sql);
+        $sth->bindValue(1,$offset, PDO::PARAM_INT);
+        $sth->bindValue(2,$rowsperpage, PDO::PARAM_INT);
         $sth->execute();
         $result = $sth->fetchAll();
         foreach ($result as $i=>$image_results) {

@@ -15,6 +15,7 @@ if(isset($_SESSION['timeout'])){
 $_SESSION['timeout'] = time();
 
 include 'php_tools/settings.php';
+include 'php_tools/showamount.php';
 
 if(isset($_SESSION['username'])){
     $upvoteCount = 0;
@@ -166,6 +167,7 @@ if(isset($_SESSION['username'])){
 
 
     <div class="footer">
+        <?php include('php_tools/paginator.php'); ?>
         <span></span>
         <h6>&#169; CRAP</h6>
     </div>
