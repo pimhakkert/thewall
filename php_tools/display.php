@@ -28,9 +28,9 @@ if(isset($_SESSION['username'])){
     <img class="galleryItemImg" src="images/<?php echo $image_results['image_name']; ?>" alt="Picture: <?php echo $image_results['image_title']; ?>"/>
     <h3 class="galleryItemTitle"><?php echo $image_results['image_title']; ?></h3>
     <div class="galleryItemScore">
-        <div class="galleryItemUpvote" <?php echo "id='upvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."',".$i; ?>,'up')">asdasd</div>
+        <div class="galleryItemUpvote" <?php echo "id='upvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."',".$i; ?>,'up')"></div>
         <p class="galleryItemScoreText" <?php echo "id='scoreText".$imageID."'"; ?>> <?php echo $image_results['score']; ?></p>
-        <div class="galleryItemDownvote" <?php echo "id='upvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."',".$i; ?>,'down')">sadasd</div>
+        <div class="galleryItemDownvote" <?php echo "id='upvote".$imageID."'"; ?> onclick="scoreImage(<?php echo $imageID.","."'".$user."',".$i; ?>,'down')"></div>
     </div>
     <div class="modalContent">
         <div class="modalItemTitle">
