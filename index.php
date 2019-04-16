@@ -1,6 +1,8 @@
 <?php
 session_start();
 $timeout = 1199;
+$voteId = null;
+$upvoteCount = -999;
 if(isset($_SESSION['timeout'])){
     $duration = time() - (int)$_SESSION['timeout'];
     if($duration > $timeout){
@@ -15,11 +17,24 @@ $_SESSION['timeout'] = time();
 include 'php_tools/settings.php';
 
 if(isset($_SESSION['username'])){
+    $upvoteCount = 0;
     $username = $_SESSION['username'];
     $sql = "SELECT profilepicture FROM users WHERE user_name = ?";
     $statement = $database->prepare($sql);
     $statement->execute([$username]);
     $profilePicture = $statement->fetchColumn();
+    $sql2 = "SELECT id FROM users WHERE user_name = ?";
+    $statement = $database->prepare($sql2);
+    $statement->execute([$username]);
+    $userID = $statement->fetchColumn();
+    $voteId = $userID;
+    $countSql = "SELECT SUM(score) FROM images WHERE user_id = ?";
+    $statement = $database->prepare($countSql);
+    $statement->execute([$userID]);
+    $upvoteCount = $statement->fetchColumn();
+    if($upvoteCount==null){
+        $upvoteCount = 0;
+    }
 }
 ?>
 <html lang="en">
@@ -108,7 +123,7 @@ if(isset($_SESSION['username'])){
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><a href='dashboard.php'><img onclick='window.location = \" dashboard.php\"' class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''></a><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Posts: 102</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><a href='dashboard.php'><img onclick='window.location = \" dashboard.php\"' class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''></a><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Upvotes: ".$upvoteCount."</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {
@@ -155,9 +170,15 @@ if(isset($_SESSION['username'])){
         <h6>&#169; CRAP</h6>
     </div>
 </div>
-
-
-<label class="mobileUpload" for="uploadButton2">&plus;</label
-
+<?php
+    if(isset($_SESSION['username'])){
+        echo '<label class="mobileUpload" for="uploadButton2">&plus;</label>';
+    }
+if(isset($_GET['msg'])){
+    echo '<script language="javascript">';
+    echo 'alert("Error: Search results not found!")';
+    echo '</script>';
+}
+?>
 </body>
 </html>

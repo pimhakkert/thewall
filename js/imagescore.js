@@ -1,8 +1,8 @@
-
-function scoreImage(imageID,user,upDown,imageID) {
-    var idScore = "galleryItemScoreText["+imageID+"]";
-    var scoreElement = document.getElementsByClassName(idScore);
-    var score = scoreElement.value;
+function scoreImage(imageID,user,upDown) {
+    var scoreElement = document.getElementById("scoreText"+imageID);
+    var upvote = document.getElementById("upvote"+imageID);
+    var downvote = document.getElementById("downvote"+imageID);
+    var score = scoreElement.innerHTML;
     var scoreIncrease = null;
 
     if(user===''){
@@ -20,12 +20,9 @@ function scoreImage(imageID,user,upDown,imageID) {
     else {
         switch(upDown){
             case 'up':
-
-                scoreElement.innerHTML = parseInt(score) + 1;
                 scoreIncrease = true;
                 break;
             case 'down':
-                scoreElement.innerHTML = parseInt(score) - 1;
                 scoreIncrease = false;
                 break;
         }
@@ -39,8 +36,33 @@ function scoreImage(imageID,user,upDown,imageID) {
             },
             url: 'php_tools/scorebackend.php',
             success: function(data){
-                if(data==="downvote"||data==="upvote"){
-                    alert('You can\'t '+data+' this image twice!');
+                switch(data){
+                    case 'upvote':
+                        scoreElement.innerHTML = parseInt(score)+1;
+                        upvote.className = "galleryItemUpvoted";
+                        break;
+                    case 'downvote':
+                        scoreElement.innerHTML = parseInt(score)-1;
+                        downvote.className = "galleryItemDownvoted";
+                        break;
+                    case 'upvoteBack':
+                        scoreElement.innerHTML = parseInt(score)-1;
+                        upvote.className = "galleryItemUpvoteClear";
+                        break;
+                    case 'downvoteBack':
+                        scoreElement.innerHTML = parseInt(score)+1;
+                        downvote.className = "galleryItemDownvoteClear";
+                        break;
+                    case 'downvoteDouble':
+                        scoreElement.innerHTML = parseInt(score)-2;
+                        upvote.className = "galleryItemUpvoteClear";
+                        downvote.className = "galleryItemDownvoted";
+                        break;
+                    case 'upvoteDouble':
+                        scoreElement.innerHTML = parseInt(score)+2;
+                        upvote.className = "galleryItemUpvoted";
+                        downvote.className = "galleryItemDownvoteClear";
+                        break;
                 }
             }
         });

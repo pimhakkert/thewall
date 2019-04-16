@@ -16,13 +16,18 @@ if($order == 'ASC'){
         $sth = $database->prepare($sql);
         $sth->execute([$tagName]);
         $result = $sth->fetchAll();
-        foreach ($result as $tag_results) {
-            $sqlsss = "SELECT * FROM images  LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date ASC";
-            $sth = $database->prepare($sqlsss);
-            $sth->execute([$tag_results['tag_id']]);
-            $resultss = $sth->fetchAll();
-            foreach ($resultss as $i=>$image_results){
-                include('display.php');
+        if(!$result){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($result as $tag_results) {
+                $sqlsss = "SELECT * FROM images  LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date ASC";
+                $sth = $database->prepare($sqlsss);
+                $sth->execute([$tag_results['tag_id']]);
+                $resultss = $sth->fetchAll();
+                foreach ($resultss as $i=>$image_results){
+                    include('display.php');
+                }
             }
         }
     }
@@ -32,8 +37,13 @@ if($order == 'ASC'){
         $sth = $database->prepare($sql);
         $sth->execute([$userName]);
         $results = $sth->fetchAll();
-        foreach ($results as $i=>$image_results){
-            include('display.php');
+        if(!$results){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($results as $i=>$image_results){
+                include('display.php');
+            }
         }
     }
     elseif(isset($_GET['title'])){
@@ -42,8 +52,13 @@ if($order == 'ASC'){
         $sth = $database->prepare($sql);
         $sth->execute([$title]);
         $results = $sth->fetchAll();
-        foreach ($results as $i=>$image_results){
-            include('display.php');
+        if(!$results){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($results as $i=>$image_results){
+                include('display.php');
+            }
         }
     }
     else {
@@ -63,13 +78,18 @@ else {
         $sth = $database->prepare($sql);
         $sth->execute([$tagName]);
         $result = $sth->fetchAll();
-        foreach ($result as $tag_results) {
-            $sqlsss = "SELECT * FROM images  LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date DESC";
-            $sth = $database->prepare($sqlsss);
-            $sth->execute([$tag_results['tag_id']]);
-            $resultss = $sth->fetchAll();
-            foreach ($resultss as $i=>$image_results){
-                include('display.php');
+        if(!$result){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else{
+            foreach ($result as $tag_results) {
+                $sqlsss = "SELECT * FROM images  LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date DESC";
+                $sth = $database->prepare($sqlsss);
+                $sth->execute([$tag_results['tag_id']]);
+                $resultss = $sth->fetchAll();
+                foreach ($resultss as $i=>$image_results){
+                    include('display.php');
+                }
             }
         }
     }
@@ -79,8 +99,13 @@ else {
         $sth = $database->prepare($sql);
         $sth->execute([$userName]);
         $results = $sth->fetchAll();
-        foreach ($results as $i=>$image_results){
-            include('display.php');
+        if(!$results){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($results as $i=>$image_results){
+                include('display.php');
+            }
         }
     }
     elseif(isset($_GET['title'])){
@@ -89,8 +114,13 @@ else {
         $sth = $database->prepare($sql);
         $sth->execute([$title]);
         $results = $sth->fetchAll();
-        foreach ($results as $i=>$image_results){
-            include('display.php');
+        if(!$results){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($results as $i=>$image_results){
+                include('display.php');
+            }
         }
     }
     else {
@@ -103,3 +133,4 @@ else {
         }
     }
 }
+?>

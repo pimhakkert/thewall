@@ -18,6 +18,32 @@ $sth2->execute([$userID]);
 $username = null;
 $username = $sth2->fetchColumn();
 
+if($voteId==null){
+    $vote=0;
+}
+else{
+    $sql4 = "SELECT vote FROM image_votes WHERE image_id = ? AND user_id = ?";
+    $sth3 = $database->prepare($sql4);
+    $sth3->execute([$imageID,$voteId]);
+    $vote = $sth3->fetchColumn();
+}
+$upvoteResult = null;
+$downvoteResult = null;
+switch($vote){
+    case 1:
+        $upvoteResult = 'galleryItemUpvoted';
+        $downvoteResult = 'galleryItemDownvoteClear';
+        break;
+    case -1:
+        $downvoteResult = 'galleryItemDownvoted';
+        $upvoteResult = 'galleryItemUpvoteClear';
+        break;
+    case 0:
+        $downvoteResult = 'galleryItemDownvoteClear';
+        $upvoteResult = 'galleryItemUpvoteClear';
+        break;
+}
+
 $user = '';
 if(isset($_SESSION['username'])){
     $user = $_SESSION['username'];

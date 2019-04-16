@@ -618,25 +618,39 @@ nav.upperNav input:hover {
 .galleryItem:hover .galleryItemTitle, .galleryItem:hover .galleryItemScore {
   display: block; }
 
-.galleryItemUpvote {
+.galleryItemUpvoteClear {
   background-image: url("../images/upvote.png");
   background-size: 40px;
   width: 40px;
   height: 40px;
   transform: translateY(140px); }
 
-.galleryItemUpvote:hover {
+.galleryItemUpvoteClear:hover {
   transform: scale(1.2) translateY(115px);
   background-image: url("../upvotegreen.png"); }
 
-.galleryItemDownvote {
+.galleryItemUpvoted {
+  background-image: url("../images/galleryItemUpvoted.gif");
+  background-size: 40px;
+  width: 40px;
+  height: 40px;
+  transform: translateY(140px); }
+
+.galleryItemDownvoted {
+  transform: translateY(135px);
+  background-image: url("../downvotered.png");
+  background-size: 40px;
+  width: 40px;
+  height: 40px; }
+
+.galleryItemDownvoteClear {
   transform: translateY(135px);
   background-image: url("../images/downvote.png");
   background-size: 40px;
   width: 40px;
   height: 40px; }
 
-.galleryItemDownvote:hover {
+.galleryItemDownvoteClear:hover {
   background-image: url("../downvotered.png");
   transform: scale(1.2) translateY(115px); }
 
