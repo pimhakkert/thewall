@@ -98,13 +98,13 @@ if($upvoteCount==null){
                     <h3 style="margin-bottom: 1em">Settings</h3>
                     <div class="dashboardProfileSetting"><h5>New username:</h5><input name="newUsername" class="usernameSetting" type="text" value="<?php echo $result['user_name']; ?>"></div>
                     <div class="dashboardProfileSetting"><h5>New email:</h5><input name="newEmail" class="emailSetting" type="text" value="<?php echo $result['user_email']; ?>"></div>
-                    <div style="display: flex; justify-content: flex-end"><input name="SalamiMet" type="submit1" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
+                    <div style="display: flex; justify-content: flex-end"><input name="submit2" type="submit" value="Submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
                 </form>
 
                 <form method="post" action="" class="dashboardProfileSettings" enctype="multipart/form-data">
                     <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
                     <div style="display: flex; justify-content: flex-end">
-                        <input type="submit" name="submit2" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)">
+                        <input type="submit" name="submit1" value="Submit" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)">
                     </div>
                 </form>
 
@@ -116,11 +116,6 @@ if($upvoteCount==null){
     </div>
     <script src="js/sessioncheck.js"></script><!--on submit check if in session-->
 </div>
-
-
-
-
-
 <?php
 //Hier errors laten zien als die er zijn.
 foreach($errorsArray as $echo){

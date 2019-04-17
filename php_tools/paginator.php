@@ -39,7 +39,7 @@ for ($x = ($currentpage - $range); $x < (($currentpage + $range) + 1); $x++) {
         // if we're on current page...
         if ($x == $currentpage) {
             // 'highlight' it but don't make a link
-            echo " [<b class='pagination_middle'>$x</b>] ";
+            echo "<b class='pagination_middle'>$x</b>";
             // if not current page...
         } else {
             // make it a link

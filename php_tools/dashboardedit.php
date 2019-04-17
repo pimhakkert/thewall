@@ -20,7 +20,7 @@ foreach($results as $image_results){
             </div>
             <div class="modalItemRight">
                 <div class="modalItemImg">
-                    <img src="images/<?php echo $image_results['image_name'];?>"alt="Picture: <?php echo $image_results['image_title'];?>">
+                    <img src="images/<?php echo $image_results['image_name'];?>" alt="Picture: <?php echo $image_results['image_title'];?>">
                 </div>
             </div>
             <div class="modalItemLeft">
@@ -34,8 +34,9 @@ foreach($results as $image_results){
                     <?php } ?>
                 </div>
                 <div class="dashboardModalEditButtons" style="grid-row: 12; grid-column: 2; display: flex;margin-top: 1em;">
+                    <input type="hidden" name="imageID" value="<?php echo $imageID; ?>">
                     <input type="submit" name="submit3" style="flex-grow: 1;">
-                    <button class="dashboardEditButton" style="justify-self: flex-end">Delete</button>
+                    <input type="submit" name="submit4" value="Delete" class="dashboardEditButton" style="justify-self: flex-end">
                 </div>
             </div>
         </form>
@@ -46,10 +47,17 @@ foreach($results as $image_results){
 if($_SERVER['REQUEST_METHOD']==='POST'&&isset($_POST['submit3'])){
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $id = $_POST['imageId'];
+    $id = $_POST['imageID'];
     $sql = "UPDATE images SET image_title = ?, image_description = ? WHERE id = ?";
     $sth = $database->prepare($sql);
     $sth->execute([$title,$description,$id]);
+    echo '<script>location.href="index.php";</script>';
+}
+elseif($_SERVER['REQUEST_METHOD']==='POST'&&isset($_POST['submit4'])){
+    $id = $_POST['imageID'];
+    $sql = "DELETE FROM images WHERE id = ?";
+    $sth = $database->prepare($sql);
+    $sth->execute([$id]);
     echo '<script>location.href="index.php";</script>';
 }
 ?>
