@@ -20,7 +20,7 @@ const addContent = (event) => {
     const counter = modalButtonArray.indexOf(event.target);
     console.log(counter);
     modal.appendChild(closeButton);
-    modal.appendChild(modalContent[counter]);
+    modal.appendChild(modalContent[counter])    ;
     modalBackground.appendChild(modal);
     document.body.appendChild(modalBackground);
 };
@@ -37,6 +37,12 @@ for(let i=0; i<modalButton.length; i++) {
     modalButtonArray.push(modalButton[i]);
     modalButton[i].addEventListener('click', addContent);
 }
+
+
+
+
+
+
 
 
 

@@ -1,41 +1,159 @@
 <?php
-$sql = "SELECT * FROM images";
-foreach ($database->query($sql) as $image_results) {
-    $imageID = $image_results['id'];
-    $userID = $image_results['user_id'];
-    $username;
-    $sql2 = "SELECT tag_id FROM image_tags WHERE image_id = $imageID";
-    $tagArray = array();
-    //Need to change this to prepared statements. Possible database linking???
-    foreach($database->query($sql2) as $tagId_results) {
-        $tagID = $tagId_results['tag_id'];
-        $sql3 = "SELECT tag_name FROM tags WHERE tag_id = $tagID";
-        foreach ($database->query($sql3) as $tagName_results) {
-            $tagName = $tagName_results['tag_name'];
-            array_push($tagArray,$tagName);
+if(isset($_GET['order'])&&$_GET['order']=='DESC'){
+    $order = 'DESC';
+}
+else if(isset($_GET['order'])&&$_GET['order']=='ASC'){
+    $order = 'ASC';
+}
+else {
+    $order = 'DESC';
+}
+
+if($order == 'ASC'){
+    if(isset($_GET['tag'])){
+        $tagName = $_GET['tag'];
+        $sql = "SELECT tag_id FROM tags WHERE UPPER(tag_name) = UPPER(?)";
+        $sth = $database->prepare($sql);
+        $sth->execute([$tagName]);
+        $result = $sth->fetchAll();
+        if(!$result){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($result as $tag_results) {
+                $sql = "SELECT * FROM images LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date ASC LIMIT ?,?";
+                $sth = $database->prepare($sql);
+                $sth->bindValue(1,$tag_results['tag_id'], PDO::PARAM_STR);
+                $sth->bindValue(2,$offset, PDO::PARAM_INT);
+                $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+                $sth->execute();
+                $resultss = $sth->fetchAll();
+                foreach ($resultss as $i=>$image_results){
+                    include('display.php');
+                }
+            }
         }
     }
-    //Comment End
-    $sql4 = "SELECT user_name FROM users WHERE id = $userID";
-    foreach ($database->query($sql4) as $username_results) {
-        $username = $username_results['user_name'];
+    elseif(isset($_GET['user'])){
+        $userName = '%'.$_GET['user'].'%';
+        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) LIKE UPPER(?) ORDER BY image_date ASC LIMIT ?,?";
+        $sth = $database->prepare($sql);
+        $sth->bindValue(1,$userName, PDO::PARAM_STR);
+        $sth->bindValue(2,$offset, PDO::PARAM_INT);
+        $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+        $sth->execute();
+        $results = $sth->fetchAll();
+        if(!$results){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($results as $i=>$image_results){
+                include('display.php');
+            }
+        }
     }
-    ?>
-    <div class="galleryItem">
-        <img class="galleryItemImg modalButton" src="images/<?php echo $image_results['image_name']; ?>"alt="Picture: <?php echo $image_results['image_title']; ?>"/>
-        <h3 class="galleryItemTitle"><?php echo $image_results['image_title'];?></h3>
-        <div class="modalContent">
-            <h1 class="modalItemTitle"><?php echo $image_results['image_title'];?></h1>
-            <img class="modalItemImg" src="images/<?php echo $image_results['image_name'];?>"alt="Picture: <?php echo $image_results['image_title'];?>">
-            <p class="modalItemDesc"> <?php echo $image_results['image_description'];?></p>
-            <h3 class="modalItemOwner"><?php echo $username;?></h3>
-            <h6 class="modalItemDate"><?php echo $image_results['image_date'];?></h6>
-            <!--               Need to finish search functionality for following for loop to be completed.-->
-            <?php for($i=0;$i<sizeof($tagArray);$i++){ ?>
-                <a class="modalItemTags" href="index.php/search">
-                    <?php echo $tagArray[$i];?>
-                </a>
-            <?php } ?>
-        </div>
-    </div>
-<?php } ?>
+    elseif(isset($_GET['title'])){
+        $title = '%'.$_GET['title'].'%';
+        $sql = "SELECT * FROM images WHERE UPPER(image_title) LIKE UPPER(?) ORDER BY image_date ASC LIMIT ?,?";
+        $sth = $database->prepare($sql);
+        $sth->bindValue(1,$title, PDO::PARAM_STR);
+        $sth->bindValue(2,$offset, PDO::PARAM_INT);
+        $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+        $sth->execute();
+        $results = $sth->fetchAll();
+        if(!$results){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($results as $i=>$image_results){
+                include('display.php');
+            }
+        }
+    }
+    else {
+        $sql = "SELECT * FROM images ORDER BY image_date ASC LIMIT ?,?";
+        $sth = $database->prepare($sql);
+        $sth->bindValue(1,$offset, PDO::PARAM_INT);
+        $sth->bindValue(2,$rowsperpage, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetchAll();
+        foreach ($result as $i=>$image_results) {
+            include('display.php');
+        }
+    }
+}
+else {
+    if(isset($_GET['tag'])){
+        $tagName = $_GET['tag'];
+        $sql = "SELECT tag_id FROM tags WHERE UPPER(tag_name) = UPPER(?)";
+        $sth = $database->prepare($sql);
+        $sth->execute([$tagName]);
+        $result = $sth->fetchAll();
+        if(!$result){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else{
+            foreach ($result as $tag_results) {
+                $sql = "SELECT * FROM images LEFT JOIN image_tags  ON images.id = image_tags.image_id WHERE UPPER(image_tags.tag_id) = UPPER(?) ORDER BY image_date DESC LIMIT ?,?";
+                $sth = $database->prepare($sql);
+                $sth->bindValue(1,$tag_results['tag_id'], PDO::PARAM_STR);
+                $sth->bindValue(2,$offset, PDO::PARAM_INT);
+                $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+                $sth->execute();
+                $resultss = $sth->fetchAll();
+                foreach ($resultss as $i=>$image_results){
+                    include('display.php');
+                }
+            }
+        }
+    }
+    elseif(isset($_GET['user'])){
+        $userName = '%'.$_GET['user'].'%';
+        $sql = "SELECT * FROM images LEFT JOIN users  ON images.user_id = users.id WHERE UPPER(users.user_name) LIKE UPPER(?) ORDER BY image_date DESC LIMIT ?,?";
+        $sth = $database->prepare($sql);
+        $sth->bindValue(1,$userName, PDO::PARAM_STR);
+        $sth->bindValue(2,$offset, PDO::PARAM_INT);
+        $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+        $sth = $database->prepare($sql);
+        $sth->execute();
+        $results = $sth->fetchAll();
+        if(!$results){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($results as $i=>$image_results){
+                include('display.php');
+            }
+        }
+    }
+    elseif(isset($_GET['title'])){
+        $title = '%'.$_GET['title'].'%';
+        $sql = "SELECT * FROM images WHERE UPPER(image_title) LIKE UPPER(?) ORDER BY image_date DESC LIMIT ?,?";
+        $sth = $database->prepare($sql);
+        $sth->bindValue(1,$title, PDO::PARAM_STR);
+        $sth->bindValue(2,$offset, PDO::PARAM_INT);
+        $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
+        $sth->execute();
+        $results = $sth->fetchAll();
+        if(!$results){
+            echo("<script>location.href ='index.php?msg=error';</script>");
+        }
+        else {
+            foreach ($results as $i=>$image_results){
+                include('display.php');
+            }
+        }
+    }
+    else {
+        $sql = "SELECT * FROM images ORDER BY image_date DESC LIMIT ?,?";
+        $sth = $database->prepare($sql);
+        $sth->bindValue(1,$offset, PDO::PARAM_INT);
+        $sth->bindValue(2,$rowsperpage, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetchAll();
+        foreach ($result as $i=>$image_results) {
+            include('display.php');
+        }
+    }
+}
+?>

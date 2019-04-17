@@ -1,0 +1,141 @@
+html { height: 100% }
+.wrapper{
+  margin-top: 7em;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  background: white ;
+  border: 1px solid #42464b;
+  border-radius: 6px;
+  height: auto;
+  margin: 20px auto 0;
+  width: 298px;
+  margin-top: 80px;
+  padding-bottom: 20px;
+}
+input[type="password"], input[type="text"] {
+  box-sizing: border-box;
+  font-family:Arial, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color: black;
+  height: 39px;
+  margin: 31px 0 0 29px;
+  padding-left: 37px;
+  width: 240px;
+  background-color: #F3F3F3;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  height: 16px;
+  opacity: 0;
+  position: relative;
+  width: 64px;
+}
+input[type="checkbox"]:checked {
+  left: 29px;
+  width: 58px;
+}
+
+
+.wrapper {
+  background-color: rgba(0, 0, 0, 0);
+  padding-bottom: 0;
+}
+
+input[type="checkbox"]:checked + .toggle { background-position: 0 -16px }
+.forgot {
+  color: black;
+  display: inline-block;
+  float: right;
+  font: 12px/1 sans-serif;
+  left: -19px;
+  position: relative;
+  text-decoration: none;
+  top: 5px;
+  transition: color .4s;
+}
+.forgot:hover { color: #3b3b3b }
+input[id="submit"] {
+  width:240px;
+  height:35px;
+  display:block;
+  background-color: #e8a43f;
+  font-family:Arial, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color: black;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  padding-top:6px;
+  margin: 29px 0 0 29px;
+  position:relative;
+  cursor:pointer;
+  border: none;
+  border: 1px solid #42464b;
+}
+.forgot:hover { color: #3b3b3b }
+input[id="submit2"] {
+  width:240px;
+  height:35px;
+  display:block;
+  background-color: #ecb45d;
+  font-family:Arial, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color: black;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  padding-top:6px;
+  margin: 29px 0 0 29px;
+  position:relative;
+  cursor:pointer;
+  border: none;
+  border: 1px solid #42464b;
+}
+.errorMessage{
+  padding: 20px 10px 10px 10px;
+  background-color: #fcdfd9;
+  border-color: #ff8c75;
+  border-style: solid;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.errorMessage:empty{
+  display: none;
+}
+html{
+  width: 100vw;
+  background-image: url("../images/monochrome.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+body{
+  height: 105%;
+  background-color: rgba(232,164,63,0.42);
+  transform: translateY(-113px);
+}
+
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  height: 105vh;
+  transform: translatey(-5em);
+  width: 100vw;
+  background-size: cover;
+  transition: margin-top ease-in-out 0.2s;
+}
+.footer{
+    background-color: #0A0702;
+    position: relative;
+    height: 3em;
+    margin-top: -3em;
+    clear: both;
+    bottom: 0;
+  }
