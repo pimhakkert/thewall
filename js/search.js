@@ -25,6 +25,12 @@ function sortFunction() {
         case 'oldtonew':
             sort = 'ASC';
             break;
+        case 'lowtohigh':
+            sort = 'SLH';
+            break;
+        case 'hightolow':
+            sort = 'SHL';
+            break;
     }
 
     if(getParameterByName('title')){
@@ -99,6 +105,12 @@ function sortFunction2() {
             break;
         case 'oldtonew':
             sort = 'ASC';
+            break;
+        case 'lowtohigh':
+            sort = 'SLH';
+            break;
+        case 'hightolow':
+            sort = 'SHL';
             break;
     }
 

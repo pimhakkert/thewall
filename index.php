@@ -61,9 +61,11 @@ if(isset($_SESSION['username'])){
     <nav class="upperNav" style="height: 11em; background-color: #3d3d3d; padding-top:15px; border-bottom-style: solid">
         <?php
         $sortText = "<select class=\"searchMenuSortBy2\" name=\"sortby2\" id=\"sortby2\" onchange=\"sortFunction2()\">
-<option value=\"sortby\">Sort By</option>
-<option value=\"newtoold\">New/old</option>
-<option value=\"oldtonew\">Old/New</option>
+<option value=\"sortby\">Sort by</option>
+<option value=\"newtoold\">Time: new - old</option>
+<option value=\"oldtonew\">Time: old - new</option>
+<option value=\"lowtohigh\">Score: low - high</option>
+<option value=\"hightolow\">Score: high - low</option>
 </select>";
         $searchText = "<select class=\"searchMenuSearchSelect2\" name=\"searchSelect2\" id=\"searchSelect2\">
 <option value=\"title\">Title</option>
@@ -147,9 +149,11 @@ if(isset($_SESSION['username'])){
         <input id="searchInput" type="text" placeholder="Search..">
         <button id="searchButton" onclick="searchFunction()">Search</button>
         <select class="searchMenuSortBy" name="sortby" id="sortby" onchange="sortFunction()">
-            <option value="sortby">Sort By</option>
-            <option value="newtoold">New/old</option>
-            <option value="oldtonew">Old/new</option>
+            <option value="sortby">Sort by</option>
+            <option value="newtoold">Time: new - old</option>
+            <option value="oldtonew">Time: old - new</option>
+            <option value="lowtohigh">Score: low - high</option>
+            <option value="hightolow">Score: high - low</option>
         </select>
     </nav>
 

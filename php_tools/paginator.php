@@ -9,7 +9,7 @@ if ($currentpage > 1) {
         $url = substr($_SERVER['REQUEST_URI'], 0, -1).'1';
         echo " <a class='pagination_begin' href='$url'><<</a> ";
     }
-    elseif(isset($_GET['title'])||isset($_GET['tag'])||isset($_GET['user'])) {
+    elseif(isset($_GET['title'])||isset($_GET['order'])||isset($_GET['tag'])||isset($_GET['user'])) {
         echo " <a class='pagination_begin' href='{$_SERVER['REQUEST_URI']}&page=1'><<</a> ";
     }
     else{
@@ -23,7 +23,7 @@ if ($currentpage > 1) {
         $url = substr($_SERVER['REQUEST_URI'], 0, -1).$prevpage;
         echo " <a class='pagination_back' href='$url'><</a> ";
     }
-    elseif(isset($_GET['title'])||isset($_GET['tag'])||isset($_GET['user'])) {
+    elseif(isset($_GET['title'])||isset($_GET['order'])||isset($_GET['tag'])||isset($_GET['user'])) {
         echo " <a class='pagination_back' href='{$_SERVER['REQUEST_URI']}&page=$prevpage'><</a> ";
     }
     else{
@@ -48,7 +48,7 @@ for ($x = ($currentpage - $range); $x < (($currentpage + $range) + 1); $x++) {
                 $url = substr($_SERVER['REQUEST_URI'], 0, -1).$x;
                 echo " <a class='pagination_middle' href='$url'>$x</a> ";
             }
-            elseif(isset($_GET['title'])||isset($_GET['tag'])||isset($_GET['user'])) {
+            elseif(isset($_GET['title'])||isset($_GET['order'])||isset($_GET['tag'])||isset($_GET['user'])) {
                 echo " <a class='pagination_middle' href='{$_SERVER['REQUEST_URI']}&page=$x'>$x</a> ";
 
             }
@@ -70,7 +70,7 @@ if ($currentpage != $totalpages) {
         $url = substr($_SERVER['REQUEST_URI'], 0, -1).$nextpage;
         echo " <a class='pagination_forward' href='$url'>></a> ";
     }
-    elseif(isset($_GET['title'])||isset($_GET['tag'])||isset($_GET['user'])) {
+    elseif(isset($_GET['title'])||isset($_GET['order'])||isset($_GET['tag'])||isset($_GET['user'])) {
         echo " <a class='pagination_forward' href='{$_SERVER['REQUEST_URI']}&page=$nextpage'>></a> ";
     }
     else{
@@ -83,7 +83,7 @@ if ($currentpage != $totalpages) {
         $url = substr($_SERVER['REQUEST_URI'], 0, -1).$totalpages;
         echo " <a class='pagination_end' href='$url'>>></a> ";
     }
-    elseif(isset($_GET['title'])||isset($_GET['tag'])||isset($_GET['user'])) {
+    elseif(isset($_GET['title'])||isset($_GET['order'])||isset($_GET['tag'])||isset($_GET['user'])) {
         echo " <a class='pagination_end' href='{$_SERVER['REQUEST_URI']}&page=$totalpages'>>></a> ";
     }
     else{
