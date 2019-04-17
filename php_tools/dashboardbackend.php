@@ -2,9 +2,17 @@
 $edit = true;
 $error = false;
 $errorsArray = array();
+
+$username = $_SESSION['username'];
+$sql = "SELECT * FROM images INNER JOIN users ON images.user_id = users.id WHERE user_name = ?";
+$sth = $database->prepare($sql);
+$sth->execute([$username]);
+$results = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+
 if('POST' === $_SERVER['REQUEST_METHOD']){
 
-    if(isset($_FILES["fileToUpload"]["name"])) {
+    if(isset($_POST['submit1'])) {
         $target_dir = "profilepictures/";
         $target_file_pre = basename($_FILES["fileToUpload"]["name"]);
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -14,7 +22,7 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
         $target_file = $target_dir.$dbname;
 
 
-        if(isset($_POST["submit"])) {
+        if(isset($_POST["submit1"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
                 $uploadOk = 1;
@@ -54,7 +62,7 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
         }
     }
 
-    elseif ($edit) {
+    elseif (isset($_POST['submit2'])) {
         $error2 = false;
         $newUser = $_POST['newUsername'];
         $newEmail = $_POST['newEmail'];
