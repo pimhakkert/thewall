@@ -33,7 +33,7 @@ foreach($results as $image_results){
                         </a>
                     <?php } ?>
                 </div>
-                <div style="grid-row: 12; grid-column: 2; display: flex;margin-top: 1em;">
+                <div class="dashboardModalEditButtons" style="grid-row: 12; grid-column: 2; display: flex;margin-top: 1em;">
                     <input type="submit" name="submit3" style="flex-grow: 1;">
                     <button class="dashboardEditButton" style="justify-self: flex-end">Delete</button>
                 </div>

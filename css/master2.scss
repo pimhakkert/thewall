@@ -852,7 +852,7 @@ nav.upperNav input:hover {
 
 
 .modalBackground {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -1011,6 +1011,71 @@ nav.upperNav input:hover {
     color: white;
     margin-top: auto;
     margin-bottom: auto;
+  }
+  .pagination_div{
+    flex-grow: 1;
+    margin-left: 45%;
+    margin-top: 1.5em;
+    .pagination_forward{
+      color: black;
+      padding-right: 10px;
+      padding-top: 3px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      border-style: solid;
+      border-color: #C17400;
+      border-radius: 10px;
+      border-width: 2px;
+      background-color: #E8A43F;
+    }
+    .pagination_end{
+      color: black;
+      padding-right: 10px;
+      padding-top: 3px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      border-style: solid;
+      border-color: #C17400;
+      border-radius: 10px;
+      border-width: 2px;
+      background-color: #E8A43F;
+    }
+    .pagination_begin{
+      color: black;
+      padding-right: 10px;
+      padding-top: 3px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      border-style: solid;
+      border-color: #C17400;
+      border-radius: 10px;
+      border-width: 2px;
+      background-color: #E8A43F;
+    }
+    .pagination_back{
+      color: black;
+      padding-right: 10px;
+      padding-top: 3px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      border-style: solid;
+      border-color: #C17400;
+      border-radius: 10px;
+      border-width: 2px;
+      background-color: #E8A43F;
+    }
+    .pagination_middle{
+      color: black;
+      padding-right: 10px;
+      padding-top: 3px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      border-style: solid;
+      border-color: #C17400;
+      border-radius: 10px;
+      border-width: 2px;
+      background-color: #E8A43F;
+    }
   }
 }
 @media screen and (max-width: 992px) {
@@ -1177,6 +1242,8 @@ nav.upperNav input:hover {
 
 }
 @media screen and (min-width: 768px) and (max-width: 900px) {
+
+
   #searchButton2{
     width: 50%;
     margin-left: 50px;
@@ -1184,6 +1251,13 @@ nav.upperNav input:hover {
 }
 
 @media screen and (max-width: 414px) {
+  .dashboardModalEditButtons{
+    grid-row: 6 !important;
+    grid-column: 1/ span 2 !important;
+    display: flex !important;
+    margin-top: 1em !important;
+    transform: translateY(-3em) !important;
+  }
   .dashboardItem{
     padding-left: 0;
   }
