@@ -77,7 +77,7 @@ html {
 
 body {
   height: 105%;
-  background-color: rgba(232, 164, 63, 0.42);
+  background-color: rgba(0, 0, 0, 0);
   transform: translateY(-40px); }
 
 .wrapper {
