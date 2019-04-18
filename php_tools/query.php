@@ -142,8 +142,15 @@ if($execute){
                 $sth->bindValue(3,$rowsperpage, PDO::PARAM_INT);
                 $sth->execute();
                 $resultss = $sth->fetchAll();
-                foreach ($resultss as $i=>$image_results){
-                    include('display.php');
+
+                if(!$resultss){
+                    echo("<script>location.href ='index.php?msg=error';</script>");
+                }
+                else{
+                    $_POST['count'] = count($resultss);
+                    foreach ($resultss as $i=>$image_results){
+                        include('display.php');
+                    }
                 }
             }
         }
@@ -160,6 +167,7 @@ if($execute){
             echo("<script>location.href ='index.php?msg=error';</script>");
         }
         else {
+            $_POST['count'] = count($results);
             foreach ($results as $i=>$image_results){
                 include('display.php');
             }
@@ -177,6 +185,7 @@ if($execute){
             echo("<script>location.href ='index.php?msg=error';</script>");
         }
         else {
+            $_POST['count'] = count($results);
             foreach ($results as $i=>$image_results){
                 include('display.php');
             }
@@ -188,6 +197,7 @@ if($execute){
         $sth->bindValue(2,$rowsperpage, PDO::PARAM_INT);
         $sth->execute();
         $result = $sth->fetchAll();
+        $_POST['count'] = count($result);
         foreach ($result as $i=>$image_results) {
             include('display.php');
         }

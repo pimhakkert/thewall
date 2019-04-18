@@ -89,7 +89,7 @@ if(!$error1) {
             $safe_fileName = $dbname;
             $imageRawSize = filesize($target_file);
             $imageSize = $imageRawSize / 1000000 . " MB";
-            $imageDate = date("Y/m/d");
+            $imageDate = date("Y/m/d H:i:s");
             $insertSql = "INSERT into images (image_name, image_size, image_date, user_id, image_title, image_description) VALUES (?,?,?,?,?,?)";
             $database->prepare($insertSql)->execute([$safe_fileName, $imageSize,$imageDate,$userID,$safe_title,$safe_desc]);
             $imageID = $database->lastInsertId();
