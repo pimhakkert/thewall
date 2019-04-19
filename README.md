@@ -9,6 +9,8 @@ Tijdsperiode: 25 februari tot 19 april.
 
 Verdere informatie staat in de Debriefing in de meegeleverde documentatie in de repository.
 
+Live link: http://www.raigriffioen.nl/thewall/index.php
+
 ## English version
 This project is a schoolproject where a website like Imgur or Pinterest is built.
 Users can view photos and click on them, after which the image enlarges and you can see further information such as the title, tags and description.
