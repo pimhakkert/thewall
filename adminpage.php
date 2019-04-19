@@ -1,6 +1,6 @@
 <?php
 session_start();
-$timeout = 1199;
+$timeout = 300;
 if(isset($_SESSION['timeout'])){
     $duration = time() - (int)$_SESSION['timeout'];
     if($duration > $timeout){
@@ -14,29 +14,19 @@ $_SESSION['timeout'] = time();
 
 include 'php_tools/settings.php';
 
-if(isset($_SESSION['username'])){
-    $username = $_SESSION['username'];
-    $sql = "SELECT * FROM users WHERE user_name = ?";
-    $statement = $database->prepare($sql);
-    $statement->execute([$username]);
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
+if($_SERVER['REQUEST_METHOD']==='POST'&&isset($_POST['submit'])){
+    if($_POST['password']!='fY7ctq4iQk7kxhtsUxJavNIVRN9x36LjJihlqJ4K7OTAdo4mricfzVSbRyP47yF8'){
+        header('Location: index.php');
+    }
 }
 else {
-    header('Location: login.php');
+    header('Location: index.php');
 }
-include ('php_tools/dashboardbackend.php');
-$upvoteCount = null;
-$sql2 = "SELECT id FROM users WHERE user_name = ?";
-$statement = $database->prepare($sql2);
-$statement->execute([$username]);
-$userID = $statement->fetchColumn();
-$countSql = "SELECT SUM(score) FROM images WHERE user_id = ?";
-$statement = $database->prepare($countSql);
-$statement->execute([$userID]);
-$upvoteCount = $statement->fetchColumn();
-if($upvoteCount==null){
-    $upvoteCount = 0;
+
+foreach($errorsArray as $echo){
+    echo '<script>alert('.$echo.');</script>';
 }
+
 ?>
 <html lang="en">
 <head>
@@ -62,31 +52,10 @@ if($upvoteCount==null){
     <input type="checkbox" id="searchMenuToggle" style="transform: translateY(20em); opacity: 0;">
 
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
-        <?php
-        if(isset($_SESSION['username'])){
-            echo "<a href='php_tools/logout.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
-        }
-        else {
-            echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
-        }
-        ?>
-
     </nav>
 
     <nav class="customNavbar">
         <div class="navbarLogo" onclick="window.location = 'index.php';"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
-        <div class="navButtons">
-            <?php
-            if(isset($_SESSION['username'])){
-                echo "<div class='navProfile navButton'><a href='dashboard.php'><img class='navProfileIcon' src='profilepictures/".$result['profilepicture']."' alt=''></a><a href='dashboard.php'><h3 class='navProfileUsername'>".$_SESSION['username']."</h3></a><h3 class='navProfilePosts'>Upvotes: ".$upvoteCount."</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
-            }
-            else {
-                echo "<button class=\"modalButton upload navButton\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
-                echo "<button class='navButton' type=\"button\" name=\"button\" onclick=\"location.href = 'login.php'\">Login</button>";
-            }
-            ?>
-            <label for="toggleMenu" id="navHamburger">&#9776;</label>
-        </div>
     </nav>
 
     <div class="dashboard" id="dashboard">
@@ -101,12 +70,6 @@ if($upvoteCount==null){
     </div>
     <script src="js/sessioncheck.js"></script><!--on submit check if in session-->
 </div>
-<?php
-//Hier errors laten zien als die er zijn.
-foreach($errorsArray as $echo){
-    echo $echo;
-}
-?>
 <script src="js/modal.js"></script>
 <div class="footer"></div>
 </body>

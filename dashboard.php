@@ -37,6 +37,10 @@ $upvoteCount = $statement->fetchColumn();
 if($upvoteCount==null){
     $upvoteCount = 0;
 }
+
+foreach($errorsArray as $echo){
+    echo '<script>alert('.$echo.');</script>';
+}
 ?>
 <html lang="en">
 <head>
@@ -116,12 +120,6 @@ if($upvoteCount==null){
     </div>
     <script src="js/sessioncheck.js"></script><!--on submit check if in session-->
 </div>
-<?php
-//Hier errors laten zien als die er zijn.
-foreach($errorsArray as $echo){
-    echo $echo;
-}
-?>
 <script src="js/modal.js"></script>
 <div class="footer"></div>
 </body>

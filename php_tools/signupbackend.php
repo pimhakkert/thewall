@@ -68,8 +68,8 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
         copy($tempFile,$profilePic);
         $profilePic = $safe_username.".png";
         $insertSql = "INSERT into users (user_name, user_email, user_password, profilepicture) VALUES (?,?,?,?)";
-        $database->prepare($insertSql)->execute([$safe_username,$safe_email,$password_hash,$profilePic]);
-
+        $stm = $database->prepare($insertSql);
+        $stm->execute([$safe_username,$safe_email,$password_hash,$profilePic]);
         session_write_close();
         header("Location: index.php");
     }
