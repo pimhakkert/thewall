@@ -16,7 +16,11 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
         $fieldname = $fieldnames[$i];
         if(!isset($_POST[$field]) || empty($_POST[$field])) {
 
-            array_push($errorArray,$fieldname.' has not been filled in.');
+            if($fieldname == 'Tags'){
+                array_push($errorArray,$fieldname.' have not been filled in.');
+            } else {
+                array_push($errorArray,$fieldname.' has not been filled in.');
+            }
             $error1 = true;
         }
     }
@@ -54,17 +58,16 @@ if(!$error1) {
 
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
-            array_push($errorArray,"Sorry, only JPG, JPEG, PNG & GIF files are allowed.");
+            array_push($errorArray,"Only JPG & JPEG & PNG & GIF files are allowed.");
             $error2 = true;
             $uploadOk = 0;
         }
         if ($_FILES["fileToUpload"]["size"] > 7500000) {
-            array_push($errorArray,"Sorry, images (including GIF's) can't be bigger than 7.5 MB.");
+            array_push($errorArray,"Images (including GIF's) can't be bigger than 7.5 MB.");
             $error2 = true;
             $uploadOk = 0;
         }
         if ($uploadOk == 0) {
-            array_push($errorArray,"Sorry, your file was not uploaded.");
             $error2 = true;
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {

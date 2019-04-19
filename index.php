@@ -175,9 +175,12 @@ if(isset($_SESSION['username'])){
         <h6>&#169; CRAP</h6>
     </div>
 </div>
+</body>
+</html>
 <?php
 if(!empty($errorArray)){
-    echo "<script type='text/javascript'> alert(".json_encode($errorArray).") </script>";
+    $text = json_encode($errorArray);
+    echo "<script type='text/javascript'>var text = ''+".$text."+'';text = text.replace(/,/g,' ');alert(text);</script>";
 }
 if(isset($_SESSION['username'])){
     echo '<label class="mobileUpload" for="uploadButton2">&plus;</label>';
@@ -188,5 +191,3 @@ if(isset($_GET['msg'])){
     echo '</script>';
 }
 ?>
-</body>
-</html>
