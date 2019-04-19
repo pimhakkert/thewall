@@ -76,7 +76,7 @@ if(isset($_SESSION['username'])){
                 echo "<label class=\"uploadButtonLabel\" for=\"searchButton2\" id=\"uploadButton1\">Search</label>";
                 echo $sortText;
                 echo $searchText;
-                echo "<input class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
+                echo "<input style='padding-left: 10px;' class='searchMenuInput' id=\"searchInput2\" type=\"text\" placeholder=\"Search..\">";
                 echo "<button style='display: none' class='searchMenuSearchButton' id=\"searchButton2\" onclick=\"searchFunction2()\">&#x1F50E;</button>";
             }
             else {
@@ -141,12 +141,12 @@ if(isset($_SESSION['username'])){
     </nav>
 
     <nav class="searchMenu">
-        <select class="searchMenuSearchSelect" name="searchSelect" id="searchMenuSelect">
+        <select style="padding-left: 10px;" class="searchMenuSearchSelect" name="searchSelect" id="searchMenuSelect">
             <option value="title">Title</option>
             <option value="tag">Tag</option>
             <option value="user">User</option>
         </select>
-        <input id="searchInput" type="text" placeholder="Search..">
+        <input style="padding-left: 10px;" id="searchInput" type="text" placeholder="Search..">
         <button id="searchButton" onclick="searchFunction()">Search</button>
         <select class="searchMenuSortBy" name="sortby" id="sortby" onchange="sortFunction()">
             <option value="sortby">Sort by</option>

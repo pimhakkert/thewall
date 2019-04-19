@@ -488,10 +488,11 @@ nav.upperNav input:hover {
   padding-left: 30px;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: #0A0702; }
+  border-top-color: #0A0702;
+  justify-content: space-between; }
 
 .dashboardPostTitle {
-  flex-grow: 0.2; }
+  width: 30%; }
 
 .dashboardPostUploadDate {
   flex-grow: 0.68; }
@@ -548,6 +549,9 @@ nav.upperNav input:hover {
 .searchMenuToggleLabel:hover {
   cursor: pointer;
   color: darkgray; }
+
+#searchInput {
+  padding-left: 10px !important; }
 
 #no {
   height: 84px;
@@ -806,7 +810,7 @@ nav.upperNav input:hover {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.3fr 50vh 0.5fr; }
 
-.modalItemTItle {
+.modalItemTitle {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -819,7 +823,11 @@ nav.upperNav input:hover {
   transform: translate(-63px, -17px);
   grid-row: 1;
   grid-column-start: 1;
-  grid-column-end: 3; }
+  grid-column-end: 3;
+  padding-top: 17px; }
+
+.modalitemtitle, input[type=text] {
+  padding-left: 10px; }
 
 .modalItemTitle2 {
   position: relative;
@@ -1177,7 +1185,7 @@ nav.upperNav input:hover {
     height: 50px; }
 
   #navHamburger {
-    margin-top: 8px;
+    margin-top: 13px;
     margin-bottom: auto;
     font-size: 50px;
     justify-self: flex-end; }
@@ -1188,7 +1196,7 @@ nav.upperNav input:hover {
     margin-right: 15px;
     flex-grow: 1;
     display: grid;
-    width: 170px; }
+    width: 47vw; }
 
   .navProfileUsername {
     font-size: 1em; }
@@ -1197,7 +1205,8 @@ nav.upperNav input:hover {
     font-size: 0.7em; }
 
   .navProfileLogout {
-    margin-left: 0; }
+    justify-self: end;
+    margin-right: 5px; }
 
   .searchMenu {
     display: none; }

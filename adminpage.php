@@ -90,24 +90,9 @@ if($upvoteCount==null){
     </nav>
 
     <div class="dashboard" id="dashboard">
-        <div class="dashboardBar" id="dashboardBar">Dashboard</div>
+        <div class="dashboardBar" id="dashboardBar">Administration</div>
         <div style="overflow-y: scroll; grid-column-start: 1; grid-column-end: 3;">
             <div class="dashboardContent">
-
-                <form method="post" action="" class="dashboardProfileSettings">
-                    <h3 style="margin-bottom: 1em">Settings</h3>
-                    <div class="dashboardProfileSetting"><h5>New username:</h5><input name="newUsername" class="usernameSetting" type="text" value="<?php echo $result['user_name']; ?>"></div>
-                    <div class="dashboardProfileSetting"><h5>New email:</h5><input name="newEmail" class="emailSetting" type="text" value="<?php echo $result['user_email']; ?>"></div>
-                    <div style="display: flex; justify-content: flex-end"><input name="submit2" type="submit" value="Apply" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)" ></div>
-                </form>
-
-                <form method="post" action="" class="dashboardProfileSettings" enctype="multipart/form-data">
-                    <div class="dashboardProfileSetting"><h5>Profile-icon:</h5><br><input class="profileIconSetting" type="file" name="fileToUpload" id="fileToUpload" accept="images/*"></div>
-                    <div style="display: flex; justify-content: flex-end">
-                        <input type="submit" name="submit1" value="Apply" class="dashboardEditButton" style="background-color: #1e7e34; transform: translateX(-80px)">
-                    </div>
-                </form>
-
                 <h3 style="margin-bottom: 1em">Posts</h3>
                 <?php include('php_tools/dashboardedit.php'); ?>
             </div>
