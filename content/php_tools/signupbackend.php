@@ -63,7 +63,7 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
     if($error2 === 1){
         $safe_email = filter_var($email,FILTER_SANITIZE_EMAIL);
         $safe_username = filter_var($username,FILTER_SANITIZE_STRING);
-        $tempFile = "images/standarduser.png";
+        $tempFile = "site_images/standarduser.png";
         $profilePic = "profilepictures/".$safe_username.".png";
         copy($tempFile,$profilePic);
         $profilePic = $safe_username.".png";
@@ -74,10 +74,4 @@ if('POST' === $_SERVER['REQUEST_METHOD']){
         header("Location: index.php");
     }
 }
-
-
-
-
-
-
 ?>

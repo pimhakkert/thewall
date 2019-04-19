@@ -697,7 +697,7 @@ nav.upperNav input:hover {
   display: block;
 }
 .galleryItemUpvoteClear{
-  background-image: url("../images/upvote.png");
+  background-image: url("../site_images/upvote.png");
   background-size: 40px;
   width: 40px;
   height: 40px;
@@ -705,10 +705,10 @@ nav.upperNav input:hover {
 }
 .galleryItemUpvoteClear:hover{
   transform: scale(1.2) translateY(115px);
-  background-image: url("../upvotegreen.png");
+  background-image: url("../site_images/upvotegreen.png");
 }
 .galleryItemUpvoted{
-  background-image: url("../images/galleryItemUpvoted.gif");
+  background-image: url("../site_images/galleryItemUpvoted.gif");
   background-size: 40px;
   width: 40px;
   height: 40px;
@@ -716,20 +716,20 @@ nav.upperNav input:hover {
 }
 .galleryItemDownvoted{
   transform: translateY(135px);
-  background-image: url("../downvotered.png");
+  background-image: url("../site_images/downvotered.png");
   background-size: 40px;
   width: 40px;
   height: 40px;
 }
 .galleryItemDownvoteClear{
   transform: translateY(135px);
-  background-image: url("../images/downvote.png");
+  background-image: url("../site_images/downvote.png");
   background-size: 40px;
   width: 40px;
   height: 40px;
 }
 .galleryItemDownvoteClear:hover{
-  background-image: url("../downvotered.png");
+  background-image: url("../site_images/downvotered.png");
   transform: scale(1.2) translateY(115px);
 
 }

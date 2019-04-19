@@ -38,7 +38,7 @@ foreach($errorsArray as $echo){
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.css">
-    <link rel="icon" href="images/TheWallLogo.png">
+    <link rel="icon" href="site_images/TheWallLogo.png">
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.smoothState.min.js"></script>
@@ -55,7 +55,7 @@ foreach($errorsArray as $echo){
     </nav>
 
     <nav class="customNavbar">
-        <div class="navbarLogo" onclick="window.location = 'index.php';"><img class="navbarLogoImg" src="images/TheWallLogo.png" alt=""></div>
+        <div class="navbarLogo" onclick="window.location = 'index.php';"><img class="navbarLogoImg" src="site_images/TheWallLogo.png" alt=""></div>
     </nav>
 
     <div class="dashboard" id="dashboard">
