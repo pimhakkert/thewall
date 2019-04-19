@@ -176,9 +176,12 @@ if(isset($_SESSION['username'])){
     </div>
 </div>
 <?php
-    if(isset($_SESSION['username'])){
-        echo '<label class="mobileUpload" for="uploadButton2">&plus;</label>';
-    }
+if(!empty($errorArray)){
+    echo "<script type='text/javascript'> alert(".json_encode($errorArray).") </script>";
+}
+if(isset($_SESSION['username'])){
+    echo '<label class="mobileUpload" for="uploadButton2">&plus;</label>';
+}
 if(isset($_GET['msg'])){
     echo '<script language="javascript">';
     echo 'alert("Error: Search results not found!")';
