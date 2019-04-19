@@ -12,7 +12,7 @@ if(isset($_SESSION['timeout'])){
 }
 $_SESSION['timeout'] = time();
 
-include 'php_tools/settings.php';
+include '../private/php_tools/settings.php';
 
 if(isset($_SESSION['username'])){
     $username = $_SESSION['username'];
@@ -24,7 +24,7 @@ if(isset($_SESSION['username'])){
 else {
     header('Location: login.php');
 }
-include ('php_tools/dashboardbackend.php');
+include ('../private/php_tools/dashboardbackend.php');
 $upvoteCount = null;
 $sql2 = "SELECT id FROM users WHERE user_name = ?";
 $statement = $database->prepare($sql2);
@@ -68,7 +68,7 @@ foreach($errorsArray as $echo){
     <nav class="upperNav" style="height: 5em; background-color: dimgrey">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<a href='php_tools/logout.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
+            echo "<a href='../private/php_tools/logoutbackend.php'><input type=\"button\" value=\"Logout\" name=\"button\" id=\"mobileLogout\"></a>";
         }
         else {
             echo "<input type=\"button\" value=\"Login\" onclick=\"location.href = 'login.php'\">";
@@ -82,7 +82,7 @@ foreach($errorsArray as $echo){
         <div class="navButtons">
             <?php
             if(isset($_SESSION['username'])){
-                echo "<div class='navProfile navButton'><a href='dashboard.php'><img class='navProfileIcon' src='profilepictures/".$result['profilepicture']."' alt=''></a><a href='dashboard.php'><h3 class='navProfileUsername'>".$_SESSION['username']."</h3></a><h3 class='navProfilePosts'>Upvotes: ".$upvoteCount."</h3><a class='navProfileLogout' href='php_tools/logoutbackend.php'>Logout</a></div>";
+                echo "<div class='navProfile navButton'><a href='dashboard.php'><img class='navProfileIcon' src='profilepictures/".$result['profilepicture']."' alt=''></a><a href='dashboard.php'><h3 class='navProfileUsername'>".$_SESSION['username']."</h3></a><h3 class='navProfilePosts'>Upvotes: ".$upvoteCount."</h3><a class='navProfileLogout' href='../private/php_tools/logoutbackend.php'>Logout</a></div>";
             }
             else {
                 echo "<button class=\"modalButton upload navButton\" id=\"uploadButton\" type=\"button\" name=\"button\" style=\"display: none\">Upload</button>";
@@ -113,7 +113,7 @@ foreach($errorsArray as $echo){
                 </form>
 
                 <h3 style="margin-bottom: 1em">Posts</h3>
-                <?php include('php_tools/dashboardedit.php'); ?>
+                <?php include('../private/php_tools/dashboardedit.php'); ?>
             </div>
         </div>
 

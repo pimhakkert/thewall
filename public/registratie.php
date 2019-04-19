@@ -5,7 +5,7 @@ if(isset($_SESSION['username'])){
 }
 ?>
 <html lang="en">
-<?php include 'php_tools/settings.php';?>
+<?php include '../private/php_tools/settings.php';?>
 <head>
   <title>The Wall</title>
   <meta charset="utf-8">
@@ -40,7 +40,7 @@ if(isset($_SESSION['username'])){
             <input type="text" placeholder="E-mail" id="username" name="email">
             <input type="password" placeholder="Password" id="password" name="password">
             <input type="password" placeholder="Confirm password" id="password" name="passwordconfirm">
-            <div class="errorMessage"><?php include 'php_tools/signupbackend.php' ?></div>
+            <div class="errorMessage"><?php include '../private/php_tools/signupbackend.php' ?></div>
             <input type="submit" value="Sign Up" id="submit" name="submit">
         </form>
         <div class="shadow"></div>
