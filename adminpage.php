@@ -12,7 +12,7 @@ if(isset($_SESSION['timeout'])){
 }
 $_SESSION['timeout'] = time();
 
-include '../private/php_tools/settings.php';
+include '../../private/php_tools/settings.php';
 
 if($_SERVER['REQUEST_METHOD']==='POST'&&isset($_POST['submit'])){
     if($_POST['password']!='fY7ctq4iQk7kxhtsUxJavNIVRN9x36LjJihlqJ4K7OTAdo4mricfzVSbRyP47yF8'){
@@ -63,7 +63,7 @@ foreach($errorsArray as $echo){
         <div style="overflow-y: scroll; grid-column-start: 1; grid-column-end: 3;">
             <div class="dashboardContent">
                 <h3 style="margin-bottom: 1em">Posts</h3>
-                <?php include('../private/php_tools/dashboardedit.php'); ?>
+                <?php include('../../private/php_tools/dashboardedit.php'); ?>
             </div>
         </div>
 
