@@ -64,6 +64,14 @@ function scoreImage(imageID,user,upDown) {
                         downvote.className = "galleryItemDownvoteClear";
                         break;
                 }
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                console.log('jqXHR:');
+                console.log(jqXHR);
+                console.log('textStatus:');
+                console.log(textStatus);
+                console.log('errorThrown:');
+                console.log(errorThrown);
             }
         });
     }
