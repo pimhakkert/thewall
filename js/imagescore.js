@@ -34,7 +34,7 @@ function scoreImage(imageID,user,upDown) {
                 'imageId' : imageID,
                 'user' : user
             },
-            url: '../scorebackend.php',
+            url: 'scorebackend.php',
             success: function(data){
                 switch(data){
                     case 'upvote':
