@@ -10,6 +10,8 @@ Tijdsperiode: 25 februari tot 19 april.
 Verdere informatie staat in de Debriefing in de meegeleverde documentatie in de repository.
 
 Live link: http://www.raigriffioen.nl/thewall/index.php
+Gebruiksaanwijzing: Zet het mapje 'Thewall' in de public_html van je host en zet de private map een directory terug van public_html.
+Usage: Put the 'Thewall' folder in the public_html folder of your host and put the private map into the directory above public_html.
 
 ## English version
 This project is a schoolproject where a website like Imgur or Pinterest is built.
