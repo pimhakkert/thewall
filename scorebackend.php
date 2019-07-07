@@ -1,5 +1,5 @@
 <?php
-include "settings.php";
+include "../../private/php_tools/settings.php";
 if('POST' === $_SERVER['REQUEST_METHOD']){
     //declare variables
     $imageID = $_POST['imageId'];

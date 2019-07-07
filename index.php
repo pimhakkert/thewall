@@ -14,8 +14,8 @@ if(isset($_SESSION['timeout'])){
 }
 $_SESSION['timeout'] = time();
 
-include '../private/php_tools/settings.php';
-include '../private/php_tools/showamount.php';
+include '../../private/php_tools/settings.php';
+include '../../private/php_tools/showamount.php';
 
 if(isset($_SESSION['username'])){
     $upvoteCount = 0;
@@ -118,7 +118,7 @@ if(isset($_SESSION['username'])){
 
             </div>
         </form>
-        <?php include '../private/php_tools/uploadbackend.php'; ?>
+        <?php include '../../private/php_tools/uploadbackend.php'; ?>
     </div>
 
     <nav class="customNavbar">
@@ -126,7 +126,7 @@ if(isset($_SESSION['username'])){
         <div class="navButtons">
         <?php
         if(isset($_SESSION['username'])){
-            echo "<div class='navProfile navButton'><a href='dashboard.php'><img onclick='window.location = \" dashboard.php\"' class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''></a><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Upvotes: ".$upvoteCount."</h3><a class='navProfileLogout' href='../private/php_tools/logoutbackend.php'>Logout</a></div>";
+            echo "<div class='navProfile navButton'><a href='dashboard.php'><img onclick='window.location = \" dashboard.php\"' class='navProfileIcon' src='profilepictures/".$profilePicture."' alt=''></a><a href='dashboard.php'><h3 class='navProfileUsername'>" . $_SESSION['username'] . "</h3></a><h3 class='navProfilePosts'>Upvotes: ".$upvoteCount."</h3><a class='navProfileLogout' href='logoutbackend.php'>Logout</a></div>";
             echo "<button class=\"modalButton upload navButton gradient-border\" id=\"uploadButton2\" type=\"button\" name=\"button\" style=\"margin-left: auto\">Upload</button>";
         }
         else {
@@ -158,7 +158,7 @@ if(isset($_SESSION['username'])){
     </nav>
 
     <div class="container gallery">
-        <?php include '../private/php_tools/query.php'?>
+        <?php include '../../private/php_tools/query.php'?>
     </div>
     <div class="aside sort">
 
@@ -171,7 +171,7 @@ if(isset($_SESSION['username'])){
 
 
     <div class="footer">
-        <?php include('../private/php_tools/paginator.php'); ?>
+        <?php include('../../private/php_tools/paginator.php'); ?>
         <h6>&#169; CRAP</h6>
     </div>
 </div>

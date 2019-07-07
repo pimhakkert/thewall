@@ -1,5 +1,5 @@
 <html lang="en">
-<?php include '../private/php_tools/settings.php';?>
+<?php include '../../private/php_tools/settings.php';?>
 <head>
     <title>Admin Login</title>
     <meta charset="utf-8">
