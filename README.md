@@ -24,3 +24,4 @@ Developers: Casper Mataûschek, Rai Griffioen (Front-end) and Pim Hakkert (Back-
 Project time: February 25th until April 19th.
 
 Further information is displayed in the Debriefing in the documentation section of the repository.
+Live link: http://www.raigriffioen.nl/thewall/index.php
